@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CIS-客戶資訊整合系統</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- jQuery-ui(css_eric) -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css">
+    <!-- Bootstrap_4.5.2 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- material_icon(css_eric) -->
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/material-icons-ie.css">
+    <!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <!-- datatable(bootstrap4/DataTables) -->
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+    <!-- bootstrap-select(css_eric)-->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- datepicker_5.1.0 -->
+    <link rel="stylesheet" href="css/jquery.datepick.css">
+    <!-- lity_2.4.1 -->
+    <link rel="stylesheet" href="css/lity.css">
+    <!-- 全域(標籤) -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 框架 -->
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- 頁面 -->
+    <link rel="stylesheet" href="css/page.css">
+    <!-- 保留給rd使用 -->
+    <link rel="stylesheet" href="css/rd.css">
+</head>
+
+<body>
+    <div class="frameContainer bra21Container">
+        <!-- frame_top_start -->
+        <div class="topContainer">
+            <div class="topInner">
+                <!-- menuBar_start -->
+                <div class="menuBarBlock">
+                    <div class="menuBarInner">
+                        <!-- menuBar_btn -->
+                        <div class="menuBarBtn">
+                            <button onclick='leftMenuToggle()'><span class="menuBarLine"></span></button>
+                        </div>
+                        <!-- menuBar_logo -->
+                        <div class="menuBarLogo">
+                            <a href="#"><img src="img/logo.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- menuBar_end -->
+                <!-- log_start -->
+                <div class="logBlock">
+                    <div class="logInner">
+                        <!-- log_in_time -->
+                        <div class="loginTime">登入時間：109/07/16 (四) 08:22:30</div>
+                        <!-- log_name/time/out -->
+                        <div class="logNameTimeOut">
+                            <div class="loginName">Hi, <span class="userDepartment">客戶服務部</span><span class="userName">高育綸</span><span class="userId">CS0123</span></div>
+                            <div class="logOutCountdown"><span class="countdownHour">29</span><span class="countdownMin">59</span></div>
+                            <div class="logOut"><a href="login.html">登出</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- log_end -->
+            </div>
+        </div>
+        <!-- frame_top_end -->
+        <!-- frame_bottom_start -->
+        <div id="bottomArea" class="bottomContainer jsBottomLeftPadding">
+            <!-- left_menu_start -->
+            <div id="leftMenu" class="leftAside jsLmWidth">
+                <div class="leftAsideInner">
+                    <div class="scrollContent leftAsideContent jsLmWidth" id="leftAsideId">
+                        <nav>
+                            <div menu-html='include/menu.html'></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- left_menu_end -->
+            <!-- main_content_start -->
+            <div class="mainContent">
+                <!-- user_info_start -->
+                <div class="userInfo">
+                    <div class="userInfoInner">
+                        <div class="userInfoContent">
+                            <div class="userInfoItem userInfoBtn maleBtn">
+                                <a href="bra_1.html">廖家祥</a>
+                            </div>
+                            <div class="userInfoItem userInfoIdNum">F123456789</div>
+                            <div class="userInfoItem userInfoBirthday">
+                                <span>74</span>
+                                <span>03</span>
+                                <span>14</span>
+                            </div>
+                        </div>
+                        <div class="userInfoSearch" id="userInfoSearchId">
+                            <form class="userInfoSearchForm">
+                                <div class="userInfoSearchFormInner">
+                                    <div class="userInfoSearchFormSelector">
+                                        <select class="selectpicker" name="formSelect" onchange="location = this.value;">
+                                            <option value="frame_search_id.html" selected="">身分證號碼</option>
+                                            <option value="frame_search_num.html">保單號碼</option>
+                                            <option value="frame_searc_name_date.html">姓名/生日</option>
+                                        </select>
+                                    </div>
+                                    <div class="userInfoSearchFormField">
+                                        <div class="userInfoSearchFormFieldInner">
+                                            <div class="userInfoSearchInput">
+                                                <input type="text" placeholder="請輸入身分證號碼" value="" class="searchInput">
+                                            </div>
+                                            <div class="userInfoClear">
+                                                <a href="#" onclick="clearText()">清除</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="userInfoSearchFormBtn">
+                                        <button>搜 尋</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="userInfoSearchToggoleBtn">
+                            <button onclick="userInfoSearchToggle()"><span class="material-icons">search</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- user_info_end -->
+                <div class="rightAside">
+                    <!-- right_menu_start -->
+                    <div class="rightAsideContent rightAsideMenu jsRmWidth" id="rightMenu">
+                        <div class="rightAsideMenuInner">
+                            <div class="rightAsideBtn">
+                                <button onclick="rightMenuToggle()">
+                                    <!-- <span class="material-icons">menu_open</span> --></button>
+                            </div>
+                            <div class="rightAsideBtnList jsRmContent" id="rightAsideId">
+                                <div class="rmNavTabs">
+                                    <ul class="nav nav-tabs">
+                                        <li><a data-toggle="tab" href="#rmMsg" class="active">重要通知</a></li>
+                                        <li><a data-toggle="tab" href="#rmRecord">近三個月接觸紀錄</a></li>
+                                    </ul>
+                                </div>
+                                <div class="rmNavTabsContent">
+                                    <div class="tab-content">
+                                        <div id="rmMsg" class="tab-pane in active msgList">
+                                            <div class="msgListInner">
+                                                <div class="msgListHeader">
+                                                    <div class="msgListHeaderInner">
+                                                        <div class="msgListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                        <div class="msgListInfo">共計 <span>24</span> 筆通知</div>
+                                                    </div>
+                                                </div>
+                                                <div class="scrollContent msgListContent" id="msgListContentId">
+                                                    <div msg-html='include/msg.html'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="rmRecord" class="tab-pane fade recordList">
+                                            <div class="recordListInner">
+                                                <div class="recordListHeader">
+                                                    <div class="recordListHeaderInner">
+                                                        <div class="recordListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="recordListContent">
+                                                    <div class="scrollContent recordListContentInner" id="recordListContentId">
+                                                        <div record-html='include/record.html'></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right_menu_end -->
+                    <div class="scrollContent mainContentText jsBottomRightMargin" id="mainContentTextId">
+                        <div class="mainContentTextInner">
+                            <!-- breadcrumb_start -->
+                            <div class="breadcrumbBlock">
+                                <div class="breadcrumbList">
+                                    <ul>
+                                        <li class="breadcrumbTitle">目前位置</li>
+                                        <li>個人資料查詢</li>
+                                        <li>保障資產</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- breadcrumb_end -->
+                            <!-- dashboard_start -->
+                            <div class="dashboardBlock">
+                                <div class="taskItem">
+                                    <div class="taskTitle">保障資產</div>
+                                    <div class="taskCard">
+                                        <!-- qbe_start -->
+                                        <div class="taskQbe bra21Qbe">
+                                            <div class="qbeList">
+                                                <div class="qbeListItem qbeListTitle">請選擇查詢條件</div>
+                                                <div class="qbeListItem qbeSelector">
+                                                    <select class="selectpicker" name="formSelect">
+                                                        <option value="" selected="">查詢人與被保人同一人</option>
+                                                        <option value="">所有被保人姓名</option>
+                                                    </select>
+                                                </div>
+                                                <div class="qbeListItem qbeSearch"><a href="#"><span class="material-icons">search</span></a></div>
+                                            </div>
+                                            <div class="clearfix clearMargin"></div>
+                                        </div>
+                                        <!-- qbe_end -->
+                                        <!-- open/close_toggle_start -->
+                                        <div class="openCloseToggle">
+                                            <div class="switch">
+                                                <div class="switchInner">
+                                                    <div class="switchOption off">收合</div>
+                                                    <div class="switchOption on">展開</div>
+                                                </div>
+                                                <input class='condition' type="checkbox" value="false">
+                                            </div>
+                                        </div>
+                                        <!-- open/close_toggle_end -->
+                                        <!-- currency_note_start -->
+                                        <div class="bra21ContentUnitCurrency currencyNote"><span>金額（幣別：新台幣 / 元）</span></div>
+                                        <!-- currency_note_end -->
+                                        <!-- bra21_collapse_list_start -->
+                                        <div class="bra21CollapseList">
+                                            <!-- 身故保障 -->
+                                            <div class="bra21CollapseItem">
+                                                <div class="bra21CollapseItemTitle">
+                                                    <a data-toggle="collapse" href="#bra21Itme1"><span>身故保障</span></a>
+                                                </div>
+                                                <div id="bra21Itme1" class="collapse in bra21CollapseItemContent">
+                                                    <div class="bra21ContentUnit">
+                                                        <div class="bra21ContentUnitInner">
+                                                            <div class="bra21ContentUnitInnerSet">
+                                                                <div class="bra21DetailsList">
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#bra21_popup991_1" data-lity>
+                                                                            <span class="bra21DetailsItemTitle">一般身故</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>10,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">意外身故</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>100</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">癌症身故</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>20,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 生活照護 -->
+                                            <div class="bra21CollapseItem">
+                                                <div class="bra21CollapseItemTitle">
+                                                    <a data-toggle="collapse" href="#bra21Itme2"><span>生活照護</span></a>
+                                                </div>
+                                                <div id="bra21Itme2" class="collapse in bra21CollapseItemContent">
+                                                    <div class="bra21ContentUnit">
+                                                        <div class="bra21ContentUnitInner">
+                                                            <div class="bra21ContentUnitInnerSet">
+                                                                <div class="bra21DetailsList">
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">長照生活金(每月)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>20,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">長扶生活金(每月)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>15,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">特傷或完全失能生活金(每月)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>3,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">長照關懷金(一次)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>8,888</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">長扶關懷金(一次)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>7,777</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">特傷或完全失能生活金(一次)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>9,999</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 重疾暨特傷給付 -->
+                                            <div class="bra21CollapseItem">
+                                                <div class="bra21CollapseItemTitle">
+                                                    <a data-toggle="collapse" href="#bra21Itme3"><span>重疾暨特傷給付</span></a>
+                                                </div>
+                                                <div id="bra21Itme3" class="collapse in bra21CollapseItemContent">
+                                                    <div class="bra21ContentUnit">
+                                                        <div class="bra21ContentUnitInner">
+                                                            <div class="bra21ContentUnitInnerSet">
+                                                                <div class="bra21DetailsList">
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">7項重大疾病(一次)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>10,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">重大疾病暨特定傷病(一次)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>8,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">重大傷病卡(一次)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>7,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 實支實付住院醫療 -->
+                                            <div class="bra21CollapseItem">
+                                                <div class="bra21CollapseItemTitle">
+                                                    <a data-toggle="collapse" href="#bra21Itme4"><span>實支實付住院醫療</span></a>
+                                                </div>
+                                                <div id="bra21Itme4" class="collapse in bra21CollapseItemContent">
+                                                    <div class="bra21ContentUnit">
+                                                        <div class="bra21ContentUnitInner">
+                                                            <div class="bra21ContentUnitInnerSet">
+                                                                <div class="bra21DetailsList">
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">醫療雜費限額(每次)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>20,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">可轉換日額</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>14,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">住院前後門診(每次)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>6,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">病房費限額(每次)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>3,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">手術費用限額(每次)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>4,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">門診手術限額(每次)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>6,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 癌症醫療 -->
+                                            <div class="bra21CollapseItem">
+                                                <div class="bra21CollapseItemTitle">
+                                                    <a data-toggle="collapse" href="#bra21Itme5"><span>癌症醫療</span></a>
+                                                </div>
+                                                <div id="bra21Itme5" class="collapse in bra21CollapseItemContent">
+                                                    <div class="bra21ContentUnit">
+                                                        <div class="bra21ContentUnitInner">
+                                                            <div class="bra21ContentUnitInnerSet">
+                                                                <div class="bra21DetailsList">
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">初次罹癌</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>4,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">初次罹癌(低侵)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>3,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">初次罹癌(初期)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>3,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">初次罹癌(輕度)]</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>2,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">初次罹癌(重度)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">癌症手術</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>7,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">癌症住院手術</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>6,666</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">癌症門診手術</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">癌症門診</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>500</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">癌症住院前後門診金</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>777</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">癌症化療</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>666</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">癌症放療</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>444</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 疾病醫療 -->
+                                            <div class="bra21CollapseItem">
+                                                <div class="bra21CollapseItemTitle">
+                                                    <a data-toggle="collapse" href="#bra21Itme6"><span>疾病醫療</span></a>
+                                                </div>
+                                                <div id="bra21Itme6" class="collapse in bra21CollapseItemContent">
+                                                    <div class="bra21ContentUnit">
+                                                        <div class="bra21ContentUnitInner">
+                                                            <div class="bra21ContentUnitInnerSet">
+                                                                <div class="bra21ContentUnitTitleBlock">
+                                                                    <div class="bra21ContentUnitTitle"><span>終身醫療</span></div>
+                                                                </div>
+                                                                <div class="bra21DetailsList">
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">住院日額</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>3,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">加護病房</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,500</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">燒燙傷病房</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,800</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">住院前後門診</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>600</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">急診保險金</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>700</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">緊急醫療運送</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>900</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="bra21ContentUnitInnerSet">
+                                                                <div class="bra21ContentUnitTitleBlock">
+                                                                    <div class="bra21ContentUnitTitle"><span>定期醫療</span></div>
+                                                                </div>
+                                                                <div class="bra21DetailsList">
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">住院日額</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,500</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">加護病房</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">燒燙傷病房</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,200</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 手術醫療 -->
+                                            <div class="bra21CollapseItem">
+                                                <div class="bra21CollapseItemTitle">
+                                                    <a data-toggle="collapse" href="#bra21Itme7"><span>手術醫療</span></a>
+                                                </div>
+                                                <div id="bra21Itme7" class="collapse in bra21CollapseItemContent">
+                                                    <div class="bra21ContentUnit">
+                                                        <div class="bra21ContentUnitInner">
+                                                            <div class="bra21ContentUnitInnerSet">
+                                                                <div class="bra21ContentUnitTitleBlock">
+                                                                    <div class="bra21ContentUnitTitle"><span>終身醫療</span></div>
+                                                                </div>
+                                                                <div class="bra21DetailsList">
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">手術津貼(依手術表給付)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">住院手術</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>3,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">住院處置</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>666</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">門診手術</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>777</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">門診處置</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>150</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="bra21ContentUnitInnerSet">
+                                                                <div class="bra21ContentUnitTitleBlock">
+                                                                    <div class="bra21ContentUnitTitle"><span>定期醫療</span></div>
+                                                                </div>
+                                                                <div class="bra21DetailsList">
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">手術津貼</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>800</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">住院手術</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 意外保障 -->
+                                            <div class="bra21CollapseItem">
+                                                <div class="bra21CollapseItemTitle">
+                                                    <a data-toggle="collapse" href="#bra21Itme8"><span>意外保障</span></a>
+                                                </div>
+                                                <div id="bra21Itme8" class="collapse in bra21CollapseItemContent">
+                                                    <div class="bra21ContentUnit">
+                                                        <div class="bra21ContentUnitInner">
+                                                            <div class="bra21ContentUnitInnerSet">
+                                                                <div class="bra21DetailsList">
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">意外醫療(實支實付)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>3,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">骨折未住院</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">住院日額</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,000</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">加護病房</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,200</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">燒燙傷病房</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,400</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">住院前後門診</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>500</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">急診保險金</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>500</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">緊急醫療運送</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>700</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">重症燒燙傷</span>
+                                                                            <span class="bra21DetailsItemPrice"><span>1,200</span>元</span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="bra21DetailsItem">
+                                                                        <a href="#">
+                                                                            <span class="bra21DetailsItemTitle">意外失能(依失能等級)</span>
+                                                                            <span class="bra21DetailsItemPrice"><span> -- </span></span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- bra21_collapse_list_end -->
+                                    </div>
+                                </div>
+                                <div class="bra21Note">
+                                    <ul>
+                                        <li>
+                                            <p>以上保障內容僅以新光保單計算(不含同業保單、團險、年金險)，詳細內容請以保單之契約條款為準。小數點1位以後，無條件捨去。</p>
+                                        </li>
+                                        <li>
+                                            <p>外幣保單保障金額，以前一月平均匯率作為參考匯率換算為新台幣，投資型保單帳戶價值隨市場波動，保障金額僅供參考。</p>
+                                        </li>
+                                        <li>
+                                            <p>單一保單包含多種保障項目，各保障項目間不得逕自加總保障金額，部分險種有等待期間限制，須注意是否已超過等待期間。</p>
+                                        </li>
+                                        <li>
+                                            <p>各保障項目為正常保單狀況下加總最高保障金額，不扣除已理賠金額。</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- dashboard_end -->
+                            <!-- page_copyright_start -->
+                            <div class="pageCopyright">
+                                <p>新光人壽保險股份有限公司版權所有© Shin Kong Life Insurance Co., Ltd. All Rights Reserved</p>
+                            </div>
+                            <!-- page_copyright_end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main_content_end -->
+        </div>
+        <!-- frame_bottom_end -->
+    </div>
+    <!-- popup_start -->
+    <!-- popup991_content -->
+    <div class="lity-hide popUpModal popUp991 bra21popUp991" id="bra21_popup991_1">
+        <div class="popUpModalTitle">
+            <div class="popUpModalTitleText"><span>住院日額明細</span></div>
+            <div class="popUpModalTitleCloseBtn">
+                <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">×</button>
+            </div>
+        </div>
+        <div class="popUpModalContent">
+            <div class="braTable bra21_popupTable">
+                <div class="table-responsive">
+                    <table id="bra21_popupTableId" class="display cell-border dataTable">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="tableCol tableNum">序號</div>
+                                </th>
+                                <th>
+                                    <div class="tableCol">保單號碼</div>
+                                </th>
+                                <th>
+                                    <div class="tableCol">險種簡稱</div>
+                                </th>
+                                <th>
+                                    <div class="tableCol">保額</div>
+                                </th>
+                                <th>
+                                    <div class="tableCol">保障金額</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="tableCol tableNum">1</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol"><a href="#">100012346</a></div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">健康久久</div>
+                                </td>
+                                <td class="tablePrice">
+                                    <div class="tableCol">3.0萬</div>
+                                </td>
+                                <td class="tablePrice">
+                                    <div class="tableCol">3.0萬</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableCol tableNum">2</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol"><a href="#">100012468</a></div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">長扶心安B型失能照護終身健康保險</div>
+                                </td>
+                                <td class="tablePrice">
+                                    <div class="tableCol">6.0萬</div>
+                                </td>
+                                <td class="tablePrice">
+                                    <div class="tableCol">6.0萬</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableCol tableNum">3</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol"><a href="#">100013579</a></div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">永保安康</div>
+                                </td>
+                                <td class="tablePrice">
+                                    <div class="tableCol">2.4萬</div>
+                                </td>
+                                <td class="tablePrice">
+                                    <div class="tableCol">2.4萬</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="popUpModalBottomCloseBtn">
+            <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">關 閉</button>
+        </div>
+    </div>
+    <!-- popup_end -->
+</body>
+<!-- jQuery_3.5.1(js_eric)  -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- jQuery-ui_1.12.1(js_eric) -->
+<script src="js/jquery-ui.js"></script>
+<!-- Popper(js_eric) -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap_4.5.2 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- bootstrap-select(js_eric)-->
+<script src="js/bootstrap-select.js"></script>
+<!-- datatable(bootstrap4/DataTables) -->
+<script src="js/jquery.dataTables.js"></script>
+<!-- lity_2.4.1 -->
+<script src="js/lity.js"></script>
+<!-- js -->
+<script src="js/layout.js"></script>
+<!-- include_menu -->
+<script>
+includeMenu();
+</script>
+<!-- include_msg-->
+<script>
+includeMsg();
+</script>
+<!-- include_record-->
+<script>
+includeRecord();
+</script>
+<!-- content_height -->
+<script>
+var winHeight = window.innerHeight;
+console.log(winHeight);
+document.getElementById('msgListContentId').style.height = winHeight - 250 + 'px';
+document.getElementById('recordListContentId').style.height = winHeight - 290 + 'px';
+document.getElementById('mainContentTextId').style.height = winHeight - 120 + 'px';
+document.getElementById('leftAsideId').style.height = winHeight - 60 + 'px';
+</script>
+<!-- table_list -->
+<script>
+$(document).ready(function() {
+    // popup_table //
+    var table_popup = $('#bra21_popupTableId').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                orderable: false,
+                className: 'dt-center',
+                width: '40px'
+            },
+            {
+                targets: 1,
+                orderable: false
+            },
+            {
+                targets: 2,
+                orderable: false
+
+            },
+            {
+                targets: 3,
+                orderable: false
+            },
+            {
+                targets: 4,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+});
+</script>
+
+</html>

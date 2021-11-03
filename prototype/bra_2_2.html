@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CIS-客戶資訊整合系統</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- jQuery-ui(css_eric) -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css">
+    <!-- Bootstrap_4.5.2 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- material_icon(css_eric) -->
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/material-icons-ie.css">
+    <!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <!-- datatable(bootstrap4/DataTables) -->
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+    <!-- bootstrap-select(css_eric)-->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- datepicker_5.1.0 -->
+    <link rel="stylesheet" href="css/jquery.datepick.css">
+    <!-- lity_2.4.1 -->
+    <link rel="stylesheet" href="css/lity.css">
+    <!-- 全域(標籤) -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 框架 -->
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- 頁面 -->
+    <link rel="stylesheet" href="css/page.css">
+    <!-- 保留給rd使用 -->
+    <link rel="stylesheet" href="css/rd.css">
+</head>
+
+<body>
+    <div class="frameContainer bra22Container">
+        <!-- frame_top_start -->
+        <div class="topContainer">
+            <div class="topInner">
+                <!-- menuBar_start -->
+                <div class="menuBarBlock">
+                    <div class="menuBarInner">
+                        <!-- menuBar_btn -->
+                        <div class="menuBarBtn">
+                            <button onclick='leftMenuToggle()'><span class="menuBarLine"></span></button>
+                        </div>
+                        <!-- menuBar_logo -->
+                        <div class="menuBarLogo">
+                            <a href="#"><img src="img/logo.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- menuBar_end -->
+                <!-- log_start -->
+                <div class="logBlock">
+                    <div class="logInner">
+                        <!-- log_in_time -->
+                        <div class="loginTime">登入時間：109/07/16 (四) 08:22:30</div>
+                        <!-- log_name/time/out -->
+                        <div class="logNameTimeOut">
+                            <div class="loginName">Hi, <span class="userDepartment">客戶服務部</span><span class="userName">高育綸</span><span class="userId">CS0123</span></div>
+                            <div class="logOutCountdown"><span class="countdownHour">29</span><span class="countdownMin">59</span></div>
+                            <div class="logOut"><a href="login.html">登出</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- log_end -->
+            </div>
+        </div>
+        <!-- frame_top_end -->
+        <!-- frame_bottom_start -->
+        <div id="bottomArea" class="bottomContainer jsBottomLeftPadding">
+            <!-- left_menu_start -->
+            <div id="leftMenu" class="leftAside jsLmWidth">
+                <div class="leftAsideInner">
+                    <div class="scrollContent leftAsideContent jsLmWidth" id="leftAsideId">
+                        <nav>
+                            <div menu-html='include/menu.html'></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- left_menu_end -->
+            <!-- main_content_start -->
+            <div class="mainContent">
+                <!-- user_info_start -->
+                <div class="userInfo">
+                    <div class="userInfoInner">
+                        <div class="userInfoContent">
+                            <div class="userInfoItem userInfoBtn maleBtn">
+                                <a href="bra_1.html">廖家祥</a>
+                            </div>
+                            <div class="userInfoItem userInfoIdNum">F123456789</div>
+                            <div class="userInfoItem userInfoBirthday">
+                                <span>74</span>
+                                <span>03</span>
+                                <span>14</span>
+                            </div>
+                        </div>
+                        <div class="userInfoSearch" id="userInfoSearchId">
+                            <form class="userInfoSearchForm">
+                                <div class="userInfoSearchFormInner">
+                                    <div class="userInfoSearchFormSelector">
+                                        <select class="selectpicker" name="formSelect" onchange="location = this.value;">
+                                            <option value="frame_search_id.html" selected="">身分證號碼</option>
+                                            <option value="frame_search_num.html">保單號碼</option>
+                                            <option value="frame_searc_name_date.html">姓名/生日</option>
+                                        </select>
+                                    </div>
+                                    <div class="userInfoSearchFormField">
+                                        <div class="userInfoSearchFormFieldInner">
+                                            <div class="userInfoSearchInput">
+                                                <input type="text" placeholder="請輸入身分證號碼" value="" class="searchInput">
+                                            </div>
+                                            <div class="userInfoClear">
+                                                <a href="#" onclick="clearText()">清除</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="userInfoSearchFormBtn">
+                                        <button>搜 尋</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="userInfoSearchToggoleBtn">
+                            <button onclick="userInfoSearchToggle()"><span class="material-icons">search</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- user_info_end -->
+                <div class="rightAside">
+                    <!-- right_menu_start -->
+                    <div class="rightAsideContent rightAsideMenu jsRmWidth" id="rightMenu">
+                        <div class="rightAsideMenuInner">
+                            <div class="rightAsideBtn">
+                                <button onclick="rightMenuToggle()">
+                                    <!-- <span class="material-icons">menu_open</span> --></button>
+                            </div>
+                            <div class="rightAsideBtnList jsRmContent" id="rightAsideId">
+                                <div class="rmNavTabs">
+                                    <ul class="nav nav-tabs">
+                                        <li><a data-toggle="tab" href="#rmMsg" class="active">重要通知</a></li>
+                                        <li><a data-toggle="tab" href="#rmRecord">近三個月接觸紀錄</a></li>
+                                    </ul>
+                                </div>
+                                <div class="rmNavTabsContent">
+                                    <div class="tab-content">
+                                        <div id="rmMsg" class="tab-pane in active msgList">
+                                            <div class="msgListInner">
+                                                <div class="msgListHeader">
+                                                    <div class="msgListHeaderInner">
+                                                        <div class="msgListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                        <div class="msgListInfo">共計 <span>24</span> 筆通知</div>
+                                                    </div>
+                                                </div>
+                                                <div class="scrollContent msgListContent" id="msgListContentId">
+                                                    <div msg-html='include/msg.html'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="rmRecord" class="tab-pane fade recordList">
+                                            <div class="recordListInner">
+                                                <div class="recordListHeader">
+                                                    <div class="recordListHeaderInner">
+                                                        <div class="recordListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="recordListContent">
+                                                    <div class="scrollContent recordListContentInner" id="recordListContentId">
+                                                        <div record-html='include/record.html'></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right_menu_end -->
+                    <div class="scrollContent mainContentText jsBottomRightMargin" id="mainContentTextId">
+                        <div class="mainContentTextInner">
+                            <!-- breadcrumb_start -->
+                            <div class="breadcrumbBlock">
+                                <div class="breadcrumbList">
+                                    <ul>
+                                        <li class="breadcrumbTitle">目前位置</li>
+                                        <li>個人資料查詢</li>
+                                        <li>聯絡資料</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- breadcrumb_end -->
+                            <!-- dashboard_start -->
+                            <div class="dashboardBlock">
+                                <div class="taskItem">
+                                    <div class="taskTitle">聯絡資料</div>
+                                    <div class="taskCard">
+                                        <!-- task_tabs_start -->
+                                        <div class="taskTabs">
+                                            <div class="taskTabsNav bra22_taskTabsNav">
+                                                <ul class="nav nav-tabs">
+                                                    <li><a data-toggle="tab" href="#bra22_taskTab1" class="active">地址</a></li>
+                                                    <li><a data-toggle="tab" href="#bra22_taskTab2">電話</a></li>
+                                                    <li><a data-toggle="tab" href="#bra22_taskTab3">電子郵件信箱</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-content taskTabsContent">
+                                                <!-- address -->
+                                                <div id="bra22_taskTab1" class="tab-pane in active">
+                                                    <div class="bra22_registerInfo registerAddress">
+                                                        <div class="bra22_registerInfoInner">
+                                                            <div class="bra22_registerInfoItem">
+                                                                <div class="bra22_registerInfoTitle">戶籍地址</div>
+                                                                <div class="bra22_registerInfoText">100台北市中正區忠孝西路一段66號</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- open/close_toggle_start -->
+                                                    <div class="openCloseToggle">
+                                                        <div class="switch">
+                                                            <div class="switchInner">
+                                                                <div class="switchOption off">收合</div>
+                                                                <div class="switchOption on">展開</div>
+                                                            </div>
+                                                            <input class='condition' type="checkbox" value="false">
+                                                        </div>
+                                                    </div>
+                                                    <!-- open/close_toggle_end -->
+                                                    <div class="braTable bra22_poTable bra22_addressTable">
+                                                        <div class="table-responsive">
+                                                            <table id="bra22_addressTableId" class="display cell-border dataTable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol tableNum">序號</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">收費地址</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">更新日期</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">特殊註記</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">保單來源數</div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">1</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">110 台北市信義區松壽路11號</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>07</span><span>18</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">業務員聯繫-原址查無此人</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">3</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">2</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">100 台北市中正區忠孝西路一段66號</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>06</span><span>05</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">業務員聯繫-原址查無此人</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">3</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">110 台北市信義區松高路12號</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>105</span><span>10</span><span>01</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">無</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">2</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">4</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">110 台北市信義區松壽路9號</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>100</span><span>02</span><span>12</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">業務員聯繫-原址查無此人</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">6</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- phone -->
+                                                <div id="bra22_taskTab2" class="tab-pane fade">
+                                                    <div class="bra22_registerInfo registerPhone">
+                                                        <div class="bra22_registerInfoInner">
+                                                            <div class="bra22_registerInfoItem">
+                                                                <div class="bra22_registerInfoTitle">簡訊通知</div>
+                                                                <div class="bra22_registerInfoText">Y</div>
+                                                            </div>
+                                                            <div class="bra22_registerInfoItem">
+                                                                <div class="bra22_registerInfoTitle">會員專區/網投手機號碼</div>
+                                                                <div class="bra22_registerInfoText">0911234567</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- open/close_toggle_start -->
+                                                    <div class="openCloseToggle">
+                                                        <div class="switch">
+                                                            <div class="switchInner">
+                                                                <div class="switchOption off">收合</div>
+                                                                <div class="switchOption on">展開</div>
+                                                            </div>
+                                                            <input class='condition' type="checkbox" value="false">
+                                                        </div>
+                                                    </div>
+                                                    <!-- open/close_toggle_end -->
+                                                    <div class="braTable bra22_poTable bra22_phoneTable">
+                                                        <div class="table-responsive">
+                                                            <table id="bra22_phoneTableId" class="display cell-border dataTable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol tableNum">序號</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">類別</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">電話</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">更新日期</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">特殊註記</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">保單來源數</div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">1</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">辦公室</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">02-21234567<span class="tableExtension">2456</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>07</span><span>18</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">電訪失敗</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">3</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">2</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">住家</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">02-24689764</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>07</span><span>06</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">&nbsp;</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">2</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">3</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">手機</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">0912345678</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>06</span><span>25</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">電訪失敗</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">4</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">手機</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">0987654321</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>05</span><span>11</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">&nbsp;</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">5</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">5</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">手機</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">0966541236</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>02</span><span>14</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">&nbsp;</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">3</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- mail -->
+                                                <div id="bra22_taskTab3" class="tab-pane fade">
+                                                    <!-- open/close_toggle_start -->
+                                                    <div class="openCloseToggle">
+                                                        <div class="switch">
+                                                            <div class="switchInner">
+                                                                <div class="switchOption off">收合</div>
+                                                                <div class="switchOption on">展開</div>
+                                                            </div>
+                                                            <input class='condition' type="checkbox" value="false">
+                                                        </div>
+                                                    </div>
+                                                    <!-- open/close_toggle_end -->
+                                                    <div class="braTable bra22_poTable bra22_mailTable">
+                                                        <div class="table-responsive">
+                                                            <table id="bra22_mailTableId" class="display cell-border dataTable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol tableNum">序號</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">電子郵件信箱</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">更新日期</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">特殊註記</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">保單來源數</div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">1</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">jerry@gmail.com</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>07</span><span>18</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">mail寄送失敗</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">3</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">2</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">jerry_liang@yahoo.com.tw</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>01</span><span>06</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">&nbsp;</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">2</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">3</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">jerry_sales@company.com.tw</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>108</span><span>10</span><span>23</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">&nbsp;</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">2</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">4</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">0314jerry@gmail.com</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>108</span><span>04</span><span>19</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">mail寄送失敗</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCollapseBtn"></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">5</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">jerry1984@hinet.net</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>107</span><span>03</span><span>22</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">&nbsp;</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">4</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- task_tabs_end -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard_end -->
+                            <!-- page_copyright_start -->
+                            <div class="pageCopyright">
+                                <p>新光人壽保險股份有限公司版權所有© Shin Kong Life Insurance Co., Ltd. All Rights Reserved</p>
+                            </div>
+                            <!-- page_copyright_end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main_content_end -->
+        </div>
+        <!-- frame_bottom_end -->
+    </div>
+    <!-- popup_start -->
+    <!-- popup767_content(集彙件) -->
+    <div class="lity-hide popUpModal popUp767 bra22_groupPlan" id="bra22_groupPlanId1">
+        <div class="popUpModalTitle">
+            <div class="popUpModalTitleText"><span>集彙件</span></div>
+            <div class="popUpModalTitleCloseBtn">
+                <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">×</button>
+            </div>
+        </div>
+        <div class="popUpModalContent">
+            <div class="braTable">
+                <div class="table-responsive">
+                    <table id="bra22_popupTable_groupPlanId" class="display cell-border dataTable">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="tableCol">團體代號</div>
+                                </th>
+                                <th>
+                                    <div class="tableCol">團體名稱</div>
+                                </th>
+                                <th>
+                                    <div class="tableCol">優待費率</div>
+                                </th>
+                                <th>
+                                    <div class="tableCol">團體總人數</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="tableCol">5V812</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">新光人壽保險股份有限公司</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">5</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">5</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="popUpModalBottomCloseBtn">
+            <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">關 閉</button>
+        </div>
+    </div>
+    <!-- popup_end -->
+</body>
+<!-- jQuery_3.5.1(js_eric)  -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- jQuery-ui_1.12.1(js_eric) -->
+<script src="js/jquery-ui.js"></script>
+<!-- Popper(js_eric) -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap_4.5.2 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- bootstrap-select(js_eric)-->
+<script src="js/bootstrap-select.js"></script>
+<!-- datatable(bootstrap4/DataTables) -->
+<script src="js/jquery.dataTables.js"></script>
+<!-- lity_2.4.1 -->
+<script src="js/lity.js"></script>
+<!-- js -->
+<script src="js/layout.js"></script>
+<!-- include_menu -->
+<script>
+includeMenu();
+</script>
+<!-- include_msg-->
+<script>
+includeMsg();
+</script>
+<!-- include_record-->
+<script>
+includeRecord();
+</script>
+<!-- content_height -->
+<script>
+var winHeight = window.innerHeight;
+console.log(winHeight);
+document.getElementById('msgListContentId').style.height = winHeight - 250 + 'px';
+document.getElementById('recordListContentId').style.height = winHeight - 290 + 'px';
+document.getElementById('mainContentTextId').style.height = winHeight - 120 + 'px';
+document.getElementById('leftAsideId').style.height = winHeight - 60 + 'px';
+</script>
+<!-- table_list -->
+<script>
+function format() {
+    return '<div class="trDetailBlock">' +
+        '<table class="trDetailBlockInner">' +
+        '<thead>' +
+        '<th><div class="trDetailsItemTitle">保單號碼</div></th>' +
+        '<th><div class="trDetailsItemTitle">險種簡稱</div></th>' +
+        '<th><div class="trDetailsItemTitle">投保始期</div></th>' +
+        '<th><div class="trDetailsItemTitle">更新日期</div></th>' +
+        '<th><div class="trDetailsItemTitle">集彙件</div></th>' +
+        '</thead>' +
+        '<tbody>' +
+        '<tr>' +
+        '<td><div class="trDetailsItemText"><a href="#">1000013456</a></div></td>' +
+        '<td><div class="trDetailsItemText">安心久久</div></td>' +
+        '<td><div class="trDetailsItemText">108/06/21</div></td>' +
+        '<td><div class="trDetailsItemText">109/07/21</div></td>' +
+        '<td><div class="trDetailsItemText"><a href="#bra22_groupPlanId1" data-lity>Y</a></div></td>' +
+        '</tr>' +
+        '<tr>' +
+        '<td><div class="trDetailsItemText"><a href="#">1000013456</a></div></td>' +
+        '<td><div class="trDetailsItemText">永保安康</div></td>' +
+        '<td><div class="trDetailsItemText">104/04/22</div></td>' +
+        '<td><div class="trDetailsItemText">109/07/30</div></td>' +
+        '<td><div class="trDetailsItemText"><a href="#bra22_groupPlanId1" data-lity>Y</a></div></td>' +
+        '</tr>' +
+        '</tbody>' +
+        '</table>' +
+        '</div>';
+}
+
+$(document).ready(function() {
+    ////////// bra22_address_table //////////
+    var table_address = $('#bra22_addressTableId').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                orderable: false,
+                width: '40px',
+                className: 'details-control'
+            },
+            {
+                targets: 1,
+                width: '40px',
+                className: 'dt-center',
+                orderable: true
+            },
+            {
+                targets: 2,
+                orderable: false
+
+            },
+            {
+                targets: 3,
+                className: 'braTableDate',
+                orderable: false
+            },
+            {
+                targets: 4,
+                orderable: false
+            },
+            {
+                targets: 5,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+
+    // Add event listener for opening and closing details
+    $('#bra22_addressTableId tbody').on('click', 'td.details-control', function() {
+        var tr_address = $(this).closest('tr');
+        var row_address = table_address.row(tr_address);
+
+        if (row_address.child.isShown()) {
+            // This row is already open - close it
+            row_address.child.hide();
+            tr_address.removeClass('shown');
+        } else {
+            // Open this row
+            row_address.child(format(), 'detailTr').show();
+            tr_address.addClass('shown');
+        }
+    });
+
+    //////// bra22_phone_table //////////
+    var table_phone = $('#bra22_phoneTableId').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                orderable: false,
+                width: '40px',
+                className: 'details-control'
+            },
+            {
+                targets: 1,
+                width: '40px',
+                className: 'dt-center',
+                orderable: true
+            },
+            {
+                targets: 2,
+                orderable: false
+
+            },
+            {
+                targets: 3,
+                orderable: false
+            },
+            {
+                targets: 4,
+                className: 'braTableDate',
+                orderable: false
+            },
+            {
+                targets: 5,
+                orderable: false
+            },
+            {
+                targets: 6,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+
+    // Add event listener for opening and closing details
+    $('#bra22_phoneTableId tbody').on('click', 'td.details-control', function() {
+        var tr_phone = $(this).closest('tr');
+        var row_phone = table_phone.row(tr_phone);
+
+        if (row_phone.child.isShown()) {
+            // This row is already open - close it
+            row_phone.child.hide();
+            tr_phone.removeClass('shown');
+        } else {
+            // Open this row
+            row_phone.child(format(), 'detailTr').show();
+            tr_phone.addClass('shown');
+        }
+    });
+
+    //////// bra22_mail_table //////////
+    var table_mail = $('#bra22_mailTableId').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                orderable: false,
+                width: '40px',
+                className: 'details-control'
+            },
+            {
+                targets: 1,
+                width: '40px',
+                className: 'dt-center',
+                orderable: true
+            },
+            {
+                targets: 2,
+                orderable: false
+
+            },
+            {
+                targets: 3,
+                className: 'braTableDate',
+                orderable: false
+            },
+            {
+                targets: 4,
+                orderable: false
+            },
+            {
+                targets: 5,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+
+    // Add event listener for opening and closing details
+    $('#bra22_mailTableId tbody').on('click', 'td.details-control', function() {
+        var tr_mail = $(this).closest('tr');
+        var row_mail = table_mail.row(tr_mail);
+
+        if (row_mail.child.isShown()) {
+            // This row is already open - close it
+            row_mail.child.hide();
+            tr_mail.removeClass('shown');
+        } else {
+            // Open this row
+            row_mail.child(format(), 'detailTr').show();
+            tr_mail.addClass('shown');
+        }
+    });
+
+    // popup767_content(集彙件) //
+    $('#bra22_popupTable_groupPlanId').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                orderable: false
+            },
+            {
+                targets: 1,
+                orderable: false
+            },
+            {
+                targets: 2,
+                orderable: false
+
+            },
+            {
+                targets: 3,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+});
+</script>
+
+</html>

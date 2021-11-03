@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CIS-客戶資訊整合系統</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- jQuery-ui(css_eric) -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css">
+    <!-- Bootstrap_4.5.2 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- material_icon(css_eric) -->
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/material-icons-ie.css">
+    <!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <!-- datatable(bootstrap4/DataTables) -->
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+    <!-- bootstrap-select(css_eric)-->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- datepicker_5.1.0 -->
+    <link rel="stylesheet" href="css/jquery.datepick.css">
+    <!-- lity_2.4.1 -->
+    <link rel="stylesheet" href="css/lity.css">
+    <!-- 全域(標籤) -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 框架 -->
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- 頁面 -->
+    <link rel="stylesheet" href="css/page.css">
+    <!-- 保留給rd使用 -->
+    <link rel="stylesheet" href="css/rd.css">
+</head>
+
+<body>
+    <div class="frameContainer bra312Container">
+        <!-- frame_top_start -->
+        <div class="topContainer">
+            <div class="topInner">
+                <!-- menuBar_start -->
+                <div class="menuBarBlock">
+                    <div class="menuBarInner">
+                        <!-- menuBar_btn -->
+                        <div class="menuBarBtn">
+                            <button onclick='leftMenuToggle()'><span class="menuBarLine"></span></button>
+                        </div>
+                        <!-- menuBar_logo -->
+                        <div class="menuBarLogo">
+                            <a href="#"><img src="img/logo.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- menuBar_end -->
+                <!-- log_start -->
+                <div class="logBlock">
+                    <div class="logInner">
+                        <!-- log_in_time -->
+                        <div class="loginTime">登入時間：109/07/16 (四) 08:22:30</div>
+                        <!-- log_name/time/out -->
+                        <div class="logNameTimeOut">
+                            <div class="loginName">Hi, <span class="userDepartment">客戶服務部</span><span class="userName">高育綸</span><span class="userId">CS0123</span></div>
+                            <div class="logOutCountdown"><span class="countdownHour">29</span><span class="countdownMin">59</span></div>
+                            <div class="logOut"><a href="login.html">登出</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- log_end -->
+            </div>
+        </div>
+        <!-- frame_top_end -->
+        <!-- frame_bottom_start -->
+        <div id="bottomArea" class="bottomContainer jsBottomLeftPadding">
+            <!-- left_menu_start -->
+            <div id="leftMenu" class="leftAside jsLmWidth">
+                <div class="leftAsideInner">
+                    <div class="scrollContent leftAsideContent jsLmWidth" id="leftAsideId">
+                        <nav>
+                            <div menu-html='include/menu.html'></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- left_menu_end -->
+            <!-- main_content_start -->
+            <div class="mainContent">
+                <!-- user_info_start -->
+                <div class="userInfo">
+                    <div class="userInfoInner">
+                        <div class="userInfoContent">
+                            <div class="userInfoItem userInfoBtn maleBtn">
+                                <a href="bra_1.html">廖家祥</a>
+                            </div>
+                            <div class="userInfoItem userInfoIdNum">F123456789</div>
+                            <div class="userInfoItem userInfoBirthday">
+                                <span>74</span>
+                                <span>03</span>
+                                <span>14</span>
+                            </div>
+                        </div>
+                        <div class="userInfoSearch" id="userInfoSearchId">
+                            <form class="userInfoSearchForm">
+                                <div class="userInfoSearchFormInner">
+                                    <div class="userInfoSearchFormSelector">
+                                        <select class="selectpicker" name="formSelect" onchange="location = this.value;">
+                                            <option value="frame_search_id.html" selected="">身分證號碼</option>
+                                            <option value="frame_search_num.html">保單號碼</option>
+                                            <option value="frame_searc_name_date.html">姓名/生日</option>
+                                        </select>
+                                    </div>
+                                    <div class="userInfoSearchFormField">
+                                        <div class="userInfoSearchFormFieldInner">
+                                            <div class="userInfoSearchInput">
+                                                <input type="text" placeholder="請輸入身分證號碼" value="" class="searchInput">
+                                            </div>
+                                            <div class="userInfoClear">
+                                                <a href="#" onclick="clearText()">清除</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="userInfoSearchFormBtn">
+                                        <button>搜 尋</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="userInfoSearchToggoleBtn">
+                            <button onclick="userInfoSearchToggle()"><span class="material-icons">search</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- user_info_end -->
+                <div class="rightAside">
+                    <!-- right_menu_start -->
+                    <div class="rightAsideContent rightAsideMenu jsRmWidth" id="rightMenu">
+                        <div class="rightAsideMenuInner">
+                            <div class="rightAsideBtn">
+                                <button onclick="rightMenuToggle()">
+                                    <!-- <span class="material-icons">menu_open</span> --></button>
+                            </div>
+                            <div class="rightAsideBtnList jsRmContent" id="rightAsideId">
+                                <div class="rmNavTabs">
+                                    <ul class="nav nav-tabs">
+                                        <li><a data-toggle="tab" href="#rmMsg" class="active">重要通知</a></li>
+                                        <li><a data-toggle="tab" href="#rmRecord">近三個月接觸紀錄</a></li>
+                                    </ul>
+                                </div>
+                                <div class="rmNavTabsContent">
+                                    <div class="tab-content">
+                                        <div id="rmMsg" class="tab-pane in active msgList">
+                                            <div class="msgListInner">
+                                                <div class="msgListHeader">
+                                                    <div class="msgListHeaderInner">
+                                                        <div class="msgListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                        <div class="msgListInfo">共計 <span>24</span> 筆通知</div>
+                                                    </div>
+                                                </div>
+                                                <div class="scrollContent msgListContent" id="msgListContentId">
+                                                    <div msg-html='include/msg.html'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="rmRecord" class="tab-pane fade recordList">
+                                            <div class="recordListInner">
+                                                <div class="recordListHeader">
+                                                    <div class="recordListHeaderInner">
+                                                        <div class="recordListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="recordListContent">
+                                                    <div class="scrollContent recordListContentInner" id="recordListContentId">
+                                                        <div record-html='include/record.html'></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right_menu_end -->
+                    <div class="scrollContent mainContentText jsBottomRightMargin" id="mainContentTextId">
+                        <div class="mainContentTextInner">
+                            <!-- breadcrumb_start -->
+                            <div class="breadcrumbBlock">
+                                <div class="breadcrumbList">
+                                    <ul>
+                                        <li class="breadcrumbTitle">目前位置</li>
+                                        <li>保單資料查詢</li>
+                                        <li>待給付明細</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- breadcrumb_end -->
+                            <!-- dashboard_start -->
+                            <div class="dashboardBlock">
+                                <div class="taskItem">
+                                    <div class="taskTitle">待給付明細</div>
+                                    <div class="taskCard">
+                                        <!-- qbe_start -->
+                                        <div class="taskQbe">
+                                            <div class="qbeList">
+                                                <div class="qbeListItem qbeListTitle">請選擇查詢條件</div>
+                                                <div class="qbeListItem qbeSelector">
+                                                    <select class="selectpicker" name="formSelect">
+                                                        <option value="" selected="">投保身份(全部)</option>
+                                                        <option value="">要保人</option>
+                                                        <option value="">被保人</option>
+                                                    </select>
+                                                </div>
+                                                <div class="qbeListItem qbeSearch"><a href="#"><span class="material-icons">search</span></a></div>
+                                            </div>
+                                            <div class="clearfix clearMargin"></div>
+                                        </div>
+                                        <!-- qbe_end -->
+                                        <!-- 年金 -->
+                                        <div class="bra312_tableItem bra312_tableItemAnnuity">
+                                            <div class="braTableTitle"><span>年金</span></div>
+                                            <!-- open/close_toggle_start -->
+                                            <div class="openCloseToggle">
+                                                <div class="switch">
+                                                    <div class="switchInner">
+                                                        <div class="switchOption off">關閉</div>
+                                                        <div class="switchOption on">展開</div>
+                                                    </div>
+                                                    <input class='condition' type="checkbox" value="false">
+                                                </div>
+                                            </div>
+                                            <!-- open/close_toggle_end -->
+                                            <div class="braTable bra312_poTable bra312_waitingPayTable">
+                                                <div class="table-responsive">
+                                                    <table id="bra312_waitingPayTableId1" class="display cell-border dataTable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <div class="tableCol tableCollapseBtn"></div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol tableNum">序號</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">保單號碼</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">險種簡稱</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">被保人</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">保額</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">給付種類</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">給付代碼說明</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">給付排程日期</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">給付金額</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">幣別</div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="tableCol tableCollapseBtn"></div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tableNum">1</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">A2QA101101</div>
+                                                                </td>
+                                                                <td>千禧年金寶貝終身還本壽險</td>
+                                                                <td>
+                                                                    <div class="tableCol">吳新光</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tablePrice">20,000,000</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">生存保險金</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">第1年末到100歲每年還本20%</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">1090101</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tablePrice">50,000</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">台幣</div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="tableCol tableCollapseBtn"></div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tableNum">2</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">A2QA101101</div>
+                                                                </td>
+                                                                <td>千禧年金寶貝終身還本壽險</td>
+                                                                <td>
+                                                                    <div class="tableCol">吳新光</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tablePrice">20,000,000</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">生存保險金</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">第1年末到100歲每年還本20%</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">1090101</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tablePrice">50,000</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">台幣</div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 紅利 -->
+                                        <div class="bra312_tableItem bra312_tableItemBonus">
+                                            <div class="braTableTitle"><span>紅利</span></div>
+                                            <!-- open/close_toggle_start -->
+                                            <div class="openCloseToggle">
+                                                <div class="switch">
+                                                    <div class="switchInner">
+                                                        <div class="switchOption off">關閉</div>
+                                                        <div class="switchOption on">展開</div>
+                                                    </div>
+                                                    <input class='condition' type="checkbox" value="false">
+                                                </div>
+                                            </div>
+                                            <!-- open/close_toggle_end -->
+                                            <div class="braTable bra312_poTable bra312_waitingPayTable">
+                                                <div class="table-responsive">
+                                                    <table id="bra312_waitingPayTableId2" class="display cell-border dataTable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <div class="tableCol tableCollapseBtn"></div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol tableNum">序號</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">保單號碼</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">險種簡稱</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">被保人</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">紅利選擇權</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">當年度應計紅利</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">累積紅利總額</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">累積紅利異動日</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">幣別</div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="tableCol tableCollapseBtn"></div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tableNum">1</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">ASFZ001001</div>
+                                                                </td>
+                                                                <td>保本長紅終身壽險</td>
+                                                                <td>
+                                                                    <div class="tableCol">吳新光</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">現金給付</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tablePrice">1,000</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tablePrice">79,120</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">1080101</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol ">台幣</div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="tableCol tableCollapseBtn"></div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tableNum">2</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">ASFZ001001</div>
+                                                                </td>
+                                                                <td>保本長紅終身壽險</td>
+                                                                <td>
+                                                                    <div class="tableCol">吳新光</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">現金給付</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tablePrice">1,000</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tablePrice">79,120</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">1080101</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol ">台幣</div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 回饋金 -->
+                                        <div class="bra312_tableItem bra312_tableItemReward">
+                                            <div class="braTableTitle"><span>回饋金</span></div>
+                                            <!-- open/close_toggle_start -->
+                                            <div class="openCloseToggle">
+                                                <div class="switch">
+                                                    <div class="switchInner">
+                                                        <div class="switchOption off">關閉</div>
+                                                        <div class="switchOption on">展開</div>
+                                                    </div>
+                                                    <input class='condition' type="checkbox" value="false">
+                                                </div>
+                                            </div>
+                                            <!-- open/close_toggle_end -->
+                                            <div class="braTable bra312_poTable bra312_waitingPayTable">
+                                                <div class="table-responsive">
+                                                    <table id="bra312_waitingPayTableId3" class="display cell-border dataTable">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <div class="tableCol tableCollapseBtn"></div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol tableNum">序號</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">保單號碼</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">險種簡稱</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">被保人</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">回饋金選擇權(第六年內)</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">回饋金選擇權(第七年起)</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">累計回饋金總額</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">累計回饋金異動日</div>
+                                                                </th>
+                                                                <th>
+                                                                    <div class="tableCol">幣別</div>
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="tableCol tableCollapseBtn"></div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tableNum">1</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">ASFZ001001</div>
+                                                                </td>
+                                                                <td>保本長紅終身壽險</td>
+                                                                <td>
+                                                                    <div class="tableCol">吳新光</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">購買增額繳清保險</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">現金給付</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tablePrice">1,000</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">1080101</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol ">台幣</div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="tableCol tableCollapseBtn"></div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tableNum">2</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">ASFZ001001</div>
+                                                                </td>
+                                                                <td>保本長紅終身壽險</td>
+                                                                <td>
+                                                                    <div class="tableCol">吳新光</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">購買增額繳清保險</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">現金給付</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tablePrice">1,000</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">1080101</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol ">台幣</div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="disableBtn">
+                                                                    <div class="tableCol tableCollapseBtn"></div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tableNum">3</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">ASFZ001001</div>
+                                                                </td>
+                                                                <td>7 PLUS利變型保險</td>
+                                                                <td>
+                                                                    <div class="tableCol">吳新光</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">購買增額繳清保險</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">儲存生息</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol tablePrice">800</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol">1080101</div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="tableCol ">台幣</div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard_end -->
+                            <!-- page_copyright_start -->
+                            <div class="pageCopyright">
+                                <p>新光人壽保險股份有限公司版權所有© Shin Kong Life Insurance Co., Ltd. All Rights Reserved</p>
+                            </div>
+                            <!-- page_copyright_end -->
+                        </div>
+                    </div>
+                </div>
+                <!-- main_content_end -->
+            </div>
+            <!-- frame_bottom_end -->
+        </div>
+        <!-- popup_start -->
+        <!-- popup_end -->
+</body>
+<!-- jQuery_3.5.1(js_eric)  -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- jQuery-ui_1.12.1(js_eric) -->
+<script src="js/jquery-ui.js"></script>
+<!-- Popper(js_eric) -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap_4.5.2 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- bootstrap-select(js_eric)-->
+<script src="js/bootstrap-select.js"></script>
+<!-- datatable(bootstrap4/DataTables) -->
+<script src="js/jquery.dataTables.js"></script>
+<!-- lity_2.4.1 -->
+<script src="js/lity.js"></script>
+<!-- js -->
+<script src="js/layout.js"></script>
+<!-- include_menu -->
+<script>
+includeMenu();
+</script>
+<!-- include_msg-->
+<script>
+includeMsg();
+</script>
+<!-- include_record-->
+<script>
+includeRecord();
+</script>
+<!-- content_height -->
+<script>
+var winHeight = window.innerHeight;
+console.log(winHeight);
+document.getElementById('msgListContentId').style.height = winHeight - 250 + 'px';
+document.getElementById('recordListContentId').style.height = winHeight - 290 + 'px';
+document.getElementById('mainContentTextId').style.height = winHeight - 120 + 'px';
+document.getElementById('leftAsideId').style.height = winHeight - 60 + 'px';
+</script>
+<!-- table_list -->
+<script>
+function format_annuity() {
+    return '<div class="trDetailBlock">' +
+        '<table class="trDetailBlockInner">' +
+        '<thead>' +
+        '<th><div class="trDetailsItemTitle">受款人</div></th>' +
+        '<th><div class="trDetailsItemTitle">身分證字號</div></th>' +
+        '<th><div class="trDetailsItemTitle">銀行代號</div></th>' +
+        '<th><div class="trDetailsItemTitle">銀行名稱</div></th>' +
+        '<th><div class="trDetailsItemTitle">分行代碼</div></th>' +
+        '<th><div class="trDetailsItemTitle">分行名稱</div></th>' +
+        '<th><div class="trDetailsItemTitle">帳號</div></th>' +
+        '</thead>' +
+        '<tbody>' +
+        '<tr>' +
+        '<td><div class="trDetailsItemText">吳新光</div></td>' +
+        '<td><div class="trDetailsItemText">A127383749</div></td>' +
+        '<td><div class="trDetailsItemText">103</div></td>' +
+        '<td><div class="trDetailsItemText">新光銀行</div></td>' +
+        '<td><div class="trDetailsItemText">1100</div></td>' +
+        '<td><div class="trDetailsItemText">台北分行</div></td>' +
+        '<td><div class="trDetailsItemText">1100500019203</div></td>' +
+        '</tr>' +
+        '</tbody>' +
+        '</table>' +
+        '</div>';
+}
+
+function format_bonus() {
+    return '<div class="trDetailBlock">' +
+        '<table class="trDetailBlockInner">' +
+        '<thead>' +
+        '<th><div class="trDetailsItemTitle">受款人</div></th>' +
+        '<th><div class="trDetailsItemTitle">身分證字號</div></th>' +
+        '<th><div class="trDetailsItemTitle">銀行代號</div></th>' +
+        '<th><div class="trDetailsItemTitle">銀行名稱</div></th>' +
+        '<th><div class="trDetailsItemTitle">分行代碼</div></th>' +
+        '<th><div class="trDetailsItemTitle">分行名稱</div></th>' +
+        '<th><div class="trDetailsItemTitle">帳號</div></th>' +
+        '</thead>' +
+        '<tbody>' +
+        '<tr>' +
+        '<td><div class="trDetailsItemText">吳新光</div></td>' +
+        '<td><div class="trDetailsItemText">A127383749</div></td>' +
+        '<td><div class="trDetailsItemText">103</div></td>' +
+        '<td><div class="trDetailsItemText">新光銀行</div></td>' +
+        '<td><div class="trDetailsItemText">1100</div></td>' +
+        '<td><div class="trDetailsItemText">台北分行</div></td>' +
+        '<td><div class="trDetailsItemText">1100500019203</div></td>' +
+        '</tr>' +
+        '</tbody>' +
+        '</table>' +
+        '</div>';
+}
+
+function format_reward() {
+    return '<div class="trDetailBlock">' +
+        '<table class="trDetailBlockInner">' +
+        '<thead>' +
+        '<th><div class="trDetailsItemTitle">受款人</div></th>' +
+        '<th><div class="trDetailsItemTitle">身分證字號</div></th>' +
+        '<th><div class="trDetailsItemTitle">銀行代號</div></th>' +
+        '<th><div class="trDetailsItemTitle">銀行名稱</div></th>' +
+        '<th><div class="trDetailsItemTitle">分行代碼</div></th>' +
+        '<th><div class="trDetailsItemTitle">分行名稱</div></th>' +
+        '<th><div class="trDetailsItemTitle">帳號</div></th>' +
+        '</thead>' +
+        '<tbody>' +
+        '<tr>' +
+        '<td><div class="trDetailsItemText">吳新光</div></td>' +
+        '<td><div class="trDetailsItemText">A127383749</div></td>' +
+        '<td><div class="trDetailsItemText">103</div></td>' +
+        '<td><div class="trDetailsItemText">新光銀行</div></td>' +
+        '<td><div class="trDetailsItemText">1100</div></td>' +
+        '<td><div class="trDetailsItemText">台北分行</div></td>' +
+        '<td><div class="trDetailsItemText">1100500019203</div></td>' +
+        '</tr>' +
+        '</tbody>' +
+        '</table>' +
+        '</div>';
+}
+
+$(document).ready(function() {
+    ////////// bra312_waitingPayTableId1 //////////
+    var table_bra312_waitingPay_annuity = $('#bra312_waitingPayTableId1').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                orderable: false,
+                width: '35px',
+                className: 'details-control'
+            },
+            {
+                targets: 1,
+                width: '35px',
+                className: 'dt-center',
+                orderable: true
+            },
+            {
+                targets: 2,
+                orderable: false
+
+            },
+            {
+                targets: 3,
+                orderable: false,
+                render: function(data, type, row, meta) {
+                    if (type === 'display') {
+                        if (data.length > 7) {
+                            return '<div ' + 'data-toggle="' + 'tooltip" ' + ' class="tableCol"' + 'title="' + data + '">' + data.substr(0, 6) + '...</div>';
+                        } else {
+                            return '<div' + ' class="tableCol"' + 'title="' + data + '"">' + data + '</div>';
+                        }
+                    }
+                    return data;
+                }
+            },
+            {
+                targets: 4,
+                orderable: false
+            },
+            {
+                targets: 5,
+                orderable: false
+            },
+            {
+                targets: 6,
+                orderable: false
+            },
+            {
+                targets: 7,
+                orderable: false
+            },
+            {
+                targets: 8,
+                orderable: false
+            },
+            {
+                targets: 9,
+                orderable: false
+            },
+            {
+                targets: 10,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+    // 主要table_row child //
+    // Add event listener for opening and closing details
+    $('#bra312_waitingPayTableId1 tbody').on('click', 'td.details-control', function() {
+        var tr_rowChild = $(this).closest('tr');
+        var row_rowChild = table_bra312_waitingPay_annuity.row(tr_rowChild);
+
+        if (row_rowChild.child.isShown()) {
+            // This row is already open - close it
+            row_rowChild.child.hide();
+            tr_rowChild.removeClass('shown');
+        } else {
+            // Open this row
+            row_rowChild.child(format_annuity(), 'detailTr').show();
+            tr_rowChild.addClass('shown');
+        }
+    });
+    ////////// bra312_waitingPayTableId2 //////////
+    var table_bra312_waitingPay_bonus = $('#bra312_waitingPayTableId2').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                orderable: false,
+                width: '35px',
+                className: 'details-control'
+            },
+            {
+                targets: 1,
+                width: '35px',
+                className: 'dt-center',
+                orderable: true
+            },
+            {
+                targets: 2,
+                orderable: false
+
+            },
+            {
+                targets: 3,
+                orderable: false,
+                render: function(data, type, row, meta) {
+                    if (type === 'display') {
+                        if (data.length > 7) {
+                            return '<div ' + 'data-toggle="' + 'tooltip" ' + ' class="tableCol"' + 'title="' + data + '">' + data.substr(0, 6) + '...</div>';
+                        } else {
+                            return '<div' + ' class="tableCol"' + 'title="' + data + '"">' + data + '</div>';
+                        }
+                    }
+                    return data;
+                }
+            },
+            {
+                targets: 4,
+                orderable: false
+            },
+            {
+                targets: 5,
+                orderable: false
+            },
+            {
+                targets: 6,
+                orderable: false
+            },
+            {
+                targets: 7,
+                orderable: false
+            },
+            {
+                targets: 8,
+                orderable: false
+            },
+            {
+                targets: 9,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+    // 主要table_row child //
+    // Add event listener for opening and closing details
+    $('#bra312_waitingPayTableId2 tbody').on('click', 'td.details-control', function() {
+        var tr_rowChild = $(this).closest('tr');
+        var row_rowChild = table_bra312_waitingPay_bonus.row(tr_rowChild);
+
+        if (row_rowChild.child.isShown()) {
+            // This row is already open - close it
+            row_rowChild.child.hide();
+            tr_rowChild.removeClass('shown');
+        } else {
+            // Open this row
+            row_rowChild.child(format_bonus(), 'detailTr').show();
+            tr_rowChild.addClass('shown');
+        }
+    });
+    ////////// bra312_waitingPayTableId3 //////////
+    var table_bra312_waitingPay_reward = $('#bra312_waitingPayTableId3').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                orderable: false,
+                width: '35px',
+                className: 'details-control'
+            },
+            {
+                targets: 1,
+                width: '35px',
+                className: 'dt-center',
+                orderable: true
+            },
+            {
+                targets: 2,
+                orderable: false
+
+            },
+            {
+                targets: 3,
+                orderable: false,
+                render: function(data, type, row, meta) {
+                    if (type === 'display') {
+                        if (data.length > 7) {
+                            return '<div ' + 'data-toggle="' + 'tooltip" ' + ' class="tableCol"' + 'title="' + data + '">' + data.substr(0, 6) + '...</div>';
+                        } else {
+                            return '<div' + ' class="tableCol"' + 'title="' + data + '"">' + data + '</div>';
+                        }
+                    }
+                    return data;
+                }
+            },
+            {
+                targets: 4,
+                orderable: false
+            },
+            {
+                targets: 5,
+                orderable: false
+            },
+            {
+                targets: 6,
+                orderable: false
+            },
+            {
+                targets: 7,
+                orderable: false
+            },
+            {
+                targets: 8,
+                orderable: false
+            },
+            {
+                targets: 9,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+    // 主要table_row child //
+    // Add event listener for opening and closing details
+    $('#bra312_waitingPayTableId3 tbody').on('click', 'td.details-control', function() {
+        var tr_rowChild = $(this).closest('tr');
+        var row_rowChild = table_bra312_waitingPay_reward.row(tr_rowChild);
+
+        if (row_rowChild.child.isShown()) {
+            // This row is already open - close it
+            row_rowChild.child.hide();
+            tr_rowChild.removeClass('shown');
+        } else {
+            // Open this row
+            row_rowChild.child(format_bonus(), 'detailTr').show();
+            tr_rowChild.addClass('shown');
+        }
+    });
+});
+</script>
+<!-- bootstrap tooltip -->
+<script>
+$(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+</html>

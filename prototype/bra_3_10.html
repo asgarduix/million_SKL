@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CIS-客戶資訊整合系統</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- jQuery-ui(css_eric) -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css">
+    <!-- Bootstrap_4.5.2 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- material_icon(css_eric) -->
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/material-icons-ie.css">
+    <!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <!-- datatable(bootstrap4/DataTables) -->
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+    <!-- bootstrap-select(css_eric)-->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- datepicker_5.1.0 -->
+    <link rel="stylesheet" href="css/jquery.datepick.css">
+    <!-- lity_2.4.1 -->
+    <link rel="stylesheet" href="css/lity.css">
+    <!-- 全域(標籤) -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 框架 -->
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- 頁面 -->
+    <link rel="stylesheet" href="css/page.css">
+    <!-- 保留給rd使用 -->
+    <link rel="stylesheet" href="css/rd.css">
+</head>
+
+<body>
+    <div class="frameContainer bra310Container">
+        <!-- frame_top_start -->
+        <div class="topContainer">
+            <div class="topInner">
+                <!-- menuBar_start -->
+                <div class="menuBarBlock">
+                    <div class="menuBarInner">
+                        <!-- menuBar_btn -->
+                        <div class="menuBarBtn">
+                            <button onclick='leftMenuToggle()'><span class="menuBarLine"></span></button>
+                        </div>
+                        <!-- menuBar_logo -->
+                        <div class="menuBarLogo">
+                            <a href="#"><img src="img/logo.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- menuBar_end -->
+                <!-- log_start -->
+                <div class="logBlock">
+                    <div class="logInner">
+                        <!-- log_in_time -->
+                        <div class="loginTime">登入時間：109/07/16 (四) 08:22:30</div>
+                        <!-- log_name/time/out -->
+                        <div class="logNameTimeOut">
+                            <div class="loginName">Hi, <span class="userDepartment">客戶服務部</span><span class="userName">高育綸</span><span class="userId">CS0123</span></div>
+                            <div class="logOutCountdown"><span class="countdownHour">29</span><span class="countdownMin">59</span></div>
+                            <div class="logOut"><a href="login.html">登出</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- log_end -->
+            </div>
+        </div>
+        <!-- frame_top_end -->
+        <!-- frame_bottom_start -->
+        <div id="bottomArea" class="bottomContainer jsBottomLeftPadding">
+            <!-- left_menu_start -->
+            <div id="leftMenu" class="leftAside jsLmWidth">
+                <div class="leftAsideInner">
+                    <div class="scrollContent leftAsideContent jsLmWidth" id="leftAsideId">
+                        <nav>
+                            <div menu-html='include/menu.html'></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- left_menu_end -->
+            <!-- main_content_start -->
+            <div class="mainContent">
+                <!-- user_info_start -->
+                <div class="userInfo">
+                    <div class="userInfoInner">
+                        <div class="userInfoContent">
+                            <div class="userInfoItem userInfoBtn maleBtn">
+                                <a href="bra_1.html">廖家祥</a>
+                            </div>
+                            <div class="userInfoItem userInfoIdNum">F123456789</div>
+                            <div class="userInfoItem userInfoBirthday">
+                                <span>74</span>
+                                <span>03</span>
+                                <span>14</span>
+                            </div>
+                        </div>
+                        <div class="userInfoSearch" id="userInfoSearchId">
+                            <form class="userInfoSearchForm">
+                                <div class="userInfoSearchFormInner">
+                                    <div class="userInfoSearchFormSelector">
+                                        <select class="selectpicker" name="formSelect" onchange="location = this.value;">
+                                            <option value="frame_search_id.html" selected="">身分證號碼</option>
+                                            <option value="frame_search_num.html">保單號碼</option>
+                                            <option value="frame_searc_name_date.html">姓名/生日</option>
+                                        </select>
+                                    </div>
+                                    <div class="userInfoSearchFormField">
+                                        <div class="userInfoSearchFormFieldInner">
+                                            <div class="userInfoSearchInput">
+                                                <input type="text" placeholder="請輸入身分證號碼" value="" class="searchInput">
+                                            </div>
+                                            <div class="userInfoClear">
+                                                <a href="#" onclick="clearText()">清除</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="userInfoSearchFormBtn">
+                                        <button>搜 尋</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="userInfoSearchToggoleBtn">
+                            <button onclick="userInfoSearchToggle()"><span class="material-icons">search</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- user_info_end -->
+                <div class="rightAside">
+                    <!-- right_menu_start -->
+                    <div class="rightAsideContent rightAsideMenu jsRmWidth" id="rightMenu">
+                        <div class="rightAsideMenuInner">
+                            <div class="rightAsideBtn">
+                                <button onclick="rightMenuToggle()">
+                                    <!-- <span class="material-icons">menu_open</span> --></button>
+                            </div>
+                            <div class="rightAsideBtnList jsRmContent" id="rightAsideId">
+                                <div class="rmNavTabs">
+                                    <ul class="nav nav-tabs">
+                                        <li><a data-toggle="tab" href="#rmMsg" class="active">重要通知</a></li>
+                                        <li><a data-toggle="tab" href="#rmRecord">近三個月接觸紀錄</a></li>
+                                    </ul>
+                                </div>
+                                <div class="rmNavTabsContent">
+                                    <div class="tab-content">
+                                        <div id="rmMsg" class="tab-pane in active msgList">
+                                            <div class="msgListInner">
+                                                <div class="msgListHeader">
+                                                    <div class="msgListHeaderInner">
+                                                        <div class="msgListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                        <div class="msgListInfo">共計 <span>24</span> 筆通知</div>
+                                                    </div>
+                                                </div>
+                                                <div class="scrollContent msgListContent" id="msgListContentId">
+                                                    <div msg-html='include/msg.html'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="rmRecord" class="tab-pane fade recordList">
+                                            <div class="recordListInner">
+                                                <div class="recordListHeader">
+                                                    <div class="recordListHeaderInner">
+                                                        <div class="recordListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="recordListContent">
+                                                    <div class="scrollContent recordListContentInner" id="recordListContentId">
+                                                        <div record-html='include/record.html'></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right_menu_end -->
+                    <div class="scrollContent mainContentText jsBottomRightMargin" id="mainContentTextId">
+                        <div class="mainContentTextInner">
+                            <!-- breadcrumb_start -->
+                            <div class="breadcrumbBlock">
+                                <div class="breadcrumbList">
+                                    <ul>
+                                        <li class="breadcrumbTitle">目前位置</li>
+                                        <li>保單資料查詢</li>
+                                        <li>保價金/帳戶價值</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- breadcrumb_end -->
+                            <!-- dashboard_start -->
+                            <div class="dashboardBlock">
+                                <div class="taskItem">
+                                    <div class="taskTitle">保價金/帳戶價值</div>
+                                    <div class="taskCard">
+                                        <!-- qbe_start -->
+                                        <div class="taskQbe">
+                                            <div class="qbeList">
+                                                <div class="qbeListItem qbeListTitle">請選擇查詢條件</div>
+                                                <div class="qbeListItem qbeSelector">
+                                                    <select class="selectpicker" name="formSelect">
+                                                        <option value="" selected="">投保身份(全部)</option>
+                                                        <option value="">要保人</option>
+                                                        <option value="">被保人</option>
+                                                    </select>
+                                                </div>
+                                                <div class="qbeListItem qbeSearch"><a href="#"><span class="material-icons">search</span></a></div>
+                                            </div>
+                                            <div class="clearfix clearMargin"></div>
+                                        </div>
+                                        <!-- qbe_end -->
+                                        <!-- 保價金/保單帳戶價值 -->
+                                        <div class="bra310_valueTabs">
+                                            <div class="bra310_valueTabsNavNoteCounter">
+                                                <div class="bra310_valueTabsNavNoteInner">
+                                                    <div class="bra310_valueTabsNav">
+                                                        <ul class="nav nav-tabs">
+                                                            <li class="policyValuePreMoney"><a data-toggle="tab" href="#bra310ValueId1" class="active"><span>保單價值準備金</span></a></li>
+                                                            <li class="policyAccountValue"><a data-toggle="tab" href="#bra310ValueId2"><span>保單帳戶價值</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="bra310_valueTabsNote"><span>保單價值計算日：1090801</span></div>
+                                                </div>
+                                                <div class="bra310_valueTabsCounter">
+                                                    <!-- counter_start -->
+                                                    <div class="counter">
+                                                        <div class="counterInner">
+                                                            <div class="counterItem">
+                                                                <div class="counterItemInner">
+                                                                    <div class="counterTitle twdTitle">台幣</div>
+                                                                    <div class="counterContent">
+                                                                        <div class="counterTotal">總計</div>
+                                                                        <div class="counterPrice">0</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="counterItem">
+                                                                <div class="counterItemInner">
+                                                                    <div class="counterTitle usdTitle">美元</div>
+                                                                    <div class="counterContent">
+                                                                        <div class="counterTotal">總計</div>
+                                                                        <div class="counterPrice">0</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="counterItem">
+                                                                <div class="counterItemInner">
+                                                                    <div class="counterTitle audTitle">澳幣</div>
+                                                                    <div class="counterContent">
+                                                                        <div class="counterTotal">總計</div>
+                                                                        <div class="counterPrice">0</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="counterItem">
+                                                                <div class="counterItemInner">
+                                                                    <div class="counterTitle cnyTitle">人民幣</div>
+                                                                    <div class="counterContent">
+                                                                        <div class="counterTotal">總計</div>
+                                                                        <div class="counterPrice">0</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="counterItem">
+                                                                <div class="counterItemInner">
+                                                                    <div class="counterTitle eurTitle">歐元</div>
+                                                                    <div class="counterContent">
+                                                                        <div class="counterTotal">總計</div>
+                                                                        <div class="counterPrice">0</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- counter_end -->
+                                                </div>
+                                            </div>
+                                            <div class="tab-content bra310_valueTabsContent">
+                                                <div id="bra310ValueId1" class="tab-pane in active">
+                                                    <!-- selectBtn_start -->
+                                                    <div class="selectBtn">
+                                                        <ul>
+                                                            <li class="all"><button>全選</button></li>
+                                                            <li class="cancel"><button>取消全選</button></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!-- selectBtn_end -->
+                                                    <div class="braTable bra310_poTable bra310_policyValuePreMoneyTable">
+                                                        <div class="table-responsive">
+                                                            <table id="bra310_policyValuePreMoneyTableId" class="display cell-border dataTable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <div class="tableCol tableCheckbox"></div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol tableNum">序號</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">保單號碼</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">險種簡稱</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">投保始期</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">被保人</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">幣別</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">預估金額</div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCheckbox">
+                                                                                <input type="checkbox" value="">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">1</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1010101100</div>
+                                                                        </td>
+                                                                        <td>安心久久手術醫療終身保險</td>
+                                                                        <td>
+                                                                            <div class="tableCol">1060101</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">吳新光</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">台幣</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tablePrice">45,000</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCheckbox">
+                                                                                <input type="checkbox" value="">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">2</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1010101101</div>
+                                                                        </td>
+                                                                        <td>美添旺外幣利率變動型終身壽險</td>
+                                                                        <td>
+                                                                            <div class="tableCol">1060712</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">吳小明</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">美元</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tablePrice">800</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCheckbox">
+                                                                                <input type="checkbox" value="">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">3</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1010101102</div>
+                                                                        </td>
+                                                                        <td>澳樂人生外幣利率變動型終身壽險</td>
+                                                                        <td>
+                                                                            <div class="tableCol">1080201</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">吳小天</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">澳幣</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tablePrice">2,000</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="bra310ValueId2" class="tab-pane fade">
+                                                    <!-- selectBtn_start -->
+                                                    <div class="selectBtn">
+                                                        <ul>
+                                                            <li class="all"><button>全選</button></li>
+                                                            <li class="cancel"><button>取消全選</button></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!-- selectBtn_end -->
+                                                    <div class="braTable bra310_poTable bra310_policyAccountValueTable">
+                                                        <div class="table-responsive">
+                                                            <table id="bra310_bra310_policyAccountValueTableId" class="display cell-border dataTable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <div class="tableCol tableCheckbox"></div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol tableNum">序號</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">保單號碼</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">險種簡稱</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">投保始期</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">被保人</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">幣別</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">預估金額</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">投資報酬率</div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCheckbox">
+                                                                                <input type="checkbox" value="">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">1</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1010101100</div>
+                                                                        </td>
+                                                                        <td>安心久久手術醫療終身保險</td>
+                                                                        <td>
+                                                                            <div class="tableCol">1060101</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">吳新光</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">台幣</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tablePrice"><a href="#bra310_estimatedAmountId1" data-lity>45,000</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#bra310_roiId1" data-lity>明細</a></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCheckbox">
+                                                                                <input type="checkbox" value="">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">2</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1010101101</div>
+                                                                        </td>
+                                                                        <td>美添旺外幣利率變動型終身壽險</td>
+                                                                        <td>
+                                                                            <div class="tableCol">1060712</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">吳小明</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">美元</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tablePrice"><a href="#">800</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">明細</a></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableCheckbox">
+                                                                                <input type="checkbox" value="">
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">3</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1010101102</div>
+                                                                        </td>
+                                                                        <td>澳樂人生外幣利率變動型終身壽險</td>
+                                                                        <td>
+                                                                            <div class="tableCol">1080201</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">吳小天</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">澳幣</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol tablePrice"><a href="#">2,000</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">明細</a></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard_end -->
+                            <!-- page_copyright_start -->
+                            <div class="pageCopyright">
+                                <p>新光人壽保險股份有限公司版權所有© Shin Kong Life Insurance Co., Ltd. All Rights Reserved</p>
+                            </div>
+                            <!-- page_copyright_end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main_content_end -->
+        </div>
+        <!-- frame_bottom_end -->
+    </div>
+    <!-- popup_start -->
+    <!-- popup767_content(預估金額) -->
+    <div class="lity-hide popUpModal popUp767 bra310_estimatedAmount" id="bra310_estimatedAmountId1">
+        <div class="popUpModalTitle">
+            <div class="popUpModalTitleText"><span>其他資訊</span></div>
+            <div class="popUpModalTitleCloseBtn">
+                <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">×</button>
+            </div>
+        </div>
+        <div class="popUpModalContent">
+            <!-- 投資型 -->
+            <div class="bra310_estimatedAmountItem">
+                <div class="popupTableMainTitle"><span>投資型</span></div>
+                <div class="braTable bra310_estimatedAmount_investment_Table">
+                    <table>
+                        <thead>
+                            <th>基本保費</th>
+                            <th>緩繳起日</th>
+                            <th>首期不定期不定額增額保費</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tablePrice">2,000</td>
+                                <td>961129</td>
+                                <td class="tablePrice">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <th>投資標的</th>
+                            <th>標的名稱</th>
+                            <th>幣別</th>
+                            <th>比例</th>
+                            <th>單位</th>
+                            <th>淨值</th>
+                            <th>匯率</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A001</td>
+                                <td><span data-toggle="tooltip" title="富蘭克林坦伯頓成長基金 A股">富蘭克林坦伯頓成長基金 A股</span></td>
+                                <td>USD</td>
+                                <td>40</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>C002</td>
+                                <td><span data-toggle="tooltip" title="富達基金-歐洲基金">富達基金-歐洲基金</span></td>
+                                <td>EUD</td>
+                                <td>40</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>D001</td>
+                                <td><span data-toggle="tooltip" title="施羅德環球基金系列－美國小型公司(美元)A1-累積">施羅德環球基金系列－美國小型公司(美元)A1-累積</span></td>
+                                <td>EUD</td>
+                                <td>20</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <th>定期定額增額保費</th>
+                            <th>定期定額增額保費繳法別</th>
+                            <th>定期定額增額起日</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tablePrice">5,000</td>
+                                <td>月繳</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table>
+                        <thead>
+                            <th>投資標的</th>
+                            <th>標的名稱</th>
+                            <th>幣別</th>
+                            <th>比例</th>
+                            <th>單位</th>
+                            <th>淨值</th>
+                            <th>匯率</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A001</td>
+                                <td><span data-toggle="tooltip" title="富蘭克林坦伯頓成長基金 A股">富蘭克林坦伯頓成長基金 A股</span></td>
+                                <td>USD</td>
+                                <td>40</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>C002</td>
+                                <td><span data-toggle="tooltip" title="富達基金-歐洲基金">富達基金-歐洲基金</span></td>
+                                <td>EUD</td>
+                                <td>40</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>D001</td>
+                                <td><span data-toggle="tooltip" title="施羅德環球基金系列－美國小型公司(美元)A1-累積">施羅德環球基金系列－美國小型公司(美元)A1-累積</span></td>
+                                <td>EUD</td>
+                                <td>20</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="popUpModalBottomCloseBtn">
+            <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">關 閉</button>
+        </div>
+    </div>
+    <!-- popup85per_content(投資報酬率) -->
+    <div class="lity-hide popUpModal popUp85per bra310_roi" id="bra310_roiId1">
+        <div class="popUpModalTitle">
+            <div class="popUpModalTitleText"><span>投資報酬率</span></div>
+            <div class="popUpModalTitleCloseBtn">
+                <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">×</button>
+            </div>
+        </div>
+        <div class="popUpModalContent">
+            <!-- 投資報酬率試算 -->
+            <div class="roiTableItem">
+                <div class="popupTableMainTitle"><span>投資報酬率試算</span></div>
+                <div class="braTable bra310_roiTable bra310_roiCountTable">
+                    <table>
+                        <thead>
+                            <th>序號</th>
+                            <th>基金代碼</th>
+                            <th>基金名稱(計算幣別)</th>
+                            <th>淨投資金額(保單幣別)</th>
+                            <th>單位平均成本(原幣)</th>
+                            <th>評價日</th>
+                            <th>基金淨值</th>
+                            <th>評價日</th>
+                            <th>匯率</th>
+                            <th>現有單位數(含再投入單位數)</th>
+                            <th>贖回參考金額(保單幣別)</th>
+                            <th>未實現報酬率(原幣)</th>
+                            <th>未實現報酬率(保單幣別)</th>
+                            <th>已領息收-現金提領(保單幣別)</th>
+                            <th>已領息收-累積原標的(保單幣別)</th>
+                            <th>已領息收-再投入乙類(保單幣別)</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>A001</td>
+                                <td>富蘭克林坦伯頓成長基金 A股(本基金之配息來源可能為本金)(美金)</td>
+                                <td class="tablePrice">149</td>
+                                <td class="tablePrice">22<span class="decimalPoint">4562</span></td>
+                                <td>1090821</td>
+                                <td class="tablePrice">21<span class="decimalPoint">05</span></td>
+                                <td>1090821</td>
+                                <td class="tablePrice">29<span class="decimalPoint">43</span></td>
+                                <td class="tablePrice">0<span class="decimalPoint">20435998</span></td>
+                                <td class="tablePrice">127</td>
+                                <td class="tablePrice tableWarnning">-6<span class="decimalPoint">26</span>%</td>
+                                <td class="tablePrice tableWarnning">-14<span class="decimalPoint">77</span>%</td>
+                                <td class="tablePrice">0</td>
+                                <td class="tablePrice">406</td>
+                                <td class="tablePrice">0</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>E001</td>
+                                <td>聯博-國際醫療基金A股(美金)</td>
+                                <td class="tablePrice">45</td>
+                                <td class="tablePrice">155<span class="decimalPoint">76</span></td>
+                                <td>1090821</td>
+                                <td class="tablePrice">431<span class="decimalPoint">94</span></td>
+                                <td>1090821</td>
+                                <td class="tablePrice">29<span class="decimalPoint">43</span></td>
+                                <td class="tablePrice">0<span class="decimalPoint">20435998</span></td>
+                                <td class="tablePrice">111</td>
+                                <td class="tablePrice">177<span class="decimalPoint">31</span>%</td>
+                                <td class="tablePrice">146<span class="decimalPoint">67</span>%</td>
+                                <td class="tablePrice">0</td>
+                                <td class="tablePrice">0</td>
+                                <td class="tablePrice">0</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>C001</td>
+                                <td>富達基金-歐洲基金(歐元)</td>
+                                <td class="tablePrice">70</td>
+                                <td class="tablePrice">10<span class="decimalPoint">7854</span></td>
+                                <td>1090821</td>
+                                <td class="tablePrice">14<span class="decimalPoint">25</span></td>
+                                <td>1090821</td>
+                                <td class="tablePrice">34<span class="decimalPoint">87</span></td>
+                                <td class="tablePrice">0<span class="decimalPoint">16282153</span></td>
+                                <td class="tablePrice">81</td>
+                                <td class="tablePrice">32<span class="decimalPoint">12</span>%</td>
+                                <td class="tablePrice">15<span class="decimalPoint">71</span>%</td>
+                                <td class="tablePrice">0</td>
+                                <td class="tablePrice">116</td>
+                                <td class="tablePrice">0</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>C002</td>
+                                <td>富達基金-日本基金(日圓)</td>
+                                <td class="tablePrice">54</td>
+                                <td class="tablePrice">229<span class="decimalPoint">5917</span></td>
+                                <td>1090821</td>
+                                <td class="tablePrice">222<span class="decimalPoint">5</span></td>
+                                <td>1090821</td>
+                                <td class="tablePrice">0<span class="decimalPoint">2774</span></td>
+                                <td class="tablePrice">0<span class="decimalPoint">82004742</span></td>
+                                <td class="tablePrice">51</td>
+                                <td class="tablePrice tableWarnning">-3<span class="decimalPoint">09</span>%</td>
+                                <td class="tablePrice tableWarnning">-5<span class="decimalPoint">56</span>%</td>
+                                <td class="tablePrice">0</td>
+                                <td class="tablePrice">15</td>
+                                <td class="tablePrice">0</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>D001</td>
+                                <td>施羅德環球基金系列-美國小型公司(美元) A-1累積單位(美元)(美金)</td>
+                                <td class="tablePrice">83</td>
+                                <td class="tablePrice">55<span class="decimalPoint">2</span></td>
+                                <td>1090821</td>
+                                <td class="tablePrice">146<span class="decimalPoint">8691</span></td>
+                                <td>1090821</td>
+                                <td class="tablePrice">29<span class="decimalPoint">43</span></td>
+                                <td class="tablePrice">0<span class="decimalPoint">04525971</span></td>
+                                <td class="tablePrice">196</td>
+                                <td class="tablePrice">166<span class="decimalPoint">07</span>%</td>
+                                <td class="tablePrice">136<span class="decimalPoint">14</span>%</td>
+                                <td class="tablePrice">0</td>
+                                <td class="tablePrice">0</td>
+                                <td class="tablePrice">0</td>
+                            </tr>
+                            <tr class="totalRow">
+                                <td colspan="3" class="tablePrice">合計</td>
+                                <td class="tablePrice">401</td>
+                                <td class="tablePrice">&nbsp;</td>
+                                <td class="tablePrice">&nbsp;</td>
+                                <td class="tablePrice">&nbsp;</td>
+                                <td class="tablePrice">&nbsp;</td>
+                                <td class="tablePrice">&nbsp;</td>
+                                <td class="tablePrice">&nbsp;</td>
+                                <td class="tablePrice">566</td>
+                                <td class="tablePrice">&nbsp;</td>
+                                <td class="tablePrice">41<span class="decimalPoint">15</span>%</td>
+                                <td class="tablePrice">0</td>
+                                <td class="tablePrice">537</td>
+                                <td class="tablePrice">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 交易彙整表 -->
+            <div class="roiTableItem">
+                <div class="popupTableMainTitle"><span>交易彙整表</span></div>
+                <div class="braTable bra310_roiTable bra310_tradeInfoTable">
+                    <table>
+                        <thead>
+                            <th>交易項目</th>
+                            <th>累計支出(保單幣別)</th>
+                            <th>累計收入(保單幣別)</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>保險成本與保單維持費</td>
+                                <td class="tablePrice">24,746</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>基金配息(金額)</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>帳戶管理費</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>基金贖回</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>基金贖回</td>
+                                <td>-</td>
+                                <td class="tablePrice">22,800</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 備註 -->
+            <div class="roiTableItem roiTableNote">
+                <ul>
+                    <li>
+                        <p>若保戶欲知悉相關資料，亦可電話洽詢本公司免費服務電話0800-031115或來電本公司各服務人員洽詢。</p>
+                    </li>
+                    <li>
+                        <p>以上數據僅供參考，若有差異或不符時，仍依保單契約內容為主。</p>
+                    </li>
+                    <li>
+                        <p>本頁面僅為試算，試算方式以交易對手所提供最近日期之淨值及匯率進行投資報酬率粗估值。</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- 警告 -->
+            <div class="roiTableItem roiTableWarnning">
+                <p>個人資料之利用限於以保戶服務為範圍，不得為超過範圍之違法使用，以免觸法。</p>
+            </div>
+        </div>
+        <div class="popUpModalBottomCloseBtn">
+            <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">關 閉</button>
+        </div>
+    </div>
+    <!-- popup_end -->
+</body>
+<!-- jQuery_3.5.1(js_eric)  -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- jQuery-ui_1.12.1(js_eric) -->
+<script src="js/jquery-ui.js"></script>
+<!-- Popper(js_eric) -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap_4.5.2 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- bootstrap-select(js_eric)-->
+<script src="js/bootstrap-select.js"></script>
+<!-- datatable(bootstrap4/DataTables) -->
+<script src="js/jquery.dataTables.js"></script>
+<!-- lity_2.4.1 -->
+<script src="js/lity.js"></script>
+<!-- js -->
+<script src="js/layout.js"></script>
+<!-- include_menu -->
+<script>
+includeMenu();
+</script>
+<!-- include_msg-->
+<script>
+includeMsg();
+</script>
+<!-- include_record-->
+<script>
+includeRecord();
+</script>
+<!-- content_height -->
+<script>
+var winHeight = window.innerHeight;
+console.log(winHeight);
+document.getElementById('msgListContentId').style.height = winHeight - 250 + 'px';
+document.getElementById('recordListContentId').style.height = winHeight - 290 + 'px';
+document.getElementById('mainContentTextId').style.height = winHeight - 120 + 'px';
+document.getElementById('leftAsideId').style.height = winHeight - 60 + 'px';
+</script>
+<!-- table_list -->
+<script>
+$(document).ready(function() {
+    ////////// policyValuePreMoney_table //////////
+    var table_policyValuePreMoney = $('#bra310_policyValuePreMoneyTableId').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                orderable: false,
+                width: '40px',
+                className: 'details-checkbox'
+            },
+            {
+                targets: 1,
+                width: '40px',
+                className: 'dt-center',
+                orderable: true
+            },
+            {
+                targets: 2,
+                orderable: false
+
+            },
+            {
+                targets: 3,
+                orderable: false,
+                render: function(data, type, row, meta) {
+                    if (type === 'display') {
+                        if (data.length > 15) {
+                            return '<div ' + 'data-toggle="' + 'tooltip" ' + ' class="tableCol"' + 'title="' + data + '">' + data.substr(0, 7) + '...</div>';
+                        } else {
+                            return '<div' + ' class="tableCol"' + 'title="' + data + '"">' + data + '</div>';
+                        }
+                    }
+                    return data;
+                }
+            },
+            {
+                targets: 4,
+                orderable: false
+            },
+            {
+                targets: 5,
+                orderable: false
+            },
+            {
+                targets: 6,
+                orderable: false
+            },
+            {
+                targets: 7,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+    ////////// policyAccountValue_table //////////
+    var table_policyAccountValue = $('#bra310_bra310_policyAccountValueTableId').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                orderable: false,
+                width: '40px',
+                className: 'details-checkbox'
+            },
+            {
+                targets: 1,
+                width: '40px',
+                className: 'dt-center',
+                orderable: true
+            },
+            {
+                targets: 2,
+                orderable: false
+
+            },
+            {
+                targets: 3,
+                orderable: false,
+                render: function(data, type, row, meta) {
+                    if (type === 'display') {
+                        if (data.length > 15) {
+                            return '<div ' + 'data-toggle="' + 'tooltip" ' + ' class="tableCol"' + 'title="' + data + '">' + data.substr(0, 7) + '...</div>';
+                        } else {
+                            return '<div' + ' class="tableCol"' + 'title="' + data + '"">' + data + '</div>';
+                        }
+                    }
+                    return data;
+                }
+            },
+            {
+                targets: 4,
+                orderable: false
+            },
+            {
+                targets: 5,
+                orderable: false
+            },
+            {
+                targets: 6,
+                orderable: false
+            },
+            {
+                targets: 7,
+                orderable: false
+            },
+            {
+                targets: 8,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+});
+</script>
+<!-- bootstrap tooltip -->
+<script>
+$(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+</html>

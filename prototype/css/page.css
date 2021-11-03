@@ -1,0 +1,2337 @@
+/* login.html_start */
+.loginBlock {
+    display: table;
+    padding: 80px 70px 50px;
+    border-radius: 10px;
+    background: url('../img/login_entrance_bg.png') top center no-repeat;
+    background-size: cover;
+    margin: 80px auto 40px;
+}
+
+.loginLogo {
+    padding-bottom: 27px;
+}
+
+.loginPanel {
+    min-width: 320px;
+    padding: 20px 28px 24px;
+    border-radius: 10px;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 7px 0px rgba(7, 36, 71, 0.1);
+    -moz-box-shadow: 0px 0px 7px 0px rgba(7, 36, 71, 0.1);
+    box-shadow: 0px 0px 7px 0px rgba(7, 36, 71, 0.1);
+}
+
+.loginPanel .panelTitle {
+    margin-bottom: 38px;
+    text-align: center;
+    color: #1D3557;
+}
+
+.loginPanel .chTitle {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+.loginPanel .enTitle {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.loginPanel .formField {
+    width: 265px;
+    margin-bottom: 30px;
+}
+
+.loginPanel .fieldName {
+    padding: 0 5px;
+    margin-bottom: 5px;
+}
+
+.loginPanel .fieldName label {
+    font-size: 0.875rem;
+    color: #333;
+}
+
+.loginPanel .fieldInput {
+    height: 30px;
+    background: #f7f7f7;
+    border: #aaa solid 1px;
+    border-radius: 5px;
+}
+
+.loginPanel .fieldInput input {
+    height: 100%;
+    padding: 0 5px;
+}
+
+.fieldInputInner {
+    width: 100%;
+    height: 100%;
+    display: table;
+    table-layout: fixed
+}
+
+.fieldInputInner span {
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle
+}
+
+.fieldInputInner span.pwToggle {
+    width: 30px;
+    padding: 3px;
+}
+
+.pwToggle button.pwVisible {
+    background: url('../img/visibility.svg') center center no-repeat;
+    margin-top: 0;
+    border: none;
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+}
+
+.loginPanel .formBtn {
+    text-align: center;
+    padding-top: 23px;
+}
+
+.loginPanel .formBtn button {
+    line-height: 1.2;
+    padding: 8px 68px;
+    border-radius: 30px;
+    background: #1D3557;
+    color: #fff;
+    -webkit-box-shadow: 2px 2px 0px 0px rgba(170, 170, 170, 1);
+    -moz-box-shadow: 2px 2px 0px 0px rgba(170, 170, 170, 1);
+    box-shadow: 2px 2px 0px 0px rgba(170, 170, 170, 1);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.loginPanel .formBtn button:hover {
+    transform: translate(2px, 2px);
+    -webkit-transform: translate(2px, 2px);
+    -moz-transform: translate(2px, 2px);
+    -ms-transform: translate(2px, 2px);
+    -o-transform: translate(2px, 2px);
+    box-shadow: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.loginNote {
+    padding-top: 20px;
+}
+
+.loginNote p {
+    color: #1D3557;
+    text-align: center;
+}
+
+.loginNote .extension::after {
+    content: "/";
+    margin: 0 3px;
+}
+
+.loginNote .extension:nth-last-child(1)::after {
+    content: "";
+    margin: 0;
+}
+/* login.html_end */
+
+/* login_id.html_start */
+.loginIdListTitle {
+    font-size: 0.875rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.loginIdListTitle::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    width: 5px;
+    height: 5px;
+    background-color: #E63946;
+    border-radius: 6px;
+    margin-right: 5px;
+}
+
+.loginIdList ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.loginIdList li {
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    border: rgba(255, 255, 255, 0) solid 1px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.loginIdList li:hover {
+    border: #aaa solid 1px;
+}
+
+.loginIdList li a {
+    display: block;
+    padding: 7px;
+    text-decoration: none;
+}
+
+.loginIdList li span {
+    display: block;
+}
+
+.loginIdListNum {
+    font-size: 0.875rem;
+    color: #FF9F1C;
+    margin-bottom: 7px;
+}
+
+.loginIdListDepName {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.backToLogin {
+    padding-top: 15px;
+}
+
+.backToLogin a {
+    color: #aaa;
+    font-size: 0.875rem;
+}
+
+.backToLogin a:hover {
+    color: #2e3d47;
+}
+/* login_id.html_end */
+
+/* welcome.html_start */
+.welcomeContainer {
+    height: 100%;
+}
+
+.welcomeContainer .rightAside {
+    padding-top: 0;
+    height: 100%;
+    background: url('../img/login_bg.png') center center no-repeat;
+}
+
+.welcomeContainer .mainContentText {
+    padding: 0;
+    border: #000 solid 1px;
+    height: 100%;
+    background: none;
+}
+
+.welcomeContainer .bottomContainer {
+    padding-right: 0;
+    margin-top: 0;
+    background: none;
+}
+
+.welcomeContainer .mainContent {
+    height: 100%;
+}
+
+.welcomeSearchBlock {
+    margin: 170px auto 0;
+}
+
+.welcomeLogoSearch {
+    padding: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.welcomeLogo {
+    max-width: 340px;
+    background-color: #E2231A;
+    padding: 12px 80px;
+    margin: 0 auto 45px;
+    border-radius: 60px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.welcomeSearch {
+    max-width: 1065px;
+    margin: 10px auto 124px;
+    border-radius: 8px;
+    padding: 0 120px 80px;
+    background: url('../img/welcome_search_border.svg') center center no-repeat;
+    background-size: 95%;
+}
+
+.welcomeSearchTitle {
+    display: table;
+    margin: 0 auto 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.625rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.welcomeNote {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.welcomeNote p {
+    color: #fff;
+}
+/* welcome.html_end */
+
+/* welcome_num_list.html_start */
+.welcomeSearchListBlock {
+    margin: 130px auto 0;
+}
+
+.welcomeSearchList {
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 30px 120px 20px;
+    background: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+/* welcome_num_list.html_end */
+
+/* welcome_name_date_list.html_start */
+.dataTables_scrollHead {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.welcomeContainer .listTable table th {
+    border: #aaa solid 1px;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.welcomeContainer table.dataTable.stripe tbody tr,
+.welcomeContainer table.dataTable.display tbody tr,
+.welcomeContainer .listTable table td {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: #aaa solid 1px;
+}
+
+
+.welcomeContainer table.dataTable th,
+.welcomeContainer table.dataTable td {
+    color: #fff !important;
+}
+
+.welcomeContainer table.dataTable a {
+    color: #fff !important;
+}
+
+.welcomeContainer table.dataTable a:hover {
+    color: #ffc107 !important;
+}
+
+.welcomeContainer .dataTables_wrapper .dataTables_length,
+.welcomeContainer .dataTables_wrapper .dataTables_filter,
+.welcomeContainer .dataTables_wrapper .dataTables_info,
+.welcomeContainer .dataTables_wrapper .dataTables_processing,
+.welcomeContainer .dataTables_wrapper .dataTables_paginate,
+.welcomeContainer .braTable .dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.welcomeContainer .braTable .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.welcomeContainer .braTable .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active,
+.welcomeContainer .braTable .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.welcomeContainer .braTable .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.welcomeContainer .braTable .dataTables_wrapper .dataTables_paginate .paginate_button {
+    color: #fff !important;
+}
+/* welcome_name_date_list.html_end */
+
+/* bra_1.html_start */
+.bra1_BasicInfo {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    margin-bottom: 10px;
+}
+
+.bra1_basicInfoTitle,
+.bra1_basicInfoSwitch {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.bra1_basicInfoTitle .taskTitle {
+    margin-bottom: 0;
+}
+
+.bra1_basicInfoSwitch {
+    overflow: hidden;
+}
+
+.bra1_basicInfoSwitch .openCloseToggle {
+    float: right;
+}
+
+.bra1_basicInfoCardInner {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.bra1_basicInfo,
+.bra1_contactInfo,
+.bra1_otherInfo {
+    display: table-cell;
+    vertical-align: top;
+    border-right: #aaa dashed 1px;
+}
+
+.bra1_basicInfo {
+    width: 350px;
+    padding: 45px 15px 30px 0;
+}
+
+.basicInfoImgNameBirth {
+    margin-bottom: 20px;
+}
+
+.basicInfoImgNameBirthInner {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.basicInfoImg,
+.basicInfoNameBirth {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.basicInfoImg {
+    text-align: center;
+}
+
+.basicInfoImg img {
+    max-width: 105px;
+}
+
+.basicInfoName {
+    margin-bottom: 30px;
+}
+
+.basicInfoStar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.basicInfoStar li {
+    display: inline-block;
+}
+
+.basicInfoStar span {
+    color: #FF9F1C;
+    font-size: 1rem;
+    margin-left: -3px;
+}
+
+.basicInfoNameText {
+    font-size: 1.3125rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.basicInfoBirthDate {
+    margin-bottom: 10px;
+}
+
+.basicInfoBirthDate span::after {
+    content: "/";
+    margin-right: -3px;
+    margin-left: 2px;
+}
+
+.basicInfoBirthDate span:nth-last-child(1)::after {
+    content: "";
+}
+
+.basicInfoZodiac span:nth-child(1)::after {
+    content: "・";
+}
+
+.basicInfoIdAgeAgent {
+    border-radius: 4px;
+    background-color: rgba(196, 176, 157, 0.1);
+}
+
+.basicInfoIdAgeAgentItem {
+    border-bottom: #eee solid 1px;
+    padding: 15px;
+}
+
+.basicInfoIdAgeAgentItem:nth-last-child(1) {
+    border-bottom: none;
+}
+
+.basicInfoIdInner {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.basicInfoIdTitle,
+.basicInfoIdContent {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.basicInfoIdTitle {
+    width: 100px;
+    color: #2E3D47;
+    font-size: 0.875rem;
+}
+
+.basicInfoIdContent {
+    text-align: right;
+}
+
+.basicInfoIdContent span {
+    font-size: 1.125rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.basicInfoIdContent a {
+    background-color: #E2231A;
+    color: #fff;
+    font-size: 0.875rem;
+    padding: 0 5px;
+    margin-left: 4px;
+    text-decoration: none;
+}
+
+.basicInfoIdContent a:hover {
+    background-color: #ff7919;
+}
+
+.basicInfoAgeInner {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.basicInfoAgeTitle,
+.basicInfoAgeContent {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.basicInfoAgeTitle {
+    width: 100px;
+    color: #2E3D47;
+    font-size: 0.875rem;
+}
+
+.basicInfoAgeContent {
+    font-size: 1.125rem;
+    color: #333;
+    font-weight: bold;
+    text-align: right;
+}
+
+.basicInfoAgeContent span {
+    font-size: 1.125rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.basicInfoAgentTitle {
+    color: #2E3D47;
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+}
+
+.basicInfoAgentContent span {
+    font-size: 1.125rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.basicInfoAgentContent span::after {
+    content: "/";
+    margin-right: -3px;
+    margin-left: 2px;
+}
+
+.basicInfoAgentContent span:nth-last-child(1)::after {
+    content: "";
+}
+
+.bra1_contactInfo {
+    padding: 15px 15px 30px;
+}
+
+.bra1_Address {
+    border-radius: 4px;
+    background-color: rgba(196, 176, 157, 0.1);
+    padding: 12px 10px 20px;
+    margin-bottom: 8px;
+}
+
+.residenceAddress {
+    margin-bottom: 25px;
+}
+
+.bra1_AddressTitle {
+    color: #999;
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+}
+
+.bra1_AddressTitle::before {
+    font-family: 'Material Icons';
+    content: "location_on";
+    font-feature-settings: 'liga';
+    vertical-align: bottom;
+    color: #726254;
+    margin-right: 3px;
+}
+
+.residenceAddressContent,
+.currentAddressContent {
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.bra1_AddressText {
+    padding-left: 15px;
+}
+
+.bra1_phone {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: rgba(196, 176, 157, 0.1);
+    padding: 12px 10px;
+    border-bottom: rgba(196, 176, 157, 0.4) solid 1px;
+}
+
+.bra1_phoneTitle {
+    font-size: 0.875rem;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.bra1_phoneNum {
+    padding-left: 15px;
+}
+
+.bra1_phone .col {
+    margin-bottom: 14px;
+}
+
+.bra1_phone .col:nth-last-child(1) {
+    margin-bottom: 0;
+}
+
+.mobileTitle::before {
+    font-family: 'Material Icons';
+    content: "phone_iphone";
+    font-feature-settings: 'liga';
+    vertical-align: bottom;
+    color: #726254;
+    margin-right: 3px;
+}
+
+.midProve .mobileTitle::after {
+    content: "";
+    width: 50px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: bottom;
+    background: url('../img/mid_icon.png') center center no-repeat;
+}
+
+.homeTitle::before {
+    font-family: 'Material Icons';
+    content: "phone_enabled";
+    font-feature-settings: 'liga';
+    vertical-align: bottom;
+    color: #726254;
+    margin-right: 3px;
+}
+
+.officeTitle::before {
+    font-family: 'Material Icons';
+    content: "apartment";
+    font-feature-settings: 'liga';
+    vertical-align: bottom;
+    color: #726254;
+    margin-right: 3px;
+}
+
+.bra1_mail {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: rgba(196, 176, 157, 0.1);
+    padding: 12px 10px;
+}
+
+.bra1_mailTitle {
+    font-size: 0.875rem;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.bra1_mailTitle::before {
+    font-family: 'Material Icons';
+    content: "mail_outline";
+    font-feature-settings: 'liga';
+    vertical-align: bottom;
+    color: #726254;
+    margin-right: 3px;
+}
+
+.bra1_mailContent {
+    padding-left: 15px;
+}
+
+.bra1_secInfo {
+    border-right: none;
+    padding: 15px 15px 30px;
+}
+
+.bra1_career,
+.bra1_member {
+    margin-bottom: 15px;
+}
+
+.bra1_secInfoTitle {
+    font-size: 0.875rem;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.bra1_careerTitle::before {
+    font-family: 'Material Icons';
+    content: "recent_actors";
+    font-feature-settings: 'liga';
+    vertical-align: bottom;
+    color: #726254;
+    margin-right: 3px;
+}
+
+.bra1_secInfoContent {
+    border: #aaa solid 1px;
+}
+
+.bra1_careerContent {
+    padding: 11px 10px 35px;
+}
+
+.bra1_careerContentInner {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.bra1_careerLabel,
+.bra1_careerText {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.bra1_careerLabel {
+    width: 80px;
+}
+
+.bra1_careerLabel span {
+    background-color: #2E3D47;
+    color: #fff;
+    border-radius: 30px;
+    padding: 2px 15px;
+    font-size: 0.875rem;
+}
+
+.bra1_memberTitle::before {
+    font-family: 'Material Icons';
+    content: "emoji_events";
+    font-feature-settings: 'liga';
+    vertical-align: bottom;
+    color: #726254;
+    margin-right: 3px;
+}
+
+.bra1_memberContentRow {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-bottom: #aaa solid 1px;
+}
+
+.bra1_memberContentCol {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 8px 10px;
+    border-right: #aaa solid 1px;
+}
+
+.bra1_memberContentCol:nth-child(2) {
+    border-right: none;
+}
+
+.bra1_memberContentColInner {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.bra1_memberContentColTitle,
+.bra1_memberContentColText {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 0.875rem;
+}
+
+.bra1_memberContentColText {
+    width: 50px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.bra1_memberContentRow:nth-last-child(1) {
+    border-bottom: none;
+    overflow: hidden;
+}
+
+.bra1_memberContentRow:nth-last-child(1) .bra1_memberContentCol {
+    width: 50%;
+    float: left;
+}
+
+.bra1_memberContentRow:nth-child(odd) {
+    background-color: #eee;
+}
+
+.bra1_othersTitle::before {
+    font-family: 'Material Icons';
+    content: "local_atm";
+    font-feature-settings: 'liga';
+    vertical-align: bottom;
+    color: #726254;
+    margin-right: 3px;
+}
+
+.bra1_othersContentCol {
+    padding: 8px 10px;
+    border-bottom: #aaa solid 1px;
+}
+
+.bra1_othersContentCol:nth-last-child(1) {
+    border-bottom: none;
+}
+
+.bra1_othersContentCol:nth-child(odd) {
+    background-color: #eee;
+}
+
+.bra1_othersContentColInner {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.bra1_othersContentColTitle,
+.bra1_othersContentColText {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.bra1_othersContentColTitle,
+.bra1_othersContentColText {
+    font-size: 0.875rem;
+}
+
+.bra1_othersContentColTitle {
+    width: 100px;
+}
+
+.bra1_othersContentColText {
+    text-align: right;
+}
+
+.bra1_othersContentColText span {
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.bra1_othersContentColText span::after {
+    content: "/";
+    margin: 0 -3px 0 2px;
+}
+
+.bra1_othersContentColText span:nth-last-child(1)::after {
+    content: "";
+    margin: 0;
+}
+
+.bra1_secInfoNote {
+    padding: 10px 0;
+    color: #aaa;
+    text-align: right;
+    font-size: 0.875rem;
+}
+
+.bra1_taskTabsNav li:nth-child(1) a::before {
+    font-family: 'Material Icons';
+    content: "person";
+    font-feature-settings: 'liga';
+}
+
+.bra1_taskTabsNav li:nth-child(2) a::before {
+    font-family: 'Material Icons';
+    content: "people_alt";
+    font-feature-settings: 'liga';
+}
+
+.bra1_poStatus {
+    padding: 14px 10px;
+    background-color: #F2F2F2;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.bra1_poStatusItem {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.bra1_poStatusItem a {
+    display: block;
+    padding: 10px;
+    border: #fff solid 3px;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+    -webkit-box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.bra1_poStatusItem a:hover {
+    transform: translate(2px, 2px);
+    -webkit-transform: translate(2px, 2px);
+    -moz-transform: translate(2px, 2px);
+    -ms-transform: translate(2px, 2px);
+    -o-transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+.bra1_statusTotal a:hover {
+    border-color: #333;
+}
+
+.bra1_statusVaild a:hover {
+    border-color: #42B758;
+}
+
+.bra1_statusSuspended a:hover {
+    border-color: #E2231A;
+}
+
+.bra1_statusLapse a:hover {
+    border-color: #aaa;
+}
+
+.bra1_poStatusTitle {
+    margin-right: 20px;
+}
+
+.bra1_poStatusNum {
+    font-size: 1.5rem;
+}
+
+.bra1_poStatusNum span {
+    margin-left: 4px;
+}
+
+.bra1_statusTotal .bra1_poStatusTitle span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -3px;
+    border-radius: 30px;
+    background-color: #333;
+}
+
+.bra1_statusVaild .bra1_poStatusTitle span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -3px;
+    border-radius: 30px;
+    background-color: #42B758;
+}
+
+.bra1_statusSuspended .bra1_poStatusTitle span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -3px;
+    border-radius: 30px;
+    background-color: #E2231A;
+}
+
+.bra1_statusLapse .bra1_poStatusTitle span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -3px;
+    border-radius: 30px;
+    background-color: #aaa;
+}
+
+.bra1_statusTotal .bra1_poStatusNum {
+    color: #333;
+}
+
+.bra1_statusVaild .bra1_poStatusNum {
+    color: #42B758;
+}
+
+.bra1_statusSuspended .bra1_poStatusNum {
+    color: #E2231A;
+}
+
+.bra1_statusLapse .bra1_poStatusNum {
+    color: #aaa;
+}
+
+.bra1_statusTotal .statusActive {
+    border-color: #333;
+}
+
+.bra1_statusVaild .statusActive {
+    border-color: #42B758;
+}
+
+.bra1_statusSuspended .statusActive {
+    border-color: #E2231A;
+}
+
+.bra1_statusLapse .statusActive {
+    border-color: #aaa;
+}
+
+#bra1_personalTableId th:nth-child(2),
+#bra1_personalTableId td:nth-child(2),
+#bra1_personalTableId th:nth-child(4),
+#bra1_personalTableId td:nth-child(4),
+#bra1_groupTableId th:nth-child(2),
+#bra1_groupTableId td:nth-child(2) {
+    width: 165px !important;
+}
+/* bra_1.html_end */
+
+/* bra_2_2.html_start */
+.bra22_taskTabsNav li:nth-child(1) a::before {
+    font-family: 'Material Icons';
+    content: "home";
+    font-feature-settings: 'liga';
+}
+
+.bra22_taskTabsNav li:nth-child(2) a::before {
+    font-family: 'Material Icons';
+    content: "call";
+    font-feature-settings: 'liga';
+}
+
+.bra22_taskTabsNav li:nth-child(3) a::before {
+    font-family: 'Material Icons';
+    content: "email";
+    font-feature-settings: 'liga';
+}
+
+.bra22_registerInfo {
+    padding: 30px 0 0;
+}
+
+.bra22_registerInfoInner {
+    border-bottom: #aaa dotted 1px;
+    border-top: #aaa dotted 1px;
+}
+
+.bra22_registerInfoItem {
+    display: inline-block;
+}
+
+.bra22_registerInfoTitle,
+.bra22_registerInfoText {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.bra22_registerInfoTitle {
+    background-color: rgba(196, 176, 157, 0.5);
+    color: #726254;
+    padding: 9px 23px;
+}
+
+.bra22_registerInfoText {
+    padding: 0 50px 0 10px;
+}
+
+.bra22Container .openCloseToggle {
+    position: absolute;
+    margin-top: 20px;
+}
+/* bra_2_2.html_end */
+
+/* bra_2_3.html_start */
+.bra23popUp1170 .popupTableName {
+    background: #B29983;
+}
+/* bra_2_3.html_end */
+
+/* bra_2_1.html_start */
+.bra21Container .taskCard {
+    padding-bottom: 30px;
+}
+
+.bra21Container .openCloseToggle {
+    position: absolute;
+    margin-top: 25px;
+}
+
+.bra21CollapseItem {
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border-left: #052535 solid 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+}
+
+.bra21CollapseItemTitle a {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    padding: 7px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: url('../img/down_arrow_open.svg') 99% center no-repeat;
+    background-size: 30px;
+}
+
+.bra21CollapseItemTitle a[aria-expanded="false"] {
+    background: url('../img/down_arrow_open.svg') 99% center no-repeat;
+    background-size: 30px;
+}
+
+.bra21CollapseItemTitle a[aria-expanded="true"] {
+    background-image: url('../img/down_arrow_close.svg');
+    background-position: 99% center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-color: #314C71;
+    border-bottom-right-radius: 0;
+}
+
+.bra21CollapseItemTitle a:hover {
+    background-color: #314C71;
+}
+
+.bra21CollapseItemTitle a span {
+    width: 240px;
+    display: block;
+    border-right: #eee solid 1px;
+    font-size: 1.3125rem;
+    font-weight: bold;
+    color: #333333;
+    padding: 15px 20px;
+}
+
+.bra21CollapseItemTitle a:hover span {
+    color: #fff;
+}
+
+.bra21CollapseItemTitle a[aria-expanded="true"] span {
+    color: #fff;
+}
+
+.bra21ContentUnit {
+    padding: 10px;
+    background-color: #fff;
+}
+
+.bra21ContentUnitInner {
+    border: #d7d7d7 solid 2px;
+    background-color: #fff;
+}
+
+.bra21ContentUnitInnerSet {
+    padding: 20px 10px;
+}
+
+.bra21ContentUnitInnerSet:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.bra21ContentUnitTitleBlock {
+    padding: 10px;
+}
+
+.bra21ContentUnitTitle span {
+    font-size: 1.3125rem;
+    font-weight: bold;
+}
+
+.bra21ContentUnitTitle span::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #314C71;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.bra21DetailsList {
+    overflow: hidden;
+}
+
+.bra21DetailsItem {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    border-right: #aaa dashed 1px;
+}
+
+.bra21DetailsItem:nth-child(odd) {
+    padding-right: 25px;
+}
+
+.bra21DetailsItem:nth-child(even) {
+    padding-left: 25px;
+    border-right: none;
+}
+
+.bra21DetailsItem a {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    padding: 10px 5px;
+    border-bottom: #aaa dotted 1px;
+    text-decoration: none;
+}
+
+.bra21DetailsItemTitle,
+.bra21DetailsItemPrice {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.bra21DetailsItemTitle {
+    font-size: 1.125rem;
+    color: #314C71;
+    text-decoration: none;
+}
+
+.bra21DetailsItemTitle::before {
+    font-family: 'Material Icons';
+    content: "chevron_right";
+    font-feature-settings: 'liga';
+    color: #333;
+    vertical-align: bottom;
+}
+
+.bra21DetailsItemPrice {
+    text-align: right;
+}
+
+.bra21DetailsItemPrice {
+    width: 120px;
+    font-size: 1.3125rem;
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px;
+}
+
+.bra21DetailsItemPrice span {
+    font-size: 1.3125rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.bra21DetailsItem a:hover {
+    background-color: #eee;
+}
+
+.bra21Note {
+    border-top: rgba(255, 255, 255, 0.4) solid 1px;
+    padding: 20px 10px;
+}
+
+.bra21Note ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.bra21Note li p::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #555;
+    border-radius: 30px;
+    margin-right: 5px;
+}
+
+.bra21Note li p {
+    color: #555;
+}
+/* bra_2_1.html_end */
+
+/* bra_3_1.html_start */
+.bra31_taskTabsNav li:nth-child(1) a::before {
+    font-family: 'Material Icons';
+    content: "person";
+    font-feature-settings: 'liga';
+}
+
+.bra31_taskTabsNav li:nth-child(2) a::before {
+    font-family: 'Material Icons';
+    content: "people_alt";
+    font-feature-settings: 'liga';
+}
+
+.bra31Container .openCloseToggle {
+    position: absolute;
+    margin-top: 20px;
+}
+
+.bra31_staff .braTable:nth-child(1) {
+    border-bottom: #aaa dotted 1px;
+    margin-bottom: 30px;
+}
+
+.bra31_beneficiaryTableItem {
+    border-bottom: #aaa dashed 1px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.bra31_beneficiaryTableItem:nth-last-child(1) {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.bra31_beneficiaryTable table {
+    width: 100%;
+    border-bottom: #111 solid 1px;
+}
+
+.bra31_beneficiaryTable table tr {
+    border-bottom: #eee solid 1px
+}
+
+.bra31_beneficiaryTable table tr:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+.bra31_beneficiaryTable table tr:hover {
+    background-color: #f7f7f7;
+}
+
+.bra31_beneficiaryTable table th:nth-child(1) {
+    width: 150px;
+}
+
+.bra31_beneficiaryTable table th:nth-child(2) {
+    width: 150px;
+}
+
+.bra31_beneficiaryTable table th:nth-child(3) {
+    width: 150px;
+}
+
+.bra31_beneficiaryTable table th:nth-child(4) {
+    width: 100px;
+}
+
+.bra31_beneficiaryTable table th,
+.bra31_beneficiaryTable table td {
+    padding: 13px 5px;
+    border-left: #eee solid 1px;
+}
+
+.bra31_beneficiaryRanking {
+    text-align: center;
+    font-weight: bold;
+}
+
+.bra31_othersTableItem {
+    border-bottom: #aaa dashed 1px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.bra31_othersTableItem:nth-last-child(1) {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.bra31_othersTable table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.bra31_othersTable table tr {
+    border-bottom: #eee solid 1px
+}
+
+.bra31_othersTable table tr:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+.bra31_othersTable table tr:hover {
+    background-color: #f7f7f7;
+}
+
+.bra31_othersTable table th,
+.bra31_othersTable table td {
+    padding: 13px 5px;
+    border-left: #eee solid 1px;
+}
+
+.bra31_othersTable_bonus table th {
+    width: 33.33%;
+}
+
+.bra31_othersTable_bodyCondition table th {
+    width: 33.33%;
+}
+
+.bra31_othersTable_bodyCondition table td {
+    text-overflow: initial;
+    white-space: initial;
+}
+
+.bra31_othersTable_investment table:nth-child(2) {
+    margin-bottom: 10px;
+}
+
+.bra31_othersTable_investment table:nth-child(2) th:nth-child(1),
+.bra31_othersTable_investment table:nth-child(2) th:nth-child(3),
+.bra31_othersTable_investment table:nth-child(2) th:nth-child(4) {
+    width: 100px;
+}
+
+.bra31_othersTable_investment table:nth-child(4) th:nth-child(1),
+.bra31_othersTable_investment table:nth-child(4) th:nth-child(3),
+.bra31_othersTable_investment table:nth-child(4) th:nth-child(4) {
+    width: 100px;
+}
+
+.bra31_transfer table:nth-child(3) th,
+.bra31_transfer table:nth-child(3) td {
+    width: 50%;
+}
+/* bra_3_1.html_end */
+
+/* bra_3_10.html_start */
+.bra310Container .openCloseToggle {
+    position: absolute;
+    margin-top: 20px;
+}
+
+.bra310_valueTabsNavNoteCounter {
+    padding: 15px 10px 0;
+    background-color: #f7f7f7;
+    margin: 10px 0 30px;
+}
+
+.bra310_valueTabsNavNoteInner {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-bottom: #aaa dashed 1px;
+    padding: 10px 0;
+}
+
+.bra310_valueTabsNav,
+.bra310_valueTabsNote {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.bra310_valueTabsNav ul.nav-tabs {
+    border-bottom: none;
+}
+
+.bra310_valueTabsNote {
+    width: 200px;
+    text-align: right;
+}
+
+.bra310_valueTabsNote span {
+    color: #777;
+    font-size: 0.875rem;
+}
+
+.bra310_valueTabsNote span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 30px;
+    background-color: #777;
+    margin-right: 5px;
+}
+
+.bra310_valueTabsNav a {
+    background-color: #1D3557;
+    display: block;
+    padding: 7px 15px;
+    text-decoration: none;
+    border-radius: 30px;
+    opacity: 0.7;
+    -webkit-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 1);
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+.bra310_valueTabsNav li a.active,
+.bra310_valueTabsNav a:hover {
+    opacity: 1;
+    box-shadow: none;
+    transform: translate(1px, 1px);
+    -webkit-transform: translate(1px, 1px);
+    -moz-transform: translate(1px, 1px);
+    -ms-transform: translate(1px, 1px);
+    -o-transform: translate(1px, 1px);
+}
+
+.bra310_valueTabsNav a span {
+    color: #fff;
+}
+
+.bra310_valueTabsNav li {
+    margin-right: 10px;
+}
+
+.bra310_valueTabsNav li.policyValuePreMoney a span::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: sub;
+    background: url('../img/bra310_coins.svg') center center no-repeat;
+    margin-right: 5px;
+}
+
+.bra310_valueTabsNav li.policyAccountValue a span::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: sub;
+    background: url('../img/bra310_diamond.svg') center center no-repeat;
+    margin-right: 5px;
+}
+
+.bra310Container .selectBtn {
+    position: absolute;
+    margin-top: 20px;
+    padding: 0;
+    z-index: 9;
+}
+
+.bra310_estimatedAmountItem {
+    border-bottom: #aaa dashed 1px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.bra310_estimatedAmountItem:nth-last-child(1) {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.bra310_estimatedAmount_investment_Table table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.bra310_estimatedAmount_investment_Table table tr {
+    border-bottom: #eee solid 1px
+}
+
+.bra310_estimatedAmount_investment_Table table tr:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+.bra310_estimatedAmount_investment_Table table tr:hover {
+    background-color: #f7f7f7;
+}
+
+.bra310_estimatedAmount_investment_Table table th,
+.bra310_estimatedAmount_investment_Table table td {
+    padding: 13px 5px;
+    border-left: #eee solid 1px;
+}
+
+.bra310_estimatedAmount_investment_Table table td span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bra310_estimatedAmount_investment_Table table:nth-child(2) th:nth-child(2),
+.bra310_estimatedAmount_investment_Table table:nth-child(4) th:nth-child(2) {
+    width: 200px;
+}
+
+.roiTableItem {
+    border-bottom: #aaa dashed 1px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.roiTableItem:nth-last-child(1) {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.bra310_roiTable table th,
+.bra310_roiTable table td {
+    padding: 13px 5px;
+    border-left: #eee solid 1px;
+    text-overflow: inherit;
+    white-space: inherit;
+}
+
+.bra310_roiTable table tr {
+    border-bottom: #eee solid 1px
+}
+
+.bra310_roiTable table tr:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+.bra310_roiTable table tr:hover {
+    background-color: #f7f7f7;
+}
+
+.bra310_roiCountTable table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.bra310_roiCountTable table tr.totalRow:hover {
+    background-color: #027DB4;
+}
+
+.bra310_roiCountTable table tr.totalRow td:nth-child(1) {
+    text-align: right;
+    font-weight: bold;
+}
+
+.bra310_roiCountTable table th:nth-child(1),
+.bra310_roiCountTable table td:nth-child(1) {
+    width: 40px;
+    text-align: center;
+}
+
+.bra310_roiCountTable table th:nth-child(2),
+.bra310_roiCountTable table td:nth-child(2) {
+    width: 50px;
+}
+
+.bra310_roiCountTable table th:nth-child(3),
+.bra310_roiCountTable table td:nth-child(3) {
+    width: 160px;
+}
+
+.bra310_tradeInfoTable table {
+    width: 60%;
+    table-layout: fixed;
+}
+
+.bra310_tradeInfoTable th {
+    width: 33.3333%;
+}
+
+.roiTableNote ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.roiTableNote li p::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #555;
+    border-radius: 30px;
+    margin-right: 5px;
+}
+
+.roiTableNote li p {
+    color: #555;
+}
+
+.roiTableWarnning p {
+    font-size: 0.75rem;
+    color: #f92828;
+    margin-bottom: 0;
+    text-align: right;
+}
+/* bra_3_10.html_end */
+
+/* bra_3_11.html_end */
+.bra311Container .selectBtn {
+    position: absolute;
+    margin-top: 20px;
+    padding: 0;
+    z-index: 9;
+}
+
+.bra311_counter {
+    padding: 0 10px;
+    background-color: #f7f7f7;
+    margin: 10px 0 20px;
+}
+
+.bra311_counterNote {
+    text-align: right;
+}
+
+.bra311_counterNote span {
+    color: #777;
+    font-size: 0.875rem;
+}
+
+.bra311_counterNote span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 30px;
+    background-color: #777;
+    margin-right: 5px;
+}
+
+.bra311_popupTable table {
+    border: #eee solid 1px;
+}
+
+.bra311_popupTableTdInner {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.bra311_popupTableTdTitle,
+.bra311_popupTableTdPrice {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.bra311_popupTable table th,
+.bra311_popupTable table td {
+    padding: 13px 5px;
+    border-left: #eee solid 1px;
+}
+
+.bra311_popupTable table tr:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+.bra311_popupTable table tr {
+    border-bottom: #eee solid 1px;
+}
+
+.bra311_popupTable th {
+    background-color: #2E3D47;
+    color: #fff;
+}
+
+.bra311_popupTableTdPrice {
+    text-align: right;
+}
+
+.bra311_totalTr .bra311_popupTableTdTitle,
+.bra311_totalTr .bra311_popupTableTdPrice {
+    font-size: 1.3125rem;
+    font-weight: bold;
+    color: #052535;
+}
+/* bra_3_11.html_end */
+
+/* bra_3_13.html_start */
+.bra313_counter {
+    margin-top: 10px;
+}
+
+.bra313_selectOpenBtn {
+    position: absolute;
+    z-index: 9;
+    margin-top: 20px;
+}
+
+.bra313_selectOpenBtn .selectBtn,
+.bra313_selectOpenBtn .openCloseToggle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.bra313_selectOpenBtn .selectBtn {
+    border-right: #aaa solid 1px;
+    padding: 0 13px 0 0;
+}
+
+.bra313_selectOpenBtn .openCloseToggle {
+    padding: 0 0 0 5px;
+}
+
+.bra313_poTable table th,
+.bra313_poTable table td {
+    text-overflow: inherit;
+    white-space: inherit;
+}
+/* bra_3_13.html_end */
+
+/* bra_3_12.html_start */
+.bra312Container .openCloseToggle {
+    position: absolute;
+    margin-top: 20px;
+}
+
+.bra312_poTable table th,
+.bra312_poTable table td {
+    text-overflow: inherit;
+    white-space: inherit;
+}
+
+.bra312_tableItem {
+    border-bottom: #aaa dotted 1px;
+    margin-bottom: 30px;
+}
+
+.bra312_tableItem:nth-last-child(1) {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+/* bra_3_12.html_end */
+
+/* bra_3_14.html_start */
+.bra314Container .selectBtn {
+    position: absolute;
+    margin-top: 20px;
+    padding: 0;
+    z-index: 9;
+}
+
+.bra314_counter {
+    padding: 0 10px;
+    background-color: #f7f7f7;
+    margin: 10px 0 20px;
+}
+
+.bra314_counterNote {
+    text-align: right;
+}
+
+.bra314_counterNote span {
+    color: #777;
+    font-size: 0.875rem;
+}
+
+.bra314_counterNote span::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 30px;
+    background-color: #777;
+    margin-right: 5px;
+}
+/* bra_3_14.html_end */
+
+/* bra_3_15.html_start */
+.bra315_counter {
+    margin-top: 10px;
+}
+
+.bra315Container .selectBtn {
+    position: absolute;
+    margin-top: 20px;
+    padding: 0;
+    z-index: 9;
+}
+
+.bra315_counter .counterMultipleTitle {
+    background-size: 8px;
+}
+/* bra_3_15.html_end */
+
+/* bra_4_1.html_start */
+.bra41_satellite span::after {
+    content: "|";
+    margin: 0 -3px 0 2px;
+}
+
+.bra41_satellite span:nth-last-child(1)::after {
+    content: "";
+}
+
+.bra41_salesName {
+    border-top: #aaa dotted 1px;
+    margin-top: 8px;
+    padding-top: 8px;
+}
+
+.bra41_insuranceNum {
+    margin-bottom: 3px;
+}
+
+.receiveDate {
+    margin-bottom: 3px;
+}
+
+.bra41_contractChange table {
+    table-layout: fixed;
+}
+/* bra_4_1.html_end */
+
+/* bra_4_5.html_start */
+.bra45_taskTabsNav li:nth-child(1) a::before {
+    font-family: 'Material Icons';
+    content: "payment";
+    font-feature-settings: 'liga';
+}
+
+.bra45_taskTabsNav li:nth-child(2) a::before {
+    font-family: 'Material Icons';
+    content: "alarm_add";
+    font-feature-settings: 'liga';
+}
+
+.bra45Container .openCloseToggle {
+    position: absolute;
+    margin-top: 20px;
+}
+
+.bra45_poTable table th,
+.bra45_poTable table td {
+    text-overflow: inherit;
+    white-space: inherit;
+}
+
+.bra45_tableItem {
+    border-bottom: #aaa dotted 1px;
+    margin-bottom: 30px;
+}
+
+.bra45_tableItem:nth-last-child(1) {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.bra45_actuallyPaiedTable {
+    width: 100%;
+}
+
+.bra45_actuallyPaiedTableInner {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.bra45_actuallyPaiedItem {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.bra45_actuallyPaiedUnit {
+    border-bottom: #ddd solid 1px;
+}
+
+.bra45_actuallyPaiedUnitInner {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.bra45_actuallyPaiedUnitTitle,
+.bra45_actuallyPaiedUnitContent {
+    display: table-cell;
+    vertical-align: top;
+    padding: 10px 5px;
+}
+
+.bra45_actuallyPaiedUnitTitle {
+    width: 150px;
+    background-color: #052535;
+    color: #fff;
+}
+
+.bra45_actuallyPaiedUnitContent {
+    text-align: right;
+    background-color: #F7F7F7;
+}
+/* bra_4_5.html_end */
+
+/* bra_4_3.html_start */
+/* bra_4_3.html_end */
+
+/* bra_4_8.html_start */
+/* bra_4_8.html_end */
+
+/* bra_4_4.html_start */
+.bra44Container .openCloseToggle {
+    position: absolute;
+    margin-top: 20px;
+}
+
+.bra44_paymentDetailsTableItem {
+    border-bottom: #aaa dashed 1px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.bra44_paymentDetailsTableItem:nth-last-child(1) {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.bra44_paymentDetailsTable table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.bra44_paymentDetailsTable table tr {
+    border-bottom: #eee solid 1px
+}
+
+.bra44_paymentDetailsTable table tr:nth-child(odd) {
+    background-color: #f7f7f7;
+}
+
+.bra44_paymentDetailsTable table tr:hover {
+    background-color: #f7f7f7;
+}
+
+.bra44_paymentDetailsTable table th,
+.bra44_paymentDetailsTable table td {
+    padding: 13px 5px;
+    border-left: #eee solid 1px;
+}
+/* bra_4_4.html_end */
+
+/* bra_4_6.html_start */
+td .inOutBound {
+    background-color: #eee;
+}
+
+.inOutBound {
+    text-align: center;
+}
+
+.inOutBound span {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 30px;
+}
+
+span.inBound {
+    background-color: #FF9F1C;
+}
+
+span.outBound {
+    background-color: #70B603;
+}
+
+.inOutBoundNote {
+    position: absolute;
+    margin-top: 20px;
+}
+
+.inOutBoundNote .inOutBound span {
+    width: 10px;
+    height: 10px;
+}
+
+.inOutBoundNote ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.inOutBoundNote li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.inOutBoundNote li::after {
+    content: "/";
+    color: #aaa;
+    margin: 0 0 0 4px;
+}
+
+.inOutBoundNote li:nth-last-child(1)::after {
+    content: "";
+    margin: 0;
+}
+
+.inBoundStatus {
+    color: #FF9F1C;
+}
+
+.outBoundStatus {
+    color: #70B603;
+}
+/* bra_4_6.html_end */
+
+/* bra_4_7.html_start */
+/* bra_4_7.html_end */
+
+@media only screen and (max-width: 1699px) {}
+
+@media only screen and (max-width: 1499px) {
+    /* welcome_start */
+    .welcomeNote {
+        margin-bottom: 30px;
+    }
+
+    .searchBlock {
+        max-width: 90%;
+    }
+
+    .welcomeSearch {
+        max-width: 90%;
+    }
+
+    .searchResult {
+        max-width: 90%;
+    }
+    /* welcome_end */
+
+    /* login.html_start */
+    .loginBlock {
+        position: static;
+        top: inherit;
+        left: inherit;
+        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        -moz-transform: translate(0, 0);
+        -o-transform: translate(0, 0);
+        max-width: 460px;
+        margin: 60px auto 100px;
+    }
+    /* login.html_end */
+
+    /* bra_1.html_start */
+    .bra1_basicInfo,
+    .bra1_contactInfo,
+    .bra1_secInfo {
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: #aaa dashed 1px;
+        padding: 20px 0;
+    }
+
+    .bra1_contactInfo,
+    .bra1_secInfo {
+        width: 50%;
+        float: left;
+    }
+
+    .bra1_contactInfo {
+        padding-right: 10px;
+        border: none;
+    }
+
+    .bra1_secInfo {
+        border: none;
+        padding-left: 10px;
+        border-left: #aaa dashed 1px;
+    }
+
+    .basicInfoImg {
+        width: 200px;
+    }
+
+    .bra1_poStatusItem {
+        margin-right: 5px;
+    }
+
+    .basicInfoImg {
+        width: 120px;
+    }
+
+    .basicInfoImg img {
+        max-width: 90px;
+    }
+
+    .basicInfoImgNameBirth,
+    .basicInfoIdAgeAgent {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .basicInfoImgNameBirth {
+        width: 260px;
+    }
+
+    .bra1_poStatusTitle {
+        margin: 0 0 5px 0;
+    }
+
+    .bra1_poStatusTitle,
+    .bra1_poStatusNum {
+        display: block;
+    }
+
+    .bra1_poStatusNum {
+        text-align: right;
+    }
+
+    .bra1_poStatusItem a {
+        padding: 5px 15px;
+    }
+    /* bra_1.html_end*/
+
+    /* bra_2_1.html_start */
+    .bra21DetailsItem {
+        width: 100%;
+        display: block;
+        border-right: none;
+    }
+
+    .bra21DetailsItem:nth-child(odd),
+    .bra21DetailsItem:nth-child(even) {
+        padding: 0;
+    }
+    /* bra_2_1.html_start */
+}
+
+@media only screen and (max-width: 1299px) {
+    /* bra_1.html_start */
+    .bra1_careerLabel,
+    .bra1_careerText {
+        display: block;
+    }
+
+    .bra1_careerLabel {
+        margin-bottom: 10px;
+    }
+
+    .bra1_careerText {
+        padding: 0 5px;
+    }
+
+    .bra1_memberContentColTitle,
+    .bra1_memberContentColText {
+        display: block;
+    }
+
+    .bra1_memberContentColTitle {
+        padding-bottom: 3px;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    .bra1_memberContentColText {
+        width: 100%;
+        text-align: left;
+    }
+
+    .bra1_othersContentColTitle,
+    .bra1_othersContentColText {
+        display: block;
+    }
+
+    .bra1_othersContentColTitle {
+        padding-bottom: 3px;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    .bra1_othersContentColText {
+        text-align: left;
+    }
+    /* bra_1.html_end */
+}
+
+@media only screen and (min-width: 1200px) {}
+
+@media only screen and (max-width: 1199px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (max-width: 991px) {}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (max-width: 767px) {}
+
+@media only screen and (max-width: 576px) {}
+
+@media only screen and (max-width: 440px) {}
+
+@media only screen and (max-width: 420px) {}

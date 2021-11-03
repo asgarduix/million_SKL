@@ -1,0 +1,156 @@
+/* main_color: 紅：#E63946 / 藍：#2e3d47、#E63946、#052535、#3884AF / 黃：#ff9f1c / 咖啡：#c4b09d、#726254 */
+@font-face {
+    font-family: Microsoft JhengHei;
+}
+
+* {
+    font-family: Microsoft JhengHei;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+* img {
+    max-width: 100%;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: #052535;
+    line-height: 1;
+}
+
+a,
+button {
+    outline: none !important;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+button {
+    box-shadow: none;
+    border: none;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+}
+
+input {
+    width: 100%;
+    background: none;
+    border: none;
+}
+
+p {
+    line-height: 1.5;
+}
+
+label {
+    margin-bottom: 0;
+}
+
+svg {
+    transform: translateZ(0);
+}
+
+/* scrollbar_start */
+.mCSB_scrollTools {
+    width: 10px;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    width: 8px;
+}
+
+.mCSB_outside+.mCS-minimal.mCSB_scrollTools_vertical,
+.mCSB_outside+.mCS-minimal-dark.mCSB_scrollTools_vertical {
+    margin: 6px 0;
+}
+
+/* scrollbar_end */
+
+/* jquery-ui_start */
+.ui-datepicker a.ui-datepicker-prev {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url('../img/prev-arrow.svg') center center no-repeat;
+    background-size: contain;
+    margin-top: 5px;
+}
+
+.ui-datepicker a.ui-datepicker-next {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url('../img/next-arrow.svg') center center no-repeat;
+    background-size: contain;
+    margin-top: 5px;
+}
+
+.ui-datepicker a.ui-datepicker-prev:hover {
+    width: 20px;
+    height: 20px;
+    background: url('../img/prev-arrow.svg') center center no-repeat;
+    background-size: contain;
+}
+
+.ui-datepicker a.ui-datepicker-next:hover {
+    width: 20px;
+    height: 20px;
+    background: url('../img/next-arrow.svg') center center no-repeat;
+    background-size: contain;
+}
+
+/* bootstrap-select_start */
+.bootstrap-select>select,
+.bootstrap-select,
+.bootstrap-select>.dropdown-toggle {
+    width: 100% !important;
+    height: 40px !important;
+    border: #eee solid 1px;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.bootstrap-select>select {
+    left: 0;
+}
+
+/* bootstrap-select_end */
+
+@media only screen and (max-width: 1299px) {}
+
+@media only screen and (min-width: 1200px) {}
+
+@media only screen and (max-width: 1199px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (max-width: 991px) {}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (max-width: 767px) {}
+
+@media only screen and (max-width: 576px) {}
+
+@media only screen and (max-width: 440px) {}
+
+@media only screen and (max-width: 420px) {}

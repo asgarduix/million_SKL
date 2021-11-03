@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CIS-客戶資訊整合系統</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- jQuery-ui(css_eric) -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css">
+    <!-- Bootstrap_4.5.2 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- material_icon(css_eric) -->
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/material-icons-ie.css">
+    <!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <!-- datatable(bootstrap4/DataTables) -->
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+    <!-- bootstrap-select(css_eric)-->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- datepicker_5.1.0 -->
+    <link rel="stylesheet" href="css/jquery.datepick.css">
+    <!-- lity_2.4.1 -->
+    <link rel="stylesheet" href="css/lity.css">
+    <!-- 全域(標籤) -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 框架 -->
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- 頁面 -->
+    <link rel="stylesheet" href="css/page.css">
+    <!-- 保留給rd使用 -->
+    <link rel="stylesheet" href="css/rd.css">
+</head>
+
+<body>
+    <div class="frameContainer">
+        <!-- frame_top_start -->
+        <div class="topContainer">
+            <div class="topInner">
+                <!-- menuBar_start -->
+                <div class="menuBarBlock">
+                    <div class="menuBarInner">
+                        <!-- menuBar_btn -->
+                        <div class="menuBarBtn">
+                            <button onclick='leftMenuToggle()'><span class="menuBarLine"></span></button>
+                        </div>
+                        <!-- menuBar_logo -->
+                        <div class="menuBarLogo">
+                            <a href="#"><img src="img/logo.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- menuBar_end -->
+                <!-- log_start -->
+                <div class="logBlock">
+                    <div class="logInner">
+                        <!-- log_in_time -->
+                        <div class="loginTime">登入時間：109/07/16 (四) 08:22:30</div>
+                        <!-- log_name/time/out -->
+                        <div class="logNameTimeOut">
+                            <div class="loginName">Hi, <span class="userDepartment">客戶服務部</span><span class="userName">高育綸</span><span class="userId">CS0123</span></div>
+                            <div class="logOutCountdown"><span class="countdownHour">29</span><span class="countdownMin">59</span></div>
+                            <div class="logOut"><a href="login.html">登出</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- log_end -->
+            </div>
+        </div>
+        <!-- frame_top_end -->
+        <!-- frame_bottom_start -->
+        <div id="bottomArea" class="bottomContainer jsBottomLeftPadding">
+            <!-- left_menu_start -->
+            <div id="leftMenu" class="leftAside jsLmWidth">
+                <div class="leftAsideInner">
+                    <div class="scrollContent leftAsideContent jsLmWidth" id="leftAsideId">
+                        <nav>
+                            <div menu-html='include/menu.html'></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- left_menu_end -->
+            <!-- main_content_start -->
+            <div class="mainContent">
+                <!-- user_info_start -->
+                <div class="userInfo">
+                    <div class="userInfoInner">
+                        <div class="userInfoContent">
+                            <div class="userInfoItem userInfoBtn maleBtn">
+                                <a href="#">廖家祥</a>
+                            </div>
+                            <div class="userInfoItem userInfoIdNum">F123456789</div>
+                            <div class="userInfoItem userInfoBirthday">
+                                <span>74</span>
+                                <span>03</span>
+                                <span>14</span>
+                            </div>
+                        </div>
+                        <div class="userInfoSearch" id="userInfoSearchId">
+                            <form class="userInfoSearchForm">
+                                <div class="userInfoSearchFormInner">
+                                    <div class="userInfoSearchFormSelector">
+                                        <select class="selectpicker" name="formSelect" onchange="location = this.value;">
+                                            <option value="frame_search_id.html" selected="">身分證號碼</option>
+                                            <option value="frame_search_num.html">保單號碼</option>
+                                            <option value="frame_searc_name_date.html">姓名/生日</option>
+                                        </select>
+                                    </div>
+                                    <div class="userInfoSearchFormField">
+                                        <div class="userInfoSearchFormFieldInner">
+                                            <div class="userInfoSearchInput">
+                                                <input type="text" placeholder="請輸入身分證號碼" value="" class="searchInput">
+                                            </div>
+                                            <div class="userInfoClear">
+                                                <a href="#" onclick="clearText()">清除</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="userInfoSearchFormBtn">
+                                        <button>搜 尋</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="userInfoSearchToggoleBtn">
+                            <button onclick="userInfoSearchToggle()"><span class="material-icons">search</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- user_info_end -->
+                <div class="rightAside">
+                    <!-- right_menu_start -->
+                    <div class="rightAsideContent rightAsideMenu jsRmWidth" id="rightMenu">
+                        <div class="rightAsideMenuInner">
+                            <div class="rightAsideBtn"><button onclick="rightMenuToggle()"><span class="material-icons">menu_open</span></button></div>
+                            <div class="rightAsideBtnList jsRmContent" id="rightAsideId">
+                                <div class="rmNavTabs">
+                                    <ul class="nav nav-tabs">
+                                        <li><a data-toggle="tab" href="#rmMsg" class="active">重要通知</a></li>
+                                        <li><a data-toggle="tab" href="#rmRecord">近三個月接觸紀錄</a></li>
+                                    </ul>
+                                </div>
+                                <div class="rmNavTabsContent">
+                                    <div class="tab-content">
+                                        <div id="rmMsg" class="tab-pane in active msgList">
+                                            <div class="msgListInner">
+                                                <div class="msgListHeader">
+                                                    <div class="msgListHeaderInner">
+                                                        <div class="msgListRefreshBtn"><button><span class="material-icons">refresh</span> 重整</button></div>
+                                                        <div class="msgListInfo">共計 <span>24</span> 筆通知</div>
+                                                    </div>
+                                                </div>
+                                                <div class="scrollContent msgListContent" id="msgListContentId">
+                                                    <div msg-html='include/msg.html'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="rmRecord" class="tab-pane fade recordList">
+                                            <div class="recordListInner">
+                                                <div class="recordListHeader">
+                                                    <div class="recordListHeaderInner">
+                                                        <div class="recordListRefreshBtn"><button><span class="material-icons">refresh</span> 重整</button></div>
+                                                    </div>
+                                                </div>
+                                                <div class="recordListContent">
+                                                    <div class="scrollContent recordListContentInner" id="recordListContentId">
+                                                        <div record-html='include/record.html'></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right_menu_end -->
+                    <div class="mainContentText jsBottomRightPadding" id="mainContentTextId">first<br>texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>text<br>end</div>
+                </div>
+            </div>
+            <!-- main_content_end -->
+        </div>
+        <!-- frame_bottom_end -->
+    </div>
+</body>
+<!-- jQuery_3.5.1(js_eric)  -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- jQuery-ui_1.12.1(js_eric) -->
+<script src="js/jquery-ui.js"></script>
+<!-- Popper(js_eric) -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap_4.5.2 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- bootstrap-select(js_eric)-->
+<script src="js/bootstrap-select.js"></script>
+<!-- datatable(bootstrap4/DataTables) -->
+<script src="js/jquery.dataTables.js"></script>
+<!-- lity_2.4.1 -->
+<script src="js/lity.js"></script>
+<!-- js -->
+<script src="js/layout.js"></script>
+<!-- include_menu -->
+<script>
+includeMenu();
+</script>
+<!-- include_msg-->
+<script>
+includeMsg();
+</script>
+<!-- include_record-->
+<script>
+includeRecord();
+</script>
+<!-- content_height -->
+<script>
+var winHeight = window.innerHeight;
+console.log(winHeight);
+document.getElementById('msgListContentId').style.height = winHeight - 250 + 'px';
+document.getElementById('recordListContentId').style.height = winHeight - 290 + 'px';
+document.getElementById('mainContentTextId').style.height = winHeight - 120 + 'px';
+document.getElementById('leftAsideId').style.height = winHeight - 60 + 'px';
+</script>
+</html>

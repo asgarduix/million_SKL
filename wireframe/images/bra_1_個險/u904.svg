@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="115px" height="42px" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="57.5007" y1="1" x2="57.5007" y2="41" id="LinearGradient6">
+      <stop id="Stop7" stop-color="#c4b09d" offset="0" />
+      <stop id="Stop8" stop-color="#bfab99" offset="0.09" />
+      <stop id="Stop9" stop-color="#af9d8d" offset="0.19" />
+      <stop id="Stop10" stop-color="#a29183" offset="0.26" />
+      <stop id="Stop11" stop-color="#a19081" offset="0.27" />
+      <stop id="Stop12" stop-color="#847462" offset="0.48" />
+      <stop id="Stop13" stop-color="#796a56" offset="0.6" />
+      <stop id="Stop14" stop-color="#796a56" offset="1" />
+    </linearGradient>
+    <mask fill="white" id="clip15">
+      <path d="M 115 37  C 115 39.76  112.76 42  110 42  C 110 42  5 42  5 42  C 2.24 42  0 39.76  0 37  C 0 37  0 5  0 5  C 0 2.24  2.24 0  5 0  C 5 0  110 0  110 0  C 112.76 0  115 2.24  115 5  C 115 5  115 37  115 37  Z " fill-rule="evenodd" />
+    </mask>
+  </defs>
+  <g transform="matrix(1 0 0 1 -30 -18 )">
+    <path d="M 115 37  C 115 39.76  112.76 42  110 42  C 110 42  5 42  5 42  C 2.24 42  0 39.76  0 37  C 0 37  0 5  0 5  C 0 2.24  2.24 0  5 0  C 5 0  110 0  110 0  C 112.76 0  115 2.24  115 5  C 115 5  115 37  115 37  Z " fill-rule="nonzero" fill="url(#LinearGradient6)" stroke="none" transform="matrix(1 0 0 1 30 18 )" />
+    <path d="M 115 37  C 115 39.76  112.76 42  110 42  C 110 42  5 42  5 42  C 2.24 42  0 39.76  0 37  C 0 37  0 5  0 5  C 0 2.24  2.24 0  5 0  C 5 0  110 0  110 0  C 112.76 0  115 2.24  115 5  C 115 5  115 37  115 37  Z " stroke-width="4" stroke="#8c6f62" fill="none" transform="matrix(1 0 0 1 30 18 )" mask="url(#clip15)" />
+  </g>
+</svg>

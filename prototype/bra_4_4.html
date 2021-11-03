@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CIS-客戶資訊整合系統</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- jQuery-ui(css_eric) -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css">
+    <!-- Bootstrap_4.5.2 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- material_icon(css_eric) -->
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/material-icons-ie.css">
+    <!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <!-- datatable(bootstrap4/DataTables) -->
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+    <!-- bootstrap-select(css_eric)-->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- datepicker_5.1.0 -->
+    <link rel="stylesheet" href="css/jquery.datepick.css">
+    <!-- lity_2.4.1 -->
+    <link rel="stylesheet" href="css/lity.css">
+    <!-- 全域(標籤) -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 框架 -->
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- 頁面 -->
+    <link rel="stylesheet" href="css/page.css">
+    <!-- 保留給rd使用 -->
+    <link rel="stylesheet" href="css/rd.css">
+</head>
+
+<body>
+    <div class="frameContainer bra44Container">
+        <!-- frame_top_start -->
+        <div class="topContainer">
+            <div class="topInner">
+                <!-- menuBar_start -->
+                <div class="menuBarBlock">
+                    <div class="menuBarInner">
+                        <!-- menuBar_btn -->
+                        <div class="menuBarBtn">
+                            <button onclick='leftMenuToggle()'><span class="menuBarLine"></span></button>
+                        </div>
+                        <!-- menuBar_logo -->
+                        <div class="menuBarLogo">
+                            <a href="#"><img src="img/logo.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- menuBar_end -->
+                <!-- log_start -->
+                <div class="logBlock">
+                    <div class="logInner">
+                        <!-- log_in_time -->
+                        <div class="loginTime">登入時間：109/07/16 (四) 08:22:30</div>
+                        <!-- log_name/time/out -->
+                        <div class="logNameTimeOut">
+                            <div class="loginName">Hi, <span class="userDepartment">客戶服務部</span><span class="userName">高育綸</span><span class="userId">CS0123</span></div>
+                            <div class="logOutCountdown"><span class="countdownHour">29</span><span class="countdownMin">59</span></div>
+                            <div class="logOut"><a href="login.html">登出</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- log_end -->
+            </div>
+        </div>
+        <!-- frame_top_end -->
+        <!-- frame_bottom_start -->
+        <div id="bottomArea" class="bottomContainer jsBottomLeftPadding">
+            <!-- left_menu_start -->
+            <div id="leftMenu" class="leftAside jsLmWidth">
+                <div class="leftAsideInner">
+                    <div class="scrollContent leftAsideContent jsLmWidth" id="leftAsideId">
+                        <nav>
+                            <div menu-html='include/menu.html'></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- left_menu_end -->
+            <!-- main_content_start -->
+            <div class="mainContent">
+                <!-- user_info_start -->
+                <div class="userInfo">
+                    <div class="userInfoInner">
+                        <div class="userInfoContent">
+                            <div class="userInfoItem userInfoBtn maleBtn">
+                                <a href="bra_1.html">廖家祥</a>
+                            </div>
+                            <div class="userInfoItem userInfoIdNum">F123456789</div>
+                            <div class="userInfoItem userInfoBirthday">
+                                <span>74</span>
+                                <span>03</span>
+                                <span>14</span>
+                            </div>
+                        </div>
+                        <div class="userInfoSearch" id="userInfoSearchId">
+                            <form class="userInfoSearchForm">
+                                <div class="userInfoSearchFormInner">
+                                    <div class="userInfoSearchFormSelector">
+                                        <select class="selectpicker" name="formSelect" onchange="location = this.value;">
+                                            <option value="frame_search_id.html" selected="">身分證號碼</option>
+                                            <option value="frame_search_num.html">保單號碼</option>
+                                            <option value="frame_searc_name_date.html">姓名/生日</option>
+                                        </select>
+                                    </div>
+                                    <div class="userInfoSearchFormField">
+                                        <div class="userInfoSearchFormFieldInner">
+                                            <div class="userInfoSearchInput">
+                                                <input type="text" placeholder="請輸入身分證號碼" value="" class="searchInput">
+                                            </div>
+                                            <div class="userInfoClear">
+                                                <a href="#" onclick="clearText()">清除</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="userInfoSearchFormBtn">
+                                        <button>搜 尋</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="userInfoSearchToggoleBtn">
+                            <button onclick="userInfoSearchToggle()"><span class="material-icons">search</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- user_info_end -->
+                <div class="rightAside">
+                    <!-- right_menu_start -->
+                    <div class="rightAsideContent rightAsideMenu jsRmWidth" id="rightMenu">
+                        <div class="rightAsideMenuInner">
+                            <div class="rightAsideBtn">
+                                <button onclick="rightMenuToggle()">
+                                    <!-- <span class="material-icons">menu_open</span> --></button>
+                            </div>
+                            <div class="rightAsideBtnList jsRmContent" id="rightAsideId">
+                                <div class="rmNavTabs">
+                                    <ul class="nav nav-tabs">
+                                        <li><a data-toggle="tab" href="#rmMsg" class="active">重要通知</a></li>
+                                        <li><a data-toggle="tab" href="#rmRecord">近三個月接觸紀錄</a></li>
+                                    </ul>
+                                </div>
+                                <div class="rmNavTabsContent">
+                                    <div class="tab-content">
+                                        <div id="rmMsg" class="tab-pane in active msgList">
+                                            <div class="msgListInner">
+                                                <div class="msgListHeader">
+                                                    <div class="msgListHeaderInner">
+                                                        <div class="msgListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                        <div class="msgListInfo">共計 <span>24</span> 筆通知</div>
+                                                    </div>
+                                                </div>
+                                                <div class="scrollContent msgListContent" id="msgListContentId">
+                                                    <div msg-html='include/msg.html'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="rmRecord" class="tab-pane fade recordList">
+                                            <div class="recordListInner">
+                                                <div class="recordListHeader">
+                                                    <div class="recordListHeaderInner">
+                                                        <div class="recordListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="recordListContent">
+                                                    <div class="scrollContent recordListContentInner" id="recordListContentId">
+                                                        <div record-html='include/record.html'></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right_menu_end -->
+                    <div class="scrollContent mainContentText jsBottomRightMargin" id="mainContentTextId">
+                        <div class="mainContentTextInner">
+                            <!-- breadcrumb_start -->
+                            <div class="breadcrumbBlock">
+                                <div class="breadcrumbList">
+                                    <ul>
+                                        <li class="breadcrumbTitle">目前位置</li>
+                                        <li>紀錄查詢</li>
+                                        <li>理賠紀錄</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- breadcrumb_end -->
+                            <!-- dashboard_start -->
+                            <div class="dashboardBlock">
+                                <div class="taskItem">
+                                    <div class="taskTitle">理賠紀錄</div>
+                                    <div class="taskCard">
+                                        <!-- qbe_start -->
+                                        <div class="taskQbe">
+                                            <div class="qbeList">
+                                                <div class="qbeListItem qbeListTitle">請選擇查詢條件</div>
+                                                <div class="qbeListItem qbeDatepicker">
+                                                    <div class="qbeDatepickerInner">
+                                                        <div class="qbeDatepickerTitle">事故日</div>
+                                                        <div class="qbeDatepickerUnit"><input type="text" placeholder="查詢日期" value="" class="searchDatepicker searchInput"></div>
+                                                        <div class="qbeDatepickerUnit">～</div>
+                                                        <div class="qbeDatepickerUnit"><input type="text" placeholder="查詢日期" value="" class="searchDatepicker searchInput"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="qbeListItem qbeSearch"><a href="#"><span class="material-icons">search</span></a></div>
+                                            </div>
+                                            <div class="clearfix clearMargin"></div>
+                                        </div>
+                                        <!-- qbe_end -->
+                                        <!-- open/close_toggle_start -->
+                                        <div class="openCloseToggle">
+                                            <div class="switch">
+                                                <div class="switchInner">
+                                                    <div class="switchOption off">收合</div>
+                                                    <div class="switchOption on">展開</div>
+                                                </div>
+                                                <input class='condition' type="checkbox" value="false">
+                                            </div>
+                                        </div>
+                                        <!-- open/close_toggle_end -->
+                                        <div class="braTable bra44_poTable bra44_insuranceClaimTable">
+                                            <div class="table-responsive">
+                                                <table id="bra44_insuranceClaimTableId" class="display cell-border dataTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <div class="tableCol tableCollapseBtn"></div>
+                                                            </th>
+                                                            <th>
+                                                                <div class="tableCol tableNum">序號</div>
+                                                            </th>
+                                                            <th>
+                                                                <div class="tableCol">理賠案號</div>
+                                                            </th>
+                                                            <th>
+                                                                <div class="tableCol">事故日期</div>
+                                                            </th>
+                                                            <th>
+                                                                <div class="tableCol">事故者ID</div>
+                                                            </th>
+                                                            <th>
+                                                                <div class="tableCol">事故者姓名</div>
+                                                            </th>
+                                                            <th>
+                                                                <div class="tableCol">事故原因</div>
+                                                            </th>
+                                                            <th>
+                                                                <div class="tableCol">就診醫院</div>
+                                                            </th>
+                                                            <th>
+                                                                <div class="tableCol">理賠經辦</div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="tableCol tableCollapseBtn"></div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="tableCol tableNum">1</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="tableCol">A1149702020081301</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="tableCol">1090731</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="tableCol">V121458729</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="tableCol">黃彥樵</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="tableCol">鼻骨閉鎖性骨折</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="tableCol">林口長庚</div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="tableCol"><a href="#bra44_insuranceClaimId1" data-lity>明細</a></div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard_end -->
+                            <!-- page_copyright_start -->
+                            <div class="pageCopyright">
+                                <p>新光人壽保險股份有限公司版權所有© Shin Kong Life Insurance Co., Ltd. All Rights Reserved</p>
+                            </div>
+                            <!-- page_copyright_end -->
+                        </div>
+                    </div>
+                </div>
+                <!-- main_content_end -->
+            </div>
+            <!-- frame_bottom_end -->
+        </div>
+        <!-- popup_start -->
+        <!-- popup767_content(理賠經辦) -->
+        <div class="lity-hide popUpModal popUp767 bra44_insuranceClaim" id="bra44_insuranceClaimId1">
+            <div class="popUpModalTitle">
+                <div class="popUpModalTitleText"><span>理賠經辦</span></div>
+                <div class="popUpModalTitleCloseBtn">
+                    <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">×</button>
+                </div>
+            </div>
+            <div class="popUpModalContent">
+                <div class="braTable">
+                    <table id="bra44_popupTable_insuranceClaimId" class="display cell-border dataTable">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <div class="tableCol">序號</div>
+                                </th>
+                                <th>
+                                    <div class="tableCol">受理單位</div>
+                                </th>
+                                <th>
+                                    <div class="tableCol">經辦</div>
+                                </th>
+                                <th>
+                                    <div class="tableCol">單位電話</div>
+                                </th>
+                                <th>
+                                    <div class="tableCol">分機</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="tableCol">1</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">北區理賠一課</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">吳小美</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">(02)2736-3826 </div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">5273</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="tableCol">2</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">北區理賠一課</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">吳小美</div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">(02)2736-3826 </div>
+                                </td>
+                                <td>
+                                    <div class="tableCol">5273</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="popUpModalBottomCloseBtn">
+                <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">關 閉</button>
+            </div>
+        </div>
+        <!-- popup1170_content(給付金額及細項) -->
+        <div class="lity-hide popUpModal popUp1170 bra44_paymentDetails" id="bra44_paymentDetailsId1">
+            <div class="popUpModalTitle">
+                <div class="popUpModalTitleText"><span>給付金額及細項</span></div>
+                <div class="popUpModalTitleCloseBtn">
+                    <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">×</button>
+                </div>
+            </div>
+            <div class="popUpModalContent">
+                <div class="braTable">
+                    <div class="table-responsive">
+                        <!-- 受益人及給付方式 -->
+                        <div class="bra44_paymentDetailsTableItem">
+                            <div class="popupTableMainTitle"><span>受益人及給付方式</span></div>
+                            <div class="braTable bra44_paymentDetailsTable">
+                                <table>
+                                    <thead>
+                                        <th>受益人ID</th>
+                                        <th>受益人姓名</th>
+                                        <th>給付金額</th>
+                                        <th>付款方式</th>
+                                        <th>銀行名稱</th>
+                                        <th>銀行代碼</th>
+                                        <th>分行名稱</th>
+                                        <th>分行代碼</th>
+                                        <th>帳號</th>
+                                        <th>支票格式</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>V121458729</td>
+                                            <td>黃彥樵</td>
+                                            <td>6,740</td>
+                                            <td>R:匯款</td>
+                                            <td>&nbsp;</td>
+                                            <td>700</td>
+                                            <td>郵政存簿</td>
+                                            <td>0021</td>
+                                            <td>10411234790</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- 給付項目 -->
+                        <div class="bra44_paymentDetailsTableItem">
+                            <div class="popupTableMainTitle"><span>給付項目</span></div>
+                            <div class="braTable bra44_paymentDetailsTable">
+                                <table>
+                                    <thead>
+                                        <th>險種簡稱</th>
+                                        <th>給付項目</th>
+                                        <th>理賠金額</th>
+                                        <th>結案碼</th>
+                                        <th>醫療起迄日/天數</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>意外傷害醫療</td>
+                                            <td>意外門診保險金</td>
+                                            <td>740</td>
+                                            <td>依約給付</td>
+                                            <td>
+                                                <div>1090331~1090331/1</div>
+                                                <div>1090411~1090414/3</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>綜合保障</td>
+                                            <td>手術保險金</td>
+                                            <td>6,000</td>
+                                            <td>依約給付</td>
+                                            <td>
+                                                <div>1090606~1090606/1</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>安心住院</td>
+                                            <td>意外門診保險金</td>
+                                            <td>0</td>
+                                            <td>不給付</td>
+                                            <td>
+                                                <div>&nbsp;</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popUpModalBottomCloseBtn">
+                <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">關 閉</button>
+            </div>
+        </div>
+        <!-- popup_end -->
+</body>
+<!-- jQuery_3.5.1(js_eric)  -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- jQuery-ui_1.12.1(js_eric) -->
+<script src="js/jquery-ui.js"></script>
+<!-- Popper(js_eric) -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap_4.5.2 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- bootstrap-select(js_eric)-->
+<script src="js/bootstrap-select.js"></script>
+<!-- datatable(bootstrap4/DataTables) -->
+<script src="js/jquery.dataTables.js"></script>
+<!-- lity_2.4.1 -->
+<script src="js/lity.js"></script>
+<!-- js -->
+<script src="js/layout.js"></script>
+<!-- include_menu -->
+<script>
+includeMenu();
+</script>
+<!-- include_msg-->
+<script>
+includeMsg();
+</script>
+<!-- include_record-->
+<script>
+includeRecord();
+</script>
+<!-- content_height -->
+<script>
+var winHeight = window.innerHeight;
+console.log(winHeight);
+document.getElementById('msgListContentId').style.height = winHeight - 250 + 'px';
+document.getElementById('recordListContentId').style.height = winHeight - 290 + 'px';
+document.getElementById('mainContentTextId').style.height = winHeight - 120 + 'px';
+document.getElementById('leftAsideId').style.height = winHeight - 60 + 'px';
+</script>
+<!-- table_list -->
+<script>
+function format() {
+    return '<div class="trDetailBlock">' +
+        '<table class="trDetailBlockInner">' +
+        '<thead>' +
+        '<th><div class="trDetailsItemTitle">保單號碼</div></th>' +
+        '<th><div class="trDetailsItemTitle">收件日期</div></th>' +
+        '<th><div class="trDetailsItemTitle">受理日期</div></th>' +
+        '<th><div class="trDetailsItemTitle">補辦狀況</div></th>' +
+        '<th><div class="trDetailsItemTitle">調查狀況</div></th>' +
+        '<th><div class="trDetailsItemTitle">理賠結案碼</div></th>' +
+        '<th><div class="trDetailsItemTitle">結案日期</div></th>' +
+        '<th><div class="trDetailsItemTitle">給付金額及細項</div></th>' +
+        '<th><div class="trDetailsItemTitle">幣別</div></th>' +
+        '</thead>' +
+        '<tbody>' +
+        '<tr>' +
+        '<td><div class="trDetailsItemText">AEHD292500</div></td>' +
+        '<td><div class="trDetailsItemText">1090813</div></td>' +
+        '<td><div class="trDetailsItemText">1090814</div></td>' +
+        '<td><div class="trDetailsItemText">&nbsp;</div></td>' +
+        '<td><div class="trDetailsItemText">&nbsp;</div></td>' +
+        '<td><div class="trDetailsItemText">依約給付</div></td>' +
+        '<td><div class="trDetailsItemText">1090814</div></td>' +
+        '<td><div class="trDetailsItemText"><a href="#bra44_paymentDetailsId1" data-lity>6,740</a></div></td>' +
+        '<td><div class="trDetailsItemText">台幣</div></td>' +
+        '</tr>' +
+        '</tbody>' +
+        '</table>' +
+        '</div>';
+}
+
+$(document).ready(function() {
+    ////////// bra44_insuranceClaimTableId //////////
+    var table_bra44_insuranceClaim = $('#bra44_insuranceClaimTableId').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                orderable: false,
+                width: '35px',
+                className: 'details-control'
+            },
+            {
+                targets: 1,
+                width: '35px',
+                className: 'dt-center',
+                orderable: true
+            },
+            {
+                targets: 2,
+                orderable: false
+
+            },
+            {
+                targets: 3,
+                orderable: false
+            },
+            {
+                targets: 4,
+                orderable: false
+            },
+            {
+                targets: 5,
+                orderable: false
+            },
+            {
+                targets: 6,
+                orderable: false
+            },
+            {
+                targets: 7,
+                orderable: false
+            },
+            {
+                targets: 8,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+    // 主要table_row child //
+    // Add event listener for opening and closing details
+    $('#bra44_insuranceClaimTableId tbody').on('click', 'td.details-control', function() {
+        var tr_rowChild = $(this).closest('tr');
+        var row_rowChild = table_bra44_insuranceClaim.row(tr_rowChild);
+
+        if (row_rowChild.child.isShown()) {
+            // This row is already open - close it
+            row_rowChild.child.hide();
+            tr_rowChild.removeClass('shown');
+        } else {
+            // Open this row
+            row_rowChild.child(format(), 'detailTr').show();
+            tr_rowChild.addClass('shown');
+        }
+    });
+    // popup767_content(理賠經辦) //
+    $('#bra44_popupTable_insuranceClaimId').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        order: [],
+        columnDefs: [{
+                targets: 0,
+                width: '40px',
+                className: 'dt-center',
+                orderable: false
+            },
+            {
+                targets: 1,
+                orderable: false
+            },
+            {
+                targets: 2,
+                orderable: false
+            },
+            {
+                targets: 3,
+                orderable: false
+            },
+            {
+                targets: 4,
+                orderable: false
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+});
+</script>
+<!-- bootstrap tooltip -->
+<script>
+$(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" class="autoOverflow">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CIS-客戶資訊整合系統</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- jQuery-ui(css_eric) -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css">
+    <!-- Bootstrap_4.5.2 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- material_icon(css_eric) -->
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/material-icons-ie.css">
+    <!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <!-- datatable(bootstrap4/DataTables) -->
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+    <!-- bootstrap-select(css_eric)-->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- datepicker_5.1.0 -->
+    <link rel="stylesheet" href="css/jquery.datepick.css">
+    <!-- lity_2.4.1 -->
+    <link rel="stylesheet" href="css/lity.css">
+    <!-- 全域(標籤) -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 框架 -->
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- 頁面 -->
+    <link rel="stylesheet" href="css/page.css">
+    <!-- 保留給rd使用 -->
+    <link rel="stylesheet" href="css/rd.css">
+</head>
+
+<body class="autoOverflow">
+    <div class="frameContainer welcomeContainer">
+        <!-- frame_top_start -->
+        <div class="topContainer">
+            <div class="topInner">
+                <!-- menuBar_start -->
+                <div class="menuBarBlock">
+                    <div class="menuBarInner">
+                        <!-- menuBar_btn -->
+                        <div class="menuBarBtn">
+                            <button onclick='leftMenuToggle()'><span class="menuBarLine"></span></button>
+                        </div>
+                        <!-- menuBar_logo -->
+                        <div class="menuBarLogo">
+                            <a href="#"><img src="img/logo.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- menuBar_end -->
+                <!-- log_start -->
+                <div class="logBlock">
+                    <div class="logInner">
+                        <!-- log_in_time -->
+                        <div class="loginTime">登入時間：109/07/16 (四) 08:22:30</div>
+                        <!-- log_name/time/out -->
+                        <div class="logNameTimeOut">
+                            <div class="loginName">Hi, <span class="userDepartment">客戶服務部</span><span class="userName">高育綸</span><span class="userId">CS0123</span></div>
+                            <div class="logOutCountdown"><span class="countdownHour">29</span><span class="countdownMin">59</span></div>
+                            <div class="logOut"><a href="login.html">登出</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- log_end -->
+            </div>
+        </div>
+        <!-- frame_top_end -->
+        <!-- frame_bottom_start -->
+        <div id="bottomArea" class="bottomContainer">
+            <!-- left_menu_start -->
+            <div id="leftMenu" class="leftAside">
+                <div class="leftAsideInner">
+                    <div class="scrollContent leftAsideContent" id="leftAsideId">
+                        <nav>
+                            <div menu-html='include/menu.html'></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- left_menu_end -->
+            <!-- main_content_start -->
+            <div class="mainContent">
+                <div class="rightAside">
+                    <div class="mainContentText" id="mainContentTextId">
+                        <div class="searchBlock welcomeSearchBlock">
+                            <!-- welcome_logo_search -->
+                            <div class="welcomeLogoSearch">
+                                <div class="welcomeLogo"><img src="img/logo_w.svg" alt=""></div>
+                                <div class="welcomeSearch">
+                                    <div class="welcomeSearchTitle">CIS 客戶資訊整合系統</div>
+                                    <form class="searchForm welcomeSearchForm" action="welcome_num_list.html">
+                                        <div class="searchFormInner">
+                                            <div class="searchFormSelector">
+                                                <select class="selectpicker" name="formSelect" onchange="location = this.value;">
+                                                    <option value="welcome_id.html">身分證號碼</option>
+                                                    <option value="welcome_num.html" selected="">保單號碼</option>
+                                                    <option value="welcome_name_date.html">姓名/生日</option>
+                                                </select>
+                                            </div>
+                                            <div class="searchFormField searchNum">
+                                                <input type="text" placeholder="請輸入保單號碼" value="" class="searchInput">
+                                                <div class="clearSearch">
+                                                    <a href="#" onclick="clearText()">清除搜尋</a>
+                                                </div>
+                                            </div>
+                                            <div class="searchFormBtn">
+                                                <button onclick="location.href='welcome_num_list.html'">搜 尋</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- welcome_note -->
+                            <div class="welcomeNote">
+                                <p>若有系統操作問題，請電洽 IT資訊部專線：1357 / 2468</p>
+                            </div>
+                        </div>
+                        <!-- copyright_start -->
+                        <div class="copyright">
+                            <p>新光人壽保險股份有限公司版權所有© Shin Kong Life Insurance Co., Ltd. All Rights Reserved</p>
+                        </div>
+                        <!-- copyright_end -->
+                    </div>
+                </div>
+            </div>
+            <!-- main_content_end -->
+        </div>
+        <!-- frame_bottom_end -->
+    </div>
+</body>
+<!-- jQuery_3.5.1(js_eric)  -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- jQuery-ui_1.12.1(js_eric) -->
+<script src="js/jquery-ui.js"></script>
+<!-- Popper(js_eric) -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap_4.5.2 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- bootstrap-select(js_eric)-->
+<script src="js/bootstrap-select.js"></script>
+<!-- datatable(bootstrap4/DataTables) -->
+<script src="js/jquery.dataTables.js"></script>
+<!-- lity_2.4.1 -->
+<script src="js/lity.js"></script>
+<!-- js -->
+<script src="js/layout.js"></script>
+<!-- include_menu -->
+<script>
+includeMenu();
+</script>
+<!-- content_height -->
+<script>
+var winHeight = window.innerHeight;
+document.getElementById('leftAsideId').style.height = winHeight - 60 + 'px';
+</script>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CIS-客戶資訊整合系統</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- jQuery-ui(css_eric) -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css">
+    <!-- Bootstrap_4.5.2 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- material_icon(css_eric) -->
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/material-icons-ie.css">
+    <!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <!-- datatable(bootstrap4/DataTables) -->
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+    <!-- bootstrap-select(css_eric)-->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- datepicker_5.1.0 -->
+    <link rel="stylesheet" href="css/jquery.datepick.css">
+    <!-- lity_2.4.1 -->
+    <link rel="stylesheet" href="css/lity.css">
+    <!-- 全域(標籤) -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 框架 -->
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- 頁面 -->
+    <link rel="stylesheet" href="css/page.css">
+    <!-- 保留給rd使用 -->
+    <link rel="stylesheet" href="css/rd.css">
+</head>
+
+<body>
+    <div class="frameContainer">
+        <!-- frame_top_start -->
+        <div class="topContainer">
+            <div class="topInner">
+                <!-- menuBar_start -->
+                <div class="menuBarBlock">
+                    <div class="menuBarInner">
+                        <!-- menuBar_btn -->
+                        <div class="menuBarBtn">
+                            <button onclick='leftMenuToggle()'><span class="menuBarLine"></span></button>
+                        </div>
+                        <!-- menuBar_logo -->
+                        <div class="menuBarLogo">
+                            <a href="#"><img src="img/logo.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- menuBar_end -->
+                <!-- log_start -->
+                <div class="logBlock">
+                    <div class="logInner">
+                        <!-- log_in_time -->
+                        <div class="loginTime">登入時間：109/07/16 (四) 08:22:30</div>
+                        <!-- log_name/time/out -->
+                        <div class="logNameTimeOut">
+                            <div class="loginName">Hi, <span class="userDepartment">客戶服務部</span><span class="userName">高育綸</span><span class="userId">CS0123</span></div>
+                            <div class="logOutCountdown"><span class="countdownHour">29</span><span class="countdownMin">59</span></div>
+                            <div class="logOut"><a href="login.html">登出</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- log_end -->
+            </div>
+        </div>
+        <!-- frame_top_end -->
+        <!-- frame_bottom_start -->
+        <div id="bottomArea" class="bottomContainer jsBottomLeftPadding">
+            <!-- left_menu_start -->
+            <div id="leftMenu" class="leftAside jsLmWidth">
+                <div class="leftAsideInner">
+                    <div class="scrollContent leftAsideContent jsLmWidth" id="leftAsideId">
+                        <nav>
+                            <div menu-html='include/menu.html'></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- left_menu_end -->
+            <!-- main_content_start -->
+            <div class="mainContent">
+                <!-- user_info_start -->
+                <div class="userInfo">
+                    <div class="userInfoInner">
+                        <div class="userInfoContent">
+                            <div class="userInfoItem userInfoBtn maleBtn">
+                                <a href="#">廖家祥</a>
+                            </div>
+                            <div class="userInfoItem userInfoIdNum">F123456789</div>
+                            <div class="userInfoItem userInfoBirthday">
+                                <span>74</span>
+                                <span>03</span>
+                                <span>14</span>
+                            </div>
+                        </div>
+                        <div class="userInfoSearch" id="userInfoSearchId">
+                            <form class="userInfoSearchForm">
+                                <div class="userInfoSearchFormInner">
+                                    <div class="userInfoSearchFormSelector">
+                                        <select class="selectpicker" name="formSelect" onchange="location = this.value;">
+                                            <option value="frame_search_id.html" selected="">身分證號碼</option>
+                                            <option value="frame_search_num.html">保單號碼</option>
+                                            <option value="frame_searc_name_date.html">姓名/生日</option>
+                                        </select>
+                                    </div>
+                                    <div class="userInfoSearchFormField">
+                                        <div class="userInfoSearchFormFieldInner">
+                                            <div class="userInfoSearchInput">
+                                                <input type="text" placeholder="請輸入身分證號碼" value="" class="searchInput">
+                                            </div>
+                                            <div class="userInfoClear">
+                                                <a href="#" onclick="clearText()">清除</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="userInfoSearchFormBtn">
+                                        <button>搜 尋</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="userInfoSearchToggoleBtn">
+                            <button onclick="userInfoSearchToggle()"><span class="material-icons">search</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- user_info_end -->
+                <div class="rightAside">
+                    <!-- right_menu_start -->
+                    <div class="rightAsideContent rightAsideMenu jsRmWidth" id="rightMenu">
+                        <div class="rightAsideMenuInner">
+                            <div class="rightAsideBtn">
+                                <button onclick="rightMenuToggle()">
+                                    <!-- <span class="material-icons">menu_open</span> --></button>
+                            </div>
+                            <div class="rightAsideBtnList jsRmContent" id="rightAsideId">
+                                <div class="rmNavTabs">
+                                    <ul class="nav nav-tabs">
+                                        <li><a data-toggle="tab" href="#rmMsg" class="active">重要通知</a></li>
+                                        <li><a data-toggle="tab" href="#rmRecord">近三個月接觸紀錄</a></li>
+                                    </ul>
+                                </div>
+                                <div class="rmNavTabsContent">
+                                    <div class="tab-content">
+                                        <div id="rmMsg" class="tab-pane in active msgList">
+                                            <div class="msgListInner">
+                                                <div class="msgListHeader">
+                                                    <div class="msgListHeaderInner">
+                                                        <div class="msgListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                        <div class="msgListInfo">共計 <span>24</span> 筆通知</div>
+                                                    </div>
+                                                </div>
+                                                <div class="scrollContent msgListContent" id="msgListContentId">
+                                                    <div msg-html='include/msg.html'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="rmRecord" class="tab-pane fade recordList">
+                                            <div class="recordListInner">
+                                                <div class="recordListHeader">
+                                                    <div class="recordListHeaderInner">
+                                                        <div class="recordListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="recordListContent">
+                                                    <div class="scrollContent recordListContentInner" id="recordListContentId">
+                                                        <div record-html='include/record.html'></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right_menu_end -->
+                    <div class="scrollContent mainContentText jsBottomRightMargin" id="mainContentTextId">
+                        <div class="mainContentTextInner">
+                            <!-- breadcrumb_start -->
+                            <div class="breadcrumbBlock">
+                                <div class="breadcrumbList">
+                                    <ul>
+                                        <li class="breadcrumbTitle">目前位置</li>
+                                        <li>客戶全視圖</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- breadcrumb_end -->
+                            <!-- dashboard_start -->
+                            <div class="dashboardBlock">
+                                <div class="taskItem">
+                                    <div class="taskTitle">保全收件紀錄</div>
+                                    <div class="taskCard">
+                                        <!-- qbe_start -->
+                                        <div class="taskQbe">
+                                            <div class="qbeList">
+                                                <div class="qbeListItem qbeListTitle">請選擇查詢條件</div>
+                                                <div class="qbeListItem qbeSelector">
+                                                    <select class="selectpicker" name="formSelect">
+                                                        <option value="" selected="">投保身份(全部)</option>
+                                                        <option value="">要保人</option>
+                                                        <option value="">被保人</option>
+                                                    </select>
+                                                </div>
+                                                <div class="qbeListItem qbeSelector">
+                                                    <select class="selectpicker" name="formSelect">
+                                                        <option value="" selected="">幣別(全部)</option>
+                                                        <option value="">台幣</option>
+                                                        <option value="">外幣</option>
+                                                    </select>
+                                                </div>
+                                                <div class="qbeListItem qbeDatepicker">
+                                                    <div class="qbeDatepickerInner">
+                                                        <div class="qbeDatepickerTitle">作業日</div>
+                                                        <div class="qbeDatepickerUnit"><input type="text" placeholder="查詢日期" value="" class="searchDatepicker searchInput"></div>
+                                                        <div class="qbeDatepickerUnit">～</div>
+                                                        <div class="qbeDatepickerUnit"><input type="text" placeholder="查詢日期" value="" class="searchDatepicker searchInput"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="qbeListItem qbeSearch"><a href="#"><span class="material-icons">search</span></a></div>
+                                            </div>
+                                            <div class="clearfix clearMargin"></div>
+                                        </div>
+                                        <!-- qbe_end -->
+                                    </div>
+                                </div>
+                                <div class="taskItem">
+                                    <div class="taskTitle">基本資料</div>
+                                    <div class="taskCard">
+                                        <!-- open/close_toggle_start -->
+                                        <div class="openCloseToggle">
+                                            <div class="switch">
+                                                <div class="switchInner">
+                                                    <div class="switchOption off">關閉</div>
+                                                    <div class="switchOption on">展開</div>
+                                                </div>
+                                                <input class='condition' type="checkbox" value="false">
+                                            </div>
+                                        </div>
+                                        <!-- open/close_toggle_end -->
+                                        <!-- selectBtn_start -->
+                                        <div class="selectBtn">
+                                            <ul>
+                                                <li class="all"><button>全選</button></li>
+                                                <li class="cancel"><button>取消全選</button></li>
+                                            </ul>
+                                        </div>
+                                        <!-- selectBtn_end -->
+                                        <!-- counter_start -->
+                                        <div class="counter">
+                                            <div class="counterNote">
+                                                <span>保單帳戶價值計算為前兩個工作日</span>
+                                            </div>
+                                            <div class="counterInner">
+                                                <div class="counterItem">
+                                                    <div class="counterItemInner">
+                                                        <div class="counterTitle twdTitle">台幣</div>
+                                                        <div class="counterContent">
+                                                            <div class="counterTotal">總計</div>
+                                                            <div class="counterPrice">0</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="counterItem">
+                                                    <div class="counterItemInner">
+                                                        <div class="counterTitle usdTitle">美元</div>
+                                                        <div class="counterContent">
+                                                            <div class="counterTotal">總計</div>
+                                                            <div class="counterPrice">0</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="counterItem">
+                                                    <div class="counterItemInner">
+                                                        <div class="counterTitle audTitle">澳幣</div>
+                                                        <div class="counterContent">
+                                                            <div class="counterTotal">總計</div>
+                                                            <div class="counterPrice">2,000</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="counterItem">
+                                                    <div class="counterItemInner">
+                                                        <div class="counterTitle cnyTitle">人民幣</div>
+                                                        <div class="counterContent">
+                                                            <div class="counterTotal">總計</div>
+                                                            <div class="counterPrice">0</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="counterItem">
+                                                    <div class="counterItemInner">
+                                                        <div class="counterTitle eurTitle">歐元</div>
+                                                        <div class="counterContent">
+                                                            <div class="counterTotal">總計</div>
+                                                            <div class="counterPrice">0</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- counter_end -->
+                                        <br>
+                                        <br>
+                                        <!-- counter_multiple_start -->
+                                        <div class="counterMultiple">
+                                            <div class="counterMultipleNote">
+                                                <span>保單價值計算日：00801</span>
+                                            </div>
+                                            <div class="counterMultipleInner">
+                                                <div class="counterMultipleItem">
+                                                    <div class="counterMultipleItemInner">
+                                                        <div class="counterMultipleTitle twdTitle">台幣</div>
+                                                        <div class="counterMultipleContent">
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">最高可借金額合計(1)</div>
+                                                                <div class="counterMultiplePrice">400,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">已借本金合計(2)</div>
+                                                                <div class="counterMultiplePrice">20,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">利息合計(3)</div>
+                                                                <div class="counterMultiplePrice">2,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">尚可借餘額合計</div>
+                                                                <div class="counterMultiplePrice">378,000</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="counterMultipleItem">
+                                                    <div class="counterMultipleItemInner">
+                                                        <div class="counterMultipleTitle usdTitle">美元</div>
+                                                        <div class="counterMultipleContent">
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">最高可借金額合計(1)</div>
+                                                                <div class="counterMultiplePrice">0</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">已借本金合計(2)</div>
+                                                                <div class="counterMultiplePrice">0</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">利息合計(3)</div>
+                                                                <div class="counterMultiplePrice">0</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">尚可借餘額合計</div>
+                                                                <div class="counterMultiplePrice">0</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="counterMultipleItem">
+                                                    <div class="counterMultipleItemInner">
+                                                        <div class="counterMultipleTitle audTitle">澳幣</div>
+                                                        <div class="counterMultipleContent">
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">最高可借金額合計(1)</div>
+                                                                <div class="counterMultiplePrice">400,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">已借本金合計(2)</div>
+                                                                <div class="counterMultiplePrice">20,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">利息合計(3)</div>
+                                                                <div class="counterMultiplePrice">2,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">尚可借餘額合計</div>
+                                                                <div class="counterMultiplePrice">378,000</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="counterMultipleItem">
+                                                    <div class="counterMultipleItemInner">
+                                                        <div class="counterMultipleTitle cnyTitle">人民幣</div>
+                                                        <div class="counterMultipleContent">
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">最高可借金額合計(1)</div>
+                                                                <div class="counterMultiplePrice">400,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">已借本金合計(2)</div>
+                                                                <div class="counterMultiplePrice">20,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">利息合計(3)</div>
+                                                                <div class="counterMultiplePrice">2,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">尚可借餘額合計</div>
+                                                                <div class="counterMultiplePrice">378,000</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="counterMultipleItem">
+                                                    <div class="counterMultipleItemInner">
+                                                        <div class="counterMultipleTitle eurTitle">歐元</div>
+                                                        <div class="counterMultipleContent">
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">最高可借金額合計(1)</div>
+                                                                <div class="counterMultiplePrice">400,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">已借本金合計(2)</div>
+                                                                <div class="counterMultiplePrice">20,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">利息合計(3)</div>
+                                                                <div class="counterMultiplePrice">2,000</div>
+                                                            </div>
+                                                            <div class="counterMultipleContentUnit">
+                                                                <div class="counterMultipleTotal">尚可借餘額合計</div>
+                                                                <div class="counterMultiplePrice">378,000</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- counter_multiple_end -->
+                                        <br>
+                                        <p>text
+                                            <br>text
+                                            <br>text
+                                            <br>text
+                                            <br>text
+                                            <br>text
+                                            <br>text
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="taskItem">
+                                    <div class="taskTitle">基本資料</div>
+                                    <div class="taskCard">
+                                        <p>text
+                                            <br>text
+                                            <br>text
+                                            <br>text
+                                            <br>text
+                                            <br>text
+                                            <br>text
+                                        </p>
+                                        <!-- popup_start -->
+                                        <!-- popup767 -->
+                                        <span><a href="#popup767_htmlName01" data-lity>767 popup /</a></span>
+                                        <!-- popup991 -->
+                                        <span><a href="#popup991_htmlName01" data-lity>991 popup /</a></span>
+                                        <!-- popup1170 -->
+                                        <span><a href="#popup1170_htmlName01" data-lity>1170 popup /</a></span>
+                                        <!-- popup85per-->
+                                        <span><a href="#popUp85per_htmlName01" data-lity>85% popup</a></span>
+                                        <!-- popup_end -->
+                                    </div>
+                                </div>
+                                <div class="taskItem">
+                                    <div class="taskTitle">保單資料</div>
+                                    <div class="taskCard">
+                                        <!-- task_tabs_start -->
+                                        <div class="taskTabs">
+                                            <div class="taskTabsNav">
+                                                <ul class="nav nav-tabs">
+                                                    <li><a data-toggle="tab" href="#taskTab1" class="active">個險</a></li>
+                                                    <li><a data-toggle="tab" href="#taskTab2">團險</a></li>
+                                                    <li><a data-toggle="tab" href="#taskTab3">團險2</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-content taskTabsContent">
+                                                <div id="taskTab1" class="tab-pane in active">
+                                                    個險
+                                                </div>
+                                                <div id="taskTab2" class="tab-pane fade">
+                                                    團險
+                                                </div>
+                                                <div id="taskTab3" class="tab-pane fade">
+                                                    團險2
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- task_tabs_end -->
+                                        <!-- pagination_start -->
+                                        <div class="taskPagination">
+                                            <ul>
+                                                <li><a href="#"><span class="material-icons">first_page</span></a></li>
+                                                <li><a href="#"><span class="material-icons">chevron_left</span></a></li>
+                                                <li><a href="#" class="pageActive">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li>...</li>
+                                                <li><a href="#"><span class="material-icons">chevron_right</span></a></li>
+                                                <li><a href="#">10</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- pagination_end -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard_end -->
+                            <!-- page_copyright_start -->
+                            <div class="pageCopyright">
+                                <p>新光人壽保險股份有限公司版權所有© Shin Kong Life Insurance Co., Ltd. All Rights Reserved</p>
+                            </div>
+                            <!-- page_copyright_end -->
+                        </div>
+                        <!-- scroll_top_start -->
+                        <div class="scrollTop" id="scrollTopId">
+                            <a href="#" class="scrollTopBtn"><span class="material-icons">navigation</span></a>
+                        </div>
+                        <!-- scroll_top_end -->
+                    </div>
+                </div>
+            </div>
+            <!-- main_content_end -->
+        </div>
+        <!-- frame_bottom_end -->
+    </div>
+    <!-- popup_start -->
+    <!-- popup767_content -->
+    <div class="lity-hide popUpModal popUp767" id="popup767_htmlName01">
+        <div class="popUpModalTitle">
+            <div class="popUpModalTitleText"><span>住院日額明細</span></div>
+            <div class="popUpModalTitleCloseBtn">
+                <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">×</button>
+            </div>
+        </div>
+        <div class="popUpModalContent">住院日額明細＿內容</div>
+        <div class="popUpModalBottomCloseBtn">
+            <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">關 閉</button>
+        </div>
+    </div>
+    <!-- popup991_content -->
+    <div class="lity-hide popUpModal popUp991" id="popup991_htmlName01">
+        <div class="popUpModalTitle">
+            <div class="popUpModalTitleText"><span>住院日額明細</span></div>
+            <div class="popUpModalTitleCloseBtn">
+                <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">×</button>
+            </div>
+        </div>
+        <div class="popUpModalContent">住院日額明細＿內容</div>
+        <div class="popUpModalBottomCloseBtn">
+            <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">關 閉</button>
+        </div>
+    </div>
+    <!-- popup1170_content -->
+    <div class="lity-hide popUpModal popUp1170" id="popup1170_htmlName01">
+        <div class="popUpModalTitle">
+            <div class="popUpModalTitleText"><span>住院日額明細</span></div>
+            <div class="popUpModalTitleCloseBtn">
+                <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">×</button>
+            </div>
+        </div>
+        <div class="popUpModalContent">住院日額明細＿內容</div>
+        <div class="popUpModalBottomCloseBtn">
+            <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">關 閉</button>
+        </div>
+    </div>
+    <!-- popup85per-->
+    <div class="lity-hide popUpModal popUp85per" id="popUp85per_htmlName01">
+        <div class="popUpModalTitle">
+            <div class="popUpModalTitleText"><span>住院日額明細</span></div>
+            <div class="popUpModalTitleCloseBtn">
+                <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">×</button>
+            </div>
+        </div>
+        <div class="popUpModalContent">住院日額明細＿內容</div>
+        <div class="popUpModalBottomCloseBtn">
+            <button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close="">關 閉</button>
+        </div>
+    </div>
+    <!-- popup_end -->
+</body>
+<!-- jQuery_3.5.1(js_eric)  -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- jQuery-ui_1.12.1(js_eric) -->
+<script src="js/jquery-ui.js"></script>
+<!-- Popper(js_eric) -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap_4.5.2 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- bootstrap-select(js_eric)-->
+<script src="js/bootstrap-select.js"></script>
+<!-- datatable(bootstrap4/DataTables) -->
+<script src="js/jquery.dataTables.js"></script>
+<!-- lity_2.4.1 -->
+<script src="js/lity.js"></script>
+<!-- js -->
+<script src="js/layout.js"></script>
+<!-- include_menu -->
+<script>
+includeMenu();
+</script>
+<!-- include_msg-->
+<script>
+includeMsg();
+</script>
+<!-- include_record-->
+<script>
+includeRecord();
+</script>
+<!-- content_height -->
+<script>
+var winHeight = window.innerHeight;
+console.log(winHeight);
+document.getElementById('msgListContentId').style.height = winHeight - 250 + 'px';
+document.getElementById('recordListContentId').style.height = winHeight - 290 + 'px';
+document.getElementById('mainContentTextId').style.height = winHeight - 120 + 'px';
+document.getElementById('leftAsideId').style.height = winHeight - 60 + 'px';
+</script>
+
+</html>

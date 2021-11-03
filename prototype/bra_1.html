@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CIS-客戶資訊整合系統</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- jQuery-ui(css_eric) -->
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery-ui.theme.css">
+    <!-- Bootstrap_4.5.2 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- material_icon(css_eric) -->
+    <link rel="stylesheet" href="css/material-icons.css">
+    <link rel="stylesheet" href="css/material-icons-ie.css">
+    <!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <!-- datatable(bootstrap4/DataTables) -->
+    <link rel="stylesheet" href="css/jquery.dataTables.css">
+    <!-- bootstrap-select(css_eric)-->
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <!-- datepicker_5.1.0 -->
+    <link rel="stylesheet" href="css/jquery.datepick.css">
+    <!-- lity_2.4.1 -->
+    <link rel="stylesheet" href="css/lity.css">
+    <!-- 全域(標籤) -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- 框架 -->
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- 頁面 -->
+    <link rel="stylesheet" href="css/page.css">
+    <!-- 保留給rd使用 -->
+    <link rel="stylesheet" href="css/rd.css">
+</head>
+
+<body>
+    <div class="frameContainer bra1Container">
+        <!-- frame_top_start -->
+        <div class="topContainer">
+            <div class="topInner">
+                <!-- menuBar_start -->
+                <div class="menuBarBlock">
+                    <div class="menuBarInner">
+                        <!-- menuBar_btn -->
+                        <div class="menuBarBtn">
+                            <button onclick='leftMenuToggle()'><span class="menuBarLine"></span></button>
+                        </div>
+                        <!-- menuBar_logo -->
+                        <div class="menuBarLogo">
+                            <a href="#"><img src="img/logo.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- menuBar_end -->
+                <!-- log_start -->
+                <div class="logBlock">
+                    <div class="logInner">
+                        <!-- log_in_time -->
+                        <div class="loginTime">登入時間：109/07/16 (四) 08:22:30</div>
+                        <!-- log_name/time/out -->
+                        <div class="logNameTimeOut">
+                            <div class="loginName">Hi, <span class="userDepartment">客戶服務部</span><span class="userName">高育綸</span><span class="userId">CS0123</span></div>
+                            <div class="logOutCountdown"><span class="countdownHour">29</span><span class="countdownMin">59</span></div>
+                            <div class="logOut"><a href="login.html">登出</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- log_end -->
+            </div>
+        </div>
+        <!-- frame_top_end -->
+        <!-- frame_bottom_start -->
+        <div id="bottomArea" class="bottomContainer jsBottomLeftPadding">
+            <!-- left_menu_start -->
+            <div id="leftMenu" class="leftAside jsLmWidth">
+                <div class="leftAsideInner">
+                    <div class="scrollContent leftAsideContent jsLmWidth" id="leftAsideId">
+                        <nav>
+                            <div menu-html='include/menu.html'></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- left_menu_end -->
+            <!-- main_content_start -->
+            <div class="mainContent">
+                <!-- user_info_start -->
+                <div class="userInfo">
+                    <div class="userInfoInner">
+                        <div class="userInfoContent">
+                            <div class="userInfoItem userInfoBtn maleBtn">
+                                <a href="bra_1.html">廖家祥</a>
+                            </div>
+                            <div class="userInfoItem userInfoIdNum">F123456789</div>
+                            <div class="userInfoItem userInfoBirthday">
+                                <span>74</span>
+                                <span>03</span>
+                                <span>14</span>
+                            </div>
+                        </div>
+                        <div class="userInfoSearch" id="userInfoSearchId">
+                            <form class="userInfoSearchForm">
+                                <div class="userInfoSearchFormInner">
+                                    <div class="userInfoSearchFormSelector">
+                                        <select class="selectpicker" name="formSelect" onchange="location = this.value;">
+                                            <option value="frame_search_id.html" selected="">身分證號碼</option>
+                                            <option value="frame_search_num.html">保單號碼</option>
+                                            <option value="frame_searc_name_date.html">姓名/生日</option>
+                                        </select>
+                                    </div>
+                                    <div class="userInfoSearchFormField">
+                                        <div class="userInfoSearchFormFieldInner">
+                                            <div class="userInfoSearchInput">
+                                                <input type="text" placeholder="請輸入身分證號碼" value="" class="searchInput">
+                                            </div>
+                                            <div class="userInfoClear">
+                                                <a href="#" onclick="clearText()">清除</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="userInfoSearchFormBtn">
+                                        <button>搜 尋</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="userInfoSearchToggoleBtn">
+                            <button onclick="userInfoSearchToggle()"><span class="material-icons">search</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- user_info_end -->
+                <div class="rightAside">
+                    <!-- right_menu_start -->
+                    <div class="rightAsideContent rightAsideMenu jsRmWidth" id="rightMenu">
+                        <div class="rightAsideMenuInner">
+                            <div class="rightAsideBtn">
+                                <button onclick="rightMenuToggle()">
+                                    <!-- <span class="material-icons">menu_open</span> --></button>
+                            </div>
+                            <div class="rightAsideBtnList jsRmContent" id="rightAsideId">
+                                <div class="rmNavTabs">
+                                    <ul class="nav nav-tabs">
+                                        <li><a data-toggle="tab" href="#rmMsg" class="active">重要通知</a></li>
+                                        <li><a data-toggle="tab" href="#rmRecord">近三個月接觸紀錄</a></li>
+                                    </ul>
+                                </div>
+                                <div class="rmNavTabsContent">
+                                    <div class="tab-content">
+                                        <div id="rmMsg" class="tab-pane in active msgList">
+                                            <div class="msgListInner">
+                                                <div class="msgListHeader">
+                                                    <div class="msgListHeaderInner">
+                                                        <div class="msgListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                        <div class="msgListInfo">共計 <span>24</span> 筆通知</div>
+                                                    </div>
+                                                </div>
+                                                <div class="scrollContent msgListContent" id="msgListContentId">
+                                                    <div msg-html='include/msg.html'></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="rmRecord" class="tab-pane fade recordList">
+                                            <div class="recordListInner">
+                                                <div class="recordListHeader">
+                                                    <div class="recordListHeaderInner">
+                                                        <div class="recordListRefreshBtn">
+                                                            <button><span class="material-icons">refresh</span> 重整</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="recordListContent">
+                                                    <div class="scrollContent recordListContentInner" id="recordListContentId">
+                                                        <div record-html='include/record.html'></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right_menu_end -->
+                    <div class="scrollContent mainContentText jsBottomRightMargin" id="mainContentTextId">
+                        <div class="mainContentTextInner">
+                            <!-- breadcrumb_start -->
+                            <div class="breadcrumbBlock">
+                                <div class="breadcrumbList">
+                                    <ul>
+                                        <li class="breadcrumbTitle">目前位置</li>
+                                        <li>客戶全視圖 (首頁)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- breadcrumb_end -->
+                            <!-- dashboard_start -->
+                            <div class="dashboardBlock bra1DashboardBlock">
+                                <div class="taskItem">
+                                    <!-- 基本資料 -->
+                                    <div class="bra1_BasicInfo">
+                                        <div class="bra1_basicInfoTitle">
+                                            <div class="taskTitle">基本資料</div>
+                                        </div>
+                                        <div class="bra1_basicInfoSwitch">
+                                            <!-- open/close_toggle_start -->
+                                            <div class="openCloseToggle ">
+                                                <div class="switch">
+                                                    <div class="switchInner">
+                                                        <div class="switchOption off">收合</div>
+                                                        <div class="switchOption on">展開</div>
+                                                    </div>
+                                                    <input class='condition' type="checkbox" value="false">
+                                                </div>
+                                            </div>
+                                            <!-- open/close_toggle_end -->
+                                        </div>
+                                    </div>
+                                    <div class="taskCard bra1_basicInfoCard">
+                                        <div class="bra1_basicInfoCardInner">
+                                            <!-- 基本資訊 -->
+                                            <div class="bra1_basicInfo">
+                                                <div class="basicInfoImgNameBirth">
+                                                    <div class="basicInfoImgNameBirthInner">
+                                                        <div class="basicInfoImg"><img src="img/p_male.svg" alt=""></div>
+                                                        <div class="basicInfoNameBirth">
+                                                            <div class="basicInfoName">
+                                                                <div class="basicInfoStar">
+                                                                    <ul>
+                                                                        <li><span class="material-icons">star</span></li>
+                                                                        <li><span class="material-icons">star</span></li>
+                                                                        <li><span class="material-icons">star</span></li>
+                                                                        <li><span class="material-icons">star</span></li>
+                                                                        <li><span class="material-icons">star</span></li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="basicInfoNameText">廖家祥</div>
+                                                            </div>
+                                                            <div class="basicInfoBirth">
+                                                                <div class="basicInfoBirthDate">
+                                                                    <span>074</span>
+                                                                    <span>03</span>
+                                                                    <span>14</span>
+                                                                </div>
+                                                                <div class="basicInfoZodiac">
+                                                                    <span>雙魚座</span>
+                                                                    <span>牛</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="basicInfoIdAgeAgent">
+                                                    <div class="basicInfoIdAgeAgentItem basicInfoId">
+                                                        <div class="basicInfoIdInner">
+                                                            <div class="basicInfoIdTitle">身分證字號</div>
+                                                            <div class="basicInfoIdContent"><span>F123456789</span><a href="#">審核</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="basicInfoIdAgeAgentItem basicInfoAge">
+                                                        <div class="basicInfoAgeInner">
+                                                            <div class="basicInfoAgeTitle">實際年齡</div>
+                                                            <div class="basicInfoAgeContent"><span>35</span>歲</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="basicInfoIdAgeAgentItem basicInfoAgent">
+                                                        <div class="basicInfoAgentTitle">法定代理人/監護人</div>
+                                                        <div class="basicInfoAgentContent">
+                                                            <span>廖正和</span>
+                                                            <span>吳貴美</span>
+                                                            <span class="noAgent">--</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 聯絡資訊 -->
+                                            <div class="bra1_contactInfo">
+                                                <div class="bra1_Address">
+                                                    <div class="residenceAddress">
+                                                        <div class="bra1_AddressTitle residenceAddressTitle">戶籍地址</div>
+                                                        <div class="bra1_AddressText residenceAddressContent">100 台北市中正區忠孝西路一段66號</div>
+                                                    </div>
+                                                    <div class="currentAddress">
+                                                        <div class="bra1_AddressTitle currentAddressTitle">住所 (收費地址)</div>
+                                                        <div class="bra1_AddressText currentAddressContent">100 台北市中正區忠孝西路一段66號</div>
+                                                    </div>
+                                                </div>
+                                                <div class="bra1_phone">
+                                                    <div class="row">
+                                                        <div class="col col-6">
+                                                            <div class="mobile midProve">
+                                                                <div class="bra1_phoneTitle mobileTitle">手機號碼</div>
+                                                                <div class="bra1_phoneNum mobileNum">0987654321</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-6">
+                                                            <div class="home">
+                                                                <div class="bra1_phoneTitle homeTitle">住家電話(H)</div>
+                                                                <div class="bra1_phoneNum homeNum">02-12345678</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-12">
+                                                            <div class="office">
+                                                                <div class="bra1_phoneTitle officeTitle">辦公室電話(O)</div>
+                                                                <div class="bra1_phoneNum officeNum">02-22461357<span class="tableExtension">2468</span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bra1_mail">
+                                                    <div class="bra1_mailTitle">E-mail</div>
+                                                    <div class="bra1_mailContent">chiashow@gmail.com</div>
+                                                </div>
+                                            </div>
+                                            <!-- 其他資訊 -->
+                                            <div class="bra1_secInfo">
+                                                <div class="bra1_career">
+                                                    <div class="bra1_secInfoTitle bra1_careerTitle">職業</div>
+                                                    <div class="bra1_secInfoContent bra1_careerContent">
+                                                        <div class="bra1_careerContentInner">
+                                                            <div class="bra1_careerLabel"><span>第一類</span></div>
+                                                            <div class="bra1_careerText">00010010 - 內勤人員、內勤工作人員</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bra1_member">
+                                                    <div class="bra1_secInfoTitle bra1_memberTitle">會員</div>
+                                                    <div class="bra1_secInfoContent bra1_memberContent">
+                                                        <div class="bra1_memberContentRow">
+                                                            <div class="bra1_memberContentCol">
+                                                                <div class="bra1_memberContentColInner">
+                                                                    <div class="bra1_memberContentColTitle">會員專區等級</div>
+                                                                    <div class="bra1_memberContentColText">進階</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="bra1_memberContentCol">
+                                                                <div class="bra1_memberContentColInner">
+                                                                    <div class="bra1_memberContentColTitle">網路投保會員</div>
+                                                                    <div class="bra1_memberContentColText">Y</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bra1_memberContentRow">
+                                                            <div class="bra1_memberContentCol">
+                                                                <div class="bra1_memberContentColInner">
+                                                                    <div class="bra1_memberContentColTitle">樂Call保會員</div>
+                                                                    <div class="bra1_memberContentColText">Y</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="bra1_memberContentCol">
+                                                                <div class="bra1_memberContentColInner">
+                                                                    <div class="bra1_memberContentColTitle">新產不便險會員</div>
+                                                                    <div class="bra1_memberContentColText">Y</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bra1_memberContentRow">
+                                                            <div class="bra1_memberContentCol">
+                                                                <div class="bra1_memberContentColInner">
+                                                                    <div class="bra1_memberContentColTitle">LINE綁定</div>
+                                                                    <div class="bra1_memberContentColText">Y</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bra1_others">
+                                                    <div class="bra1_secInfoTitle bra1_othersTitle">其他</div>
+                                                    <div class="bra1_secInfoContent bra1_othersContent">
+                                                        <div class="bra1_othersContentCol">
+                                                            <div class="bra1_othersContentColInner">
+                                                                <div class="bra1_othersContentColTitle">現行繳費管道</div>
+                                                                <div class="bra1_othersContentColText">
+                                                                    <span>銀行轉帳</span>
+                                                                    <span>信用卡扣款</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="bra1_othersContentCol">
+                                                            <div class="bra1_othersContentColInner">
+                                                                <div class="bra1_othersContentColTitle">現行繳法別</div>
+                                                                <div class="bra1_othersContentColText">
+                                                                    <span>月</span>
+                                                                    <span>年</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="bra1_secInfoNote">取自最新投保保單</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- 保單資料 -->
+                                    <div class="taskTitle">保單資料</div>
+                                    <div class="taskCard">
+                                        <!-- task_tabs_start -->
+                                        <div class="taskTabs">
+                                            <div class="taskTabsNav bra1_taskTabsNav">
+                                                <ul class="nav nav-tabs">
+                                                    <li><a data-toggle="tab" href="#bra1_taskTab1" class="active">個險</a></li>
+                                                    <li><a data-toggle="tab" href="#bra1_taskTab2">團險</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-content taskTabsContent">
+                                                <div id="bra1_taskTab1" class="tab-pane in active">
+                                                    <div class="bra1_poStatus">
+                                                        <div class="bra1_poStatusItem bra1_statusTotal">
+                                                            <a href="#" class="statusActive">
+                                                                <span class="bra1_poStatusTitle"><span>主約保單總數</span></span>
+                                                                <span class="bra1_poStatusNum">52<span>筆</span></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bra1_poStatusItem bra1_statusVaild">
+                                                            <a href="#">
+                                                                <span class="bra1_poStatusTitle"><span>主約有效</span></span>
+                                                                <span class="bra1_poStatusNum">42<span>筆</span></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bra1_poStatusItem bra1_statusSuspended">
+                                                            <a href="#">
+                                                                <span class="bra1_poStatusTitle"><span>主約停效</span></span>
+                                                                <span class="bra1_poStatusNum">07<span>筆</span></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bra1_poStatusItem bra1_statusLapse">
+                                                            <a href="#">
+                                                                <span class="bra1_poStatusTitle"><span>主約無效</span></span>
+                                                                <span class="bra1_poStatusNum">03<span>筆</span></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="braTable bra1_poTable bra1_personalPoTable">
+                                                        <div class="table-responsive">
+                                                            <table id="bra1_personalTableId" class="display cell-border dataTable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <div class="tableCol tableNum">序號</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">保單號碼</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">投保始期</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">險種簡稱</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">主約保障狀況</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">繳費年期</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">要保人</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">被保人</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">附約</div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">1</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">1091234567</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>07</span><span>19</span></div>
+                                                                        </td>
+                                                                        <td>永保安康</td>
+                                                                        <td>
+                                                                            <div class="tableCol">減額繳清</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">3年</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖家祥</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖正和</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">Y</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">2</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">1090123456</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>07</span><span>18</span></div>
+                                                                        </td>
+                                                                        <td>長期看護</td>
+                                                                        <td>
+                                                                            <div class="tableCol">減額繳清</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">2年</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖家祥</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖正和</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">Y(含停效)</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">3</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">1096547899</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>06</span><span>19</span></div>
+                                                                        </td>
+                                                                        <td>活力平安傷害 A方案</td>
+                                                                        <td>
+                                                                            <div class="tableCol">復效</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1年</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖家祥</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖正和</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">N</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">4</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">1097896541</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>06</span><span>14</span></div>
+                                                                        </td>
+                                                                        <td>新美麗人生</td>
+                                                                        <td>
+                                                                            <div class="tableCol">失效</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">5年</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖家祥</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖正和</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">Y</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">5</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">1095698742</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>03</span><span>07</span></div>
+                                                                        </td>
+                                                                        <td>美年加利</td>
+                                                                        <td>
+                                                                            <div class="tableCol">減額繳清</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1年</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖家祥</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖正和</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">Y(含停效)</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">6</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">1090012345</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>109</span><span>02</span><span>01</span></div>
+                                                                        </td>
+                                                                        <td>健康久久</td>
+                                                                        <td>
+                                                                            <div class="tableCol">停效</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">3年</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖家祥</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖正和</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">Ｎ</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">7</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">1099963963</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>108</span><span>11</span><span>10</span></div>
+                                                                        </td>
+                                                                        <td>長扶久久B型</td>
+                                                                        <td>
+                                                                            <div class="tableCol">解約</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">2年</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖家祥</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖正和</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">Ｙ</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">8</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">1095896325</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>101</span><span>05</span><span>18</span></div>
+                                                                        </td>
+                                                                        <td>得利多多</td>
+                                                                        <td>
+                                                                            <div class="tableCol">減額繳清</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">5年</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖家祥</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖正和</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">Ｙ(含停效)</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">9</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">1099874563</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>099</span><span>08</span><span>27</span></div>
+                                                                        </td>
+                                                                        <td>美樂</td>
+                                                                        <td>
+                                                                            <div class="tableCol">失效</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">4年</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖家祥</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖正和</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">N</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">10</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">1095698746</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>098</span><span>07</span><span>19</span></div>
+                                                                        </td>
+                                                                        <td>愛無間美元防癌</td>
+                                                                        <td>
+                                                                            <div class="tableCol">失效</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">7年</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖家祥</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖正和</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">N</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">11</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">1095692234</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>098</span><span>05</span><span>04</span></div>
+                                                                        </td>
+                                                                        <td>新美麗人生</td>
+                                                                        <td>
+                                                                            <div class="tableCol">復效</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">3年</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖家祥</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">廖正和</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">N</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="bra1_taskTab2" class="tab-pane fade">
+                                                    <div class="bra1_poStatus">
+                                                        <div class="bra1_poStatusItem bra1_statusTotal">
+                                                            <a href="#" class="statusActive">
+                                                                <span class="bra1_poStatusTitle"><span>主約保單總數</span></span>
+                                                                <span class="bra1_poStatusNum">52<span>筆</span></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bra1_poStatusItem bra1_statusVaild">
+                                                            <a href="#">
+                                                                <span class="bra1_poStatusTitle"><span>主約有效</span></span>
+                                                                <span class="bra1_poStatusNum">42<span>筆</span></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bra1_poStatusItem bra1_statusSuspended">
+                                                            <a href="#">
+                                                                <span class="bra1_poStatusTitle"><span>主約停效</span></span>
+                                                                <span class="bra1_poStatusNum">07<span>筆</span></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="bra1_poStatusItem bra1_statusLapse">
+                                                            <a href="#">
+                                                                <span class="bra1_poStatusTitle"><span>主約無效</span></span>
+                                                                <span class="bra1_poStatusNum">03<span>筆</span></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="braTable bra1_poTable bra1_groupPoTable">
+                                                        <div class="table-responsive">
+                                                            <table id="bra1_groupTableId" class="display cell-border dataTable">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <div class="tableCol tableNum">序號</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">保單號碼</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">要保單位名稱</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">要保公司保況</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">保險證號</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">被保人保況</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">續保日</div>
+                                                                        </th>
+                                                                        <th>
+                                                                            <div class="tableCol">續保回函日</div>
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">1
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">3000497096</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">元○生○科○股○有○公○</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">正常繳費件</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">421</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">正常繳費件</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>2020</span><span>9</span><span>16</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">&nbsp;</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">2</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">C086965140</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">智○科○股○有○公○</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">保單滿期</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">3215</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">保單滿期</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>2017</span><span>1</span><span>1</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">&nbsp;</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">3</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">3000494835</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">喬○管○顧○股○有○公○</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">正常繳費件</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">32</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">正常繳費件</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>2020</span><span>8</span><span>1</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">&nbsp;</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">4</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">3000496080</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">晶○晶○科○股○有○公○</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">正常繳費件</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">567</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">正常繳費件</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>2020</span><span>8</span><span>30</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>2019</span><span>10</span><span>21</span></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="tableCol tableNum">5</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><a href="#">C088761016</a></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">勤○眾○聯○會○師○務○</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">正常繳費件</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">1234</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">解約-保戶主動</div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol"><span>2020</span><span>6</span><span>1</span></div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="tableCol">&nbsp;</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- task_tabs_end -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- dashboard_end -->
+                            <!-- page_copyright_start -->
+                            <div class="pageCopyright">
+                                <p>新光人壽保險股份有限公司版權所有© Shin Kong Life Insurance Co., Ltd. All Rights Reserved</p>
+                            </div>
+                            <!-- page_copyright_end -->
+                        </div>
+                        <!-- scroll_top_start -->
+                        <div class="scrollTop" id="scrollTopId">
+                            <a href="#" class="scrollTopBtn"><span class="material-icons">navigation</span></a>
+                        </div>
+                        <!-- scroll_top_end -->
+                    </div>
+                </div>
+            </div>
+            <!-- main_content_end -->
+        </div>
+        <!-- frame_bottom_end -->
+    </div>
+</body>
+<!-- jQuery_3.5.1(js_eric)  -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- jQuery-ui_1.12.1(js_eric) -->
+<script src="js/jquery-ui.js"></script>
+<!-- Popper(js_eric) -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap_4.5.2 -->
+<script src="js/bootstrap.min.js"></script>
+<!-- malihu-custom-scrollbar-plugin_3.1.5 -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- bootstrap-select(js_eric)-->
+<script src="js/bootstrap-select.js"></script>
+<!-- datatable(bootstrap4/DataTables) -->
+<script src="js/jquery.dataTables.js"></script>
+<!-- lity_2.4.1 -->
+<script src="js/lity.js"></script>
+<!-- js -->
+<script src="js/layout.js"></script>
+<!-- include_menu -->
+<script>
+includeMenu();
+</script>
+<!-- include_msg-->
+<script>
+includeMsg();
+</script>
+<!-- include_record-->
+<script>
+includeRecord();
+</script>
+<!-- content_height -->
+<script>
+var winHeight = window.innerHeight;
+console.log(winHeight);
+document.getElementById('msgListContentId').style.height = winHeight - 250 + 'px';
+document.getElementById('recordListContentId').style.height = winHeight - 290 + 'px';
+document.getElementById('mainContentTextId').style.height = winHeight - 120 + 'px';
+document.getElementById('leftAsideId').style.height = winHeight - 60 + 'px';
+</script>
+<!-- table_list -->
+<script>
+$(document).ready(function() {
+    ////////// bra1_personal_table //////////
+    $('#bra1_personalTableId').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        columnDefs: [{
+                targets: 0,
+                width: '40px',
+                className: 'dt-center',
+                orderable: true
+            },
+            {
+                targets: 1,
+                orderable: true
+            },
+            {
+                targets: 2,
+                className: 'braTableDate',
+                orderable: true
+            },
+            {
+                targets: 3,
+                orderable: false,
+                render: function(data, type, row, meta) {
+                    if (type === 'display') {
+                        if (data.length > 9) {
+                            return '<div ' + 'data-toggle="' + 'tooltip" ' + ' class="tableCol"' + 'title="' + data + '">' + data.substr(0, 8) + '...</div>';
+                        } else {
+                            return '<div' + ' class="tableCol"' + 'title="' + data + '"">' + data + '</div>';
+                        }
+                    }
+                    return data;
+                }
+            },
+            {
+                targets: 4,
+                orderable: true
+            },
+            {
+                targets: 5,
+                orderable: false
+            },
+            {
+                targets: 6,
+                orderable: false
+            },
+            {
+                targets: 7,
+                className: 'no-cell-border',
+                orderable: false
+            },
+            {
+                targets: 8,
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+    ////////// bra1_group_table //////////
+    $('#bra1_groupTableId').DataTable({
+        bFilter: false,
+        responsive: true,
+        autoWidth: false,
+        columnDefs: [{
+                targets: 0,
+                width: '40px',
+                className: 'dt-center',
+                orderable: true
+            },
+            {
+                targets: 1,
+                orderable: false
+            },
+            {
+                targets: 2,
+                orderable: false
+            },
+            {
+                targets: 3,
+                orderable: false
+            },
+            {
+                targets: 4,
+                orderable: false
+            },
+            {
+                targets: 5,
+                orderable: false
+            },
+            {
+                targets: 6,
+                className: 'braTableDate',
+                orderable: false
+            },
+            {
+                targets: 7,
+                className: 'no-cell-border braTableDate',
+                orderable: false
+            },
+            {
+                targets: "_all",
+                className: 'hover'
+            }
+        ],
+        lengthMenu: [
+            [10, 25, 50, -1],
+            [10, 25, 50, "All"]
+        ],
+        language: {
+            "url": "js/Chinese-traditional.json"
+        },
+        pagingType: "full_numbers",
+        dom: '<"tableList"<"tableTopFun"<"topFun_length"l><"topFun_info"i>> <"listTable"t> <"tableBottomFun"<"bottomFun_page"p><"bottomFun_filter"f>>>',
+    });
+});
+</script>
+<!-- bootstrap tooltip -->
+<script>
+$(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+
+</html>
